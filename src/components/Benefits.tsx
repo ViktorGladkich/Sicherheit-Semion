@@ -51,7 +51,7 @@ const Benefits: React.FC = () => {
                     <div className={`mt-12 md:mt-0 transform transition-transform duration-1000  ${isVisible ? 'translate-x-0' : 'translate-x-10'}`}>
                         <img 
                         className="rounded-xl shadow-lg"
-                        src="/public/sicherheitskonzepte2.png" />
+                        src="/sicherheitskonzepte2.png" />
                     </div>
                 </div>
             </div>
