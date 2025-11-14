@@ -97,6 +97,24 @@ const Contact: React.FC = () => {
                 <MailIcon className="w-6 h-6 text-blue-500 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"/>
                 <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">kontakt@aegis-sicherheit.de</span>
               </a>
+              <div className="flex items-start group cursor-default">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6 text-blue-500 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c4.418 0 8-3.582 8-8S12 3 12 3 4 9.582 4 13s3.582 8 8 8z" />
+      <circle cx="12" cy="13" r="3" />
+    </svg>
+
+    <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
+      Musterstraße 12<br />
+      01067 Dresden, Deutschland
+    </span>
+  </div>
             </div>
           </div>
           {isSubmitted ? (

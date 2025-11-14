@@ -43,7 +43,7 @@ const Header: React.FC = () => {
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
               <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-2xl font-bold text-gray-900 dark:text-white tracking-wider">
-                AEGIS<span className="text-blue-500">.</span>
+                SEMION<span className="text-blue-500">.</span>
               </a>
             </div>
             {/* Desktop Navigation */}
