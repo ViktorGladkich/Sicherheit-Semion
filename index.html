@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aegis Sicherheit | Professioneller Schutz für Ihr Unternehmen</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Aegis Sicherheit bietet professionelle Sicherheitslösungen für Unternehmen und Privatpersonen in Deutschland. Objektschutz, Veranstaltungsschutz und individuelle Sicherheitskonzepte.">
+    <meta name="keywords" content="Sicherheitsfirma, Sicherheit, Objektschutz, Veranstaltungsschutz, Personenschutz, Deutschland, Aegis">
+    <meta name="author" content="Aegis Sicherheit">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:title" content="Aegis Sicherheit | Professioneller Schutz für Ihr Unternehmen">
+    <meta property="og:description" content="Zuverlässige und moderne Sicherheitslösungen für höchste Ansprüche.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1586923258041-331a4a82159b?w=1200&h=630&fit=crop">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://example.com/">
+    <meta property="twitter:title" content="Aegis Sicherheit | Professioneller Schutz für Ihr Unternehmen">
+    <meta property="twitter:description" content="Zuverlässige und moderne Sicherheitslösungen für höchste Ansprüche.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1586923258041-331a4a82159b?w=1200&h=630&fit=crop">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Добавлена поддержка темной темы
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <style>
+      html { scroll-behavior: smooth; }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      /* Компенсация высоты фиксированного хедера для якорных ссылок */
+      section[id] {
+        scroll-margin-top: 4rem; /* h-16 = 4rem */
+      }
+    </style>
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Aegis Sicherheit",
+      "image": "https://images.unsplash.com/photo-1586923258041-331a4a82159b",
+      "@id": "",
+      "url": "https://example.com/",
+      "telephone": "+49123456789",
+      "email": "kontakt@aegis-sicherheit.de",
+      "description": "Professioneller Schutz für Unternehmen und Privatpersonen. Wir bieten maßgeschneiderte Sicherheitslösungen, auf die Sie sich rund um die Uhr verlassen können.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Musterstraße 1",
+        "addressLocality": "Berlin",
+        "postalCode": "10115",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://www.facebook.com/aegis",
+        "https://www.twitter.com/aegis",
+        "https://www.instagram.com/aegis"
+      ] 
+    }
+    </script>
+    <script>
+      // Скрипт для предотвращения "мигания" темы
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="module" src="src/index.tsx"></script>
+</body>
+</html>
