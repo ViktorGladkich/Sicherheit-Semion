@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto py-6 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <p className="text-sm text-gray-500 dark:text-gray-400">
-            &copy; {new Date().getFullYear()} Aegis Sicherheit. Alle Rechte vorbehalten.
+            &copy; {new Date().getFullYear()} A.S.S Security UG. Alle Rechte vorbehalten.
           </p>
           <div className="flex flex-wrap justify-center space-x-6 mt-4 md:mt-0">
             <a 

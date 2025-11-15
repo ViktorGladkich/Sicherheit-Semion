@@ -4,27 +4,27 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aegis Sicherheit | Professioneller Schutz für Ihr Unternehmen</title>
+    <title>A.S.S Security UG | Ihr Ass im Ärmel für Sicherheit</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Aegis Sicherheit bietet professionelle Sicherheitslösungen für Unternehmen und Privatpersonen in Deutschland. Objektschutz, Veranstaltungsschutz und individuelle Sicherheitskonzepte.">
-    <meta name="keywords" content="Sicherheitsfirma, Sicherheit, Objektschutz, Veranstaltungsschutz, Personenschutz, Deutschland, Aegis">
-    <meta name="author" content="Aegis Sicherheit">
+    <meta name="description" content="A.S.S Security UG: Ihr Ass im Ärmel für professionelle Sicherheitslösungen. Objektschutz, Veranstaltungsschutz und individuelle Sicherheitskonzepte für höchste Ansprüche.">
+    <meta name="keywords" content="A.S.S Security, Sicherheitsfirma, Sicherheit, Objektschutz, Veranstaltungsschutz, Personenschutz, Deutschland">
+    <meta name="author" content="A.S.S Security UG">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://example.com/">
-    <meta property="og:title" content="Aegis Sicherheit | Professioneller Schutz für Ihr Unternehmen">
-    <meta property="og:description" content="Zuverlässige und moderne Sicherheitslösungen für höchste Ansprüche.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1586923258041-331a4a82159b?w=1200&h=630&fit=crop">
+    <meta property="og:title" content="A.S.S Security UG | Ihr Ass im Ärmel für Sicherheit">
+    <meta property="og:description" content="Es ist immer schön, ein ASS im Ärmel zu haben. Professionelle Sicherheitslösungen für höchste Ansprüche.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1516026672322-78ab2db9a8e2?w=1200&h=630&fit=crop">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://example.com/">
-    <meta property="twitter:title" content="Aegis Sicherheit | Professioneller Schutz für Ihr Unternehmen">
-    <meta property="twitter:description" content="Zuverlässige und moderne Sicherheitslösungen für höchste Ansprüche.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1586923258041-331a4a82159b?w=1200&h=630&fit=crop">
-
+    <meta property="twitter:title" content="A.S.S Security UG | Ihr Ass im Ärmel für Sicherheit">
+    <meta property="twitter:description" content="Es ist immer schön, ein ASS im Ärmel zu haben. Professionelle Sicherheitslösungen für höchste Ansprüche.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1516026672322-78ab2db9a8e2?w=1200&h=630&fit=crop">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       // Добавлена поддержка темной темы
@@ -42,19 +42,69 @@
       section[id] {
         scroll-margin-top: 4rem; /* h-16 = 4rem */
       }
+      /* Анимация сияния для кнопок (постоянная) */
+      @keyframes shine-animation {
+        0% {
+            transform: translateX(-100%) skewX(-25deg);
+        }
+        100% {
+            transform: translateX(200%) skewX(-25deg);
+        }
+      }
+      .btn-shine {
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-shine::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100%;
+        background-image: linear-gradient(
+          120deg,
+          rgba(255, 255, 255, 0) 20%,
+          rgba(255, 255, 255, 0.25) 50%,
+          rgba(255, 255, 255, 0) 80%
+        );
+        animation: shine-animation 5s infinite linear;
+      }
+      @keyframes floating {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      @keyframes pulse-slow {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.8; transform: scale(1.05); }
+      }
+      .animate-pulse-slow {
+        animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.8s ease-out forwards;
+      }
     </style>
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "Aegis Sicherheit",
-      "image": "https://images.unsplash.com/photo-1586923258041-331a4a82159b",
+      "name": "A.S.S Security UG",
+      "image": "https://images.unsplash.com/photo-1516026672322-78ab2db9a8e2",
       "@id": "",
       "url": "https://example.com/",
       "telephone": "+49123456789",
-      "email": "kontakt@aegis-sicherheit.de",
-      "description": "Professioneller Schutz für Unternehmen und Privatpersonen. Wir bieten maßgeschneiderte Sicherheitslösungen, auf die Sie sich rund um die Uhr verlassen können.",
+      "email": "kontakt@ass-security.de",
+      "description": "Ihr Ass im Ärmel für professionelle Sicherheitslösungen in Deutschland. Wir bieten maßgeschneiderte Sicherheitskonzepte, auf die Sie sich rund um die Uhr verlassen können.",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Musterstraße 1",
@@ -63,9 +113,9 @@
         "addressCountry": "DE"
       },
       "sameAs": [
-        "https://www.facebook.com/aegis",
-        "https://www.twitter.com/aegis",
-        "https://www.instagram.com/aegis"
+        "https://www.facebook.com/ass-security",
+        "https://www.twitter.com/ass-security",
+        "https://www.instagram.com/ass-security"
       ] 
     }
     </script>
@@ -86,7 +136,9 @@
     "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
-    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1"
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "lottie-react": "https://aistudiocdn.com/lottie-react@^2.4.0",
+    "lottie-web": "https://aistudiocdn.com/lottie-web@^5.12.2"
   }
 }
 </script>

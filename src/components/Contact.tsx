@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { MailIcon, PhoneIcon, CheckCircleIcon, SpinnerIcon, CheckIcon } from './Icons';
+import { MailIcon, PhoneIcon, CheckCircleIcon, SpinnerIcon, CheckIcon, LocationIcon } from './Icons';
 
 interface FormState { name: string; email: string; phone: string; message: string; }
 interface FormErrors { name?: string; email?: string; phone?: string; message?: string; }
@@ -93,28 +93,14 @@ const Contact: React.FC = () => {
                 <PhoneIcon className="w-6 h-6 text-blue-500 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"/>
                 <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">+49 (0) 123 456 789</span>
               </a>
-              <a href="mailto:kontakt@aegis-sicherheit.de" className="flex items-center group">
+              <a href="mailto:kontakt@ass-security.de" className="flex items-center group">
                 <MailIcon className="w-6 h-6 text-blue-500 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"/>
-                <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">kontakt@aegis-sicherheit.de</span>
+                <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">kontakt@ass-security.de</span>
               </a>
-              <div className="flex items-start group cursor-default">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="w-6 h-6 text-blue-500 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={1.5}
-      stroke="currentColor"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 21c4.418 0 8-3.582 8-8S12 3 12 3 4 9.582 4 13s3.582 8 8 8z" />
-      <circle cx="12" cy="13" r="3" />
-    </svg>
-
-    <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors leading-snug">
-      Musterstraße 12<br />
-      01067 Dresden, Deutschland
-    </span>
-  </div>
+              <a href="https://www.google.com/maps/search/?api=1&query=K%C3%B6nigstra%C3%9Fe+26,+01097+Dresden" target="_blank" rel="noopener noreferrer" className="flex items-center group">
+                <LocationIcon className="w-6 h-6 text-blue-500 dark:text-blue-400 mr-4 group-hover:scale-110 transition-transform"/>
+                <span className="text-lg text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Königstraße 26, 01097 Dresden</span>
+              </a>
             </div>
           </div>
           {isSubmitted ? (

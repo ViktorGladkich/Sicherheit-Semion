@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTheme } from '../contexts/ThemeContext';
-import { SunIcon, MoonIcon } from './Icons';
+import Lottie from "lottie-react";
+import sun from "../assets/sun.json";
+import moon from "../assets/moon.json";
 
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
@@ -12,13 +14,14 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 transition-colors"
+      className="p-2 rounded-full text-gray-600 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white transition-colors"
       aria-label="Toggle theme"
     >
       {theme === 'light' ? (
-        <MoonIcon className="w-5 h-5" />
+        
+        <Lottie animationData={moon} loop={true} className="w-10 h-10 animate-floating" />
       ) : (
-        <SunIcon className="w-5 h-5" />
+        <Lottie animationData={sun} loop={true} className="w-10 h-10 animate-floating" />
       )}
     </button>
   );

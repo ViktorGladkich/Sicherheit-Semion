@@ -1,27 +1,59 @@
 import React, { useRef } from 'react';
-import { BuildingIcon, UsersIcon, ShieldIcon, WifiIcon } from './Icons';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import Lottie from "lottie-react";
+import objektschutz from "../assets/safecity.json";
+import veranstaltungsschutz from "../assets/cctv.json";
+import personenschutz from "../assets/security.json";
+import alarmaufschaltung from "../assets/dataprivacy.json";
 
 const services = [
   {
-    icon: <BuildingIcon className="h-12 w-12 text-blue-500 dark:text-blue-400" />,
+    icon: (
+      <Lottie 
+        animationData={objektschutz} 
+        loop={true} 
+        className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
+      />
+    ),
     title: 'Objektschutz',
-    description: 'Umfassender Schutz für Ihre Immobilien, Firmengelände und Baustellen durch permanente Präsenz und modernste Überwachungstechnik.',
+    description:
+      'Umfassender Schutz für Ihre Immobilien, Firmengelände und Baustellen durch permanente Präsenz und modernste Überwachungstechnik.',
   },
   {
-    icon: <UsersIcon className="h-12 w-12 text-blue-500 dark:text-blue-400" />,
+    icon: (
+      <Lottie 
+        animationData={veranstaltungsschutz} 
+        loop={true} 
+        className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
+      />
+    ),
     title: 'Veranstaltungsschutz',
-    description: 'Professionelle Sicherheitskonzepte für Events jeder Größenordnung, von Einlasskontrollen bis zur Sicherung des gesamten Geländes.',
+    description:
+      'Professionelle Sicherheitskonzepte für Events jeder Größenordnung, von Einlasskontrollen bis zur Sicherung des gesamten Geländes.',
   },
   {
-    icon: <ShieldIcon className="h-12 w-12 text-blue-500 dark:text-blue-400" />,
+    icon: (
+      <Lottie 
+        animationData={personenschutz} 
+        loop={true} 
+        className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
+      />
+    ),
     title: 'Personenschutz',
-    description: 'Diskreter und hochqualifizierter Schutz für Personen des öffentlichen Lebens, Manager und Privatpersonen in allen Gefährdungslagen.',
+    description:
+      'Diskreter und hochqualifizierter Schutz für Personen des öffentlichen Lebens, Manager und Privatpersonen in allen Gefährdungslagen.',
   },
   {
-    icon: <WifiIcon className="h-12 w-12 text-blue-500 dark:text-blue-400" />,
+    icon: (
+      <Lottie 
+        animationData={alarmaufschaltung} 
+        loop={true} 
+        className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
+      />
+    ),
     title: 'Alarmaufschaltung',
-    description: '24/7-Überwachung Ihrer Alarmsysteme mit sofortiger Intervention im Ernstfall durch unsere zertifizierte Notruf- und Serviceleitstelle.',
+    description:
+      '24/7-Überwachung Ihrer Alarmsysteme mit sofortiger Intervention im Ernstfall durch unsere zertifizierte Notruf- und Serviceleitstelle.',
   },
 ];
 

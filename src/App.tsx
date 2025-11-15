@@ -11,9 +11,19 @@ import CookieConsent from './components/CookieConsent';
 import BackToTopButton from './components/BackToTopButton';
 import Approach from './components/Approach';
 import FAQ from './components/FAQ';
+import Preloader from './components/Preloader';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); // Продолжительность предзагрузчика в миллисекундах
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleScroll = () => {
     const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -27,12 +37,18 @@ function App() {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (!isLoading) {
+      window.addEventListener('scroll', handleScroll);
+      return () => window.removeEventListener('scroll', handleScroll);
+    }
+  }, [isLoading]);
+
+  if (isLoading) {
+    return <Preloader />;
+  }
 
   return (
-    <div className="bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 font-sans transition-colors duration-300 overflow-x-hidden">
+    <div className="bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 font-sans transition-colors duration-300 overflow-x-hidden animate-fade-in">
       <div 
         className="fixed top-0 left-0 z-[60] h-1 bg-blue-500 transition-all duration-300 ease-linear"
         style={{ width: `${scrollProgress}%` }}

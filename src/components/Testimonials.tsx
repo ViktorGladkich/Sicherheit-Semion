@@ -4,12 +4,12 @@ import { QuoteIcon } from './Icons';
 
 const testimonials = [
   {
-    quote: "Die Zusammenarbeit mit Aegis Sicherheit war von Anfang an professionell und transparent. Ihr Team hat unser Firmenevent perfekt abgesichert. Absolute Empfehlung!",
+    quote: "Die Zusammenarbeit mit A.S.S Security war von Anfang an professionell und transparent. Ihr Team hat unser Firmenevent perfekt abgesichert. Absolute Empfehlung!",
     author: 'Markus Schmidt',
     company: 'CEO, Tech Solutions GmbH',
   },
   {
-    quote: "Für den Schutz unserer Baustelle war Aegis die beste Wahl. Zuverlässig, proaktiv und immer erreichbar. Wir fühlten uns jederzeit sicher.",
+    quote: "Für den Schutz unserer Baustelle war A.S.S Security die beste Wahl. Zuverlässig, proaktiv und immer erreichbar. Wir fühlten uns jederzeit sicher.",
     author: 'Julia Wagner',
     company: 'Projektleiterin, Bauprojekte AG',
   },

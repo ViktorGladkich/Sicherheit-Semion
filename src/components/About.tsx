@@ -39,9 +39,9 @@ const About: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className={`md:grid md:grid-cols-2 md:gap-16 md:items-center transition-opacity duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                     <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
-                        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Über Aegis Sicherheit</h2>
-                        <p className="mt-4 text-xl text-blue-600 dark:text-blue-400 font-semibold">Tradition, Vertrauen und Innovation seit über einem Jahrzehnt.</p>
-                        <p className="mt-6 text-gray-600 dark:text-gray-400">Gegründet auf den Grundprinzipien von Integrität, Wachsamkeit und Professionalität, schützt Aegis Sicherheit seit über 10 Jahren das, was unseren Kunden am wichtigsten ist. Unsere Geschichte ist geprägt von kontinuierlichem Wachstum und der Anpassung an neue Herausforderungen in einer sich ständig wandelnden Welt.</p>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">Über A.S.S Security</h2>
+                        <p className="mt-4 text-xl text-blue-600 dark:text-blue-400 font-semibold">Integrität, Vertrauen und Innovation.</p>
+                        <p className="mt-6 text-gray-600 dark:text-gray-400">Gegründet auf den Grundprinzipien von Integrität, Wachsamkeit und Professionalität, schützt A.S.S Security das, was unseren Kunden am wichtigsten ist. Unsere Geschichte ist geprägt von kontinuierlichem Wachstum und der Anpassung an neue Herausforderungen in einer sich ständig wandelnden Welt.</p>
                         <p className="mt-4 text-gray-600 dark:text-gray-400">Unsere Werte sind das Fundament unserer Arbeit: Absolute Zuverlässigkeit, transparente Kommunikation und ein unerschütterliches Engagement für die Sicherheit unserer Klienten. Wir kombinieren bewährte Methoden mit modernster Technologie, um proaktive und effektive Schutzmaßnahmen zu gewährleisten.</p>
                         <h3 className="text-xl font-bold text-gray-900 dark:text-white mt-6 mb-2">Datenschutz und Vertraulichkeit</h3>
                         <p className="text-gray-600 dark:text-gray-400">Der Schutz Ihrer Daten hat für uns höchste Priorität. Wir behandeln alle Informationen mit absoluter Diskretion und halten uns streng an die geltenden Datenschutzbestimmungen. Vertrauen ist die Basis jeder erfolgreichen Sicherheitspartnerschaft.</p>
@@ -55,7 +55,7 @@ const About: React.FC = () => {
                         <div className="w-full h-full rounded-xl overflow-hidden relative">
                            {slides.map((slide, index) => (
                                 <div key={index} className="absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out" style={{ opacity: index === currentIndex ? 1 : 0, zIndex: index === currentIndex ? 10 : 1 }}>
-                                    <img loading="lazy" src={slide.image} alt={slide.caption} className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                                    <img src={slide.image} alt={slide.caption} className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
                                 </div>
                             ))}
                              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-20">

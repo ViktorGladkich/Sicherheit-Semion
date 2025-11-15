@@ -38,12 +38,12 @@ const Header: React.FC = () => {
   return (
     <>
       {/* --- Main Header for Desktop and Logo --- */}
-      <header className="fixed top-0 left-0 w-full z-40 bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm border-b border-gray-200 dark:border-slate-700/50">
+      <header className="fixed top-0 left-0 w-full z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
-              <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-2xl font-bold text-gray-900 dark:text-white tracking-wider">
-                SEMION<span className="text-blue-500">.</span>
+              <a href="#home" onClick={(e) => handleNavClick(e, '#home')}>
+                <img src="/logotip.png" alt="A.S.S Security UG Logo" className="h-20 w-auto" />
               </a>
             </div>
             {/* Desktop Navigation */}
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleNavClick(e, link.href)}
-                    className="relative group text-gray-600 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 transition-colors duration-300 uppercase text-sm font-semibold tracking-wider"
+                    className="relative group text-gray-600 hover:text-blue-500 transition-colors duration-300 uppercase text-sm font-semibold tracking-wider"
                   >
                     {link.label}
                     <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-center"></span>
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors duration-300 shadow-lg shadow-blue-600/20 uppercase text-sm font-semibold tracking-wider"
+                className="px-4 py-2 bg-blue-600 btn-shine text-white rounded-md hover:bg-blue-700 transition-colors duration-300 shadow-lg shadow-blue-600/20 uppercase text-sm font-semibold tracking-wider"
               >
                 Anfrage
               </a>
@@ -85,9 +85,9 @@ const Header: React.FC = () => {
           className="ml-4 w-8 h-8 flex flex-col justify-center items-center focus:outline-none"
           aria-label="Menü öffnen"
         >
-          <span className={`block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-[7px]' : '-translate-y-1'}`}></span>
-          <span className={`block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 my-1 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-          <span className={`block w-6 h-0.5 bg-gray-800 dark:bg-gray-200 transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 -translate-y-[7px]' : 'translate-y-1'}`}></span>
+          <span className={`block w-6 h-0.5 bg-gray-800 transform transition duration-300 ease-in-out ${isMenuOpen ? 'rotate-45 translate-y-[7px]' : '-translate-y-1'}`}></span>
+          <span className={`block w-6 h-0.5 bg-gray-800 my-1 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+          <span className={`block w-6 h-0.5 bg-gray-800 transform transition duration-300 ease-in-out ${isMenuOpen ? '-rotate-45 -translate-y-[7px]' : 'translate-y-1'}`}></span>
         </button>
       </div>
 
@@ -99,9 +99,9 @@ const Header: React.FC = () => {
         onClick={() => setIsMenuOpen(false)}
       ></div>
 
-      {/* Panel with Glassmorphism Effect */}
+      {/* Panel with Glassmorphism Effect - Always light */}
       <div
-        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 lg:hidden bg-white/90 dark:bg-slate-900/40 backdrop-blur-xl shadow-2xl rounded-l-3xl transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 lg:hidden bg-white/80 backdrop-blur-xl shadow-2xl transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >
         <div className="h-full flex flex-col items-center justify-center overflow-y-auto pt-20 pb-10 px-4">
           <nav className="flex flex-col items-center text-center space-y-8">
@@ -110,7 +110,7 @@ const Header: React.FC = () => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleMobileLinkClick(e, link.href)}
-                className={`text-2xl uppercase tracking-wider text-gray-800 dark:text-gray-200 transition-all duration-500 ease-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
+                className={`text-2xl uppercase tracking-wider text-gray-800 transition-all duration-500 ease-out ${isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
                 style={{ transitionDelay: `${150 + index * 75}ms` }}
               >
                 {link.label}

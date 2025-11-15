@@ -1,12 +1,32 @@
 import React, { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import { SearchIcon, FileTextIcon, ShieldCheckIcon, RepeatIcon } from './Icons';
+import Lottie from 'lottie-react';
+import analysisAnimation from '../assets/search.json';
+import conceptAnimation from '../assets/document.json';
+import implementationAnimation from '../assets/securedeal.json';
+import supportAnimation from '../assets/247stunden.json';
 
 const steps = [
-    { icon: <SearchIcon className="w-8 h-8 text-blue-500 dark:text-blue-600" />, title: "Analyse & Beratung", description: "Jeder Einsatz beginnt mit einer gründlichen Analyse Ihrer spezifischen Sicherheitsbedürfnisse." },
-    { icon: <FileTextIcon className="w-8 h-8 text-blue-500 dark:text-blue-600" />, title: "Konzeptentwicklung", description: "Wir entwickeln ein maßgeschneidertes Sicherheitskonzept, das alle Eventualitäten berücksichtigt." },
-    { icon: <ShieldCheckIcon className="w-8 h-8 text-blue-500 dark:text-blue-600" />, title: "Implementierung", description: "Unsere Experten setzen das Konzept vor Ort professionell und diskret um." },
-    { icon: <RepeatIcon className="w-8 h-8 text-blue-500 dark:text-blue-600" />, title: "Laufende Betreuung", description: "Regelmäßige Kontrollen und 24/7-Erreichbarkeit garantieren nachhaltige Sicherheit." }
+    { 
+        icon: <Lottie animationData={analysisAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        title: "Analyse & Beratung",
+        description: "Jeder Einsatz beginnt mit einer gründlichen Analyse Ihrer spezifischen Sicherheitsbedürfnisse."
+    },
+    { 
+        icon: <Lottie animationData={conceptAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        title: "Konzeptentwicklung",
+        description: "Wir entwickeln ein maßgeschneidertes Sicherheitskonzept, das alle Eventualitäten berücksichtigt."
+    },
+    { 
+        icon: <Lottie animationData={implementationAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        title: "Implementierung",
+        description: "Unsere Experten setzen das Konzept vor Ort professionell und diskret um."
+    },
+    { 
+        icon: <Lottie animationData={supportAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        title: "Laufende Betreuung",
+        description: "Regelmäßige Kontrollen und 24/7-Erreichbarkeit garantieren nachhaltige Sicherheit."
+    }
 ];
 
 const ApproachStep = ({ step, index }: { step: typeof steps[0], index: number }) => {

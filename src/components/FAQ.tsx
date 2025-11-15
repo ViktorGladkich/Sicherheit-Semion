@@ -94,7 +94,7 @@ const FAQ: React.FC = () => {
                             </>
                           ) : (
                             <>
-                              <PlusCircleIcon className={`w-5 h-5 mr-2 transform transition-transform duration-300 ${allExpanded ? 'rotate-180' : ''}`} />
+                              <PlusCircleIcon className="w-5 h-5 mr-2" />
                               Alle ausklappen
                             </>
                           )}
