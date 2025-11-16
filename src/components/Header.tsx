@@ -38,7 +38,7 @@ const Header: React.FC = () => {
   return (
     <>
       {/* --- Main Header for Desktop and Logo --- */}
-      <header className="fixed top-0 left-0 w-full z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+      <header className="fixed top-0 left-0 w-full z-40 bg-white backdrop-blur-sm border-b border-black">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex-shrink-0">
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
       
       {/* --- Mobile Controls --- */}
       {/* This block is separate from the header to solve the z-index stacking context issue. */}
-      <div className="lg:hidden fixed top-0 right-0 h-16 flex items-center pr-4 z-[55]">
+      <div className="lg:hidden fixed top-0 right-0 h-16 flex items-center pr-4 z-[55] ">
         <ThemeToggle />
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -94,15 +94,18 @@ const Header: React.FC = () => {
       {/* --- Mobile Menu --- */}
       {/* Overlay */}
       <div 
+        className={`fixed inset-0 z-50 lg:hidden transition-opacity duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 pointer-events-auto bg-black/40' : 'opacity-0 pointer-events-none'}`}
+        onClick={() => setIsMenuOpen(false)} // Close menu on overlay click
         aria-hidden="true"
-        className={`fixed inset-0 z-40 lg:hidden transition-opacity duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 bg-black/40' : 'opacity-0 pointer-events-none'}`}
-        onClick={() => setIsMenuOpen(false)}
       ></div>
 
       {/* Panel with Glassmorphism Effect - Always light */}
       <div
-        className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 lg:hidden bg-white/80 backdrop-blur-xl shadow-2xl transition-transform duration-500 ease-in-out ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
-      >
+  className={`fixed top-0 right-0 h-full w-4/5 max-w-sm z-50 lg:hidden 
+  bg-white/80 backdrop-blur-xl shadow-2xl rounded-l-2xl
+  transition-transform duration-500 ease-in-out 
+  ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+>
         <div className="h-full flex flex-col items-center justify-center overflow-y-auto pt-20 pb-10 px-4">
           <nav className="flex flex-col items-center text-center space-y-8">
             {navLinks.map((link, index) => (

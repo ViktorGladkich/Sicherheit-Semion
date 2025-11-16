@@ -8,22 +8,22 @@ import supportAnimation from '../assets/247stunden.json';
 
 const steps = [
     { 
-        icon: <Lottie animationData={analysisAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        icon: <Lottie animationData={analysisAnimation} loop={true} className="w-14 h-14 " />, 
         title: "Analyse & Beratung",
         description: "Jeder Einsatz beginnt mit einer gründlichen Analyse Ihrer spezifischen Sicherheitsbedürfnisse."
     },
     { 
-        icon: <Lottie animationData={conceptAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        icon: <Lottie animationData={conceptAnimation} loop={true} className="w-14 h-14 " />, 
         title: "Konzeptentwicklung",
         description: "Wir entwickeln ein maßgeschneidertes Sicherheitskonzept, das alle Eventualitäten berücksichtigt."
     },
     { 
-        icon: <Lottie animationData={implementationAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        icon: <Lottie animationData={implementationAnimation} loop={true} className="w-14 h-14 " />, 
         title: "Implementierung",
         description: "Unsere Experten setzen das Konzept vor Ort professionell und diskret um."
     },
     { 
-        icon: <Lottie animationData={supportAnimation} loop={true} className="w-14 h-14 animate-floating" />, 
+        icon: <Lottie animationData={supportAnimation} loop={true} className="w-14 h-14 " />, 
         title: "Laufende Betreuung",
         description: "Regelmäßige Kontrollen und 24/7-Erreichbarkeit garantieren nachhaltige Sicherheit."
     }

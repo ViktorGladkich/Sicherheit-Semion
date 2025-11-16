@@ -46,6 +46,7 @@ const Benefits: React.FC = () => {
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
+          {/* Текстовая колонка */}
           <div
             className={`md:pr-12 transform transition-transform duration-1000 ${
               isVisible ? "translate-x-0" : "-translate-x-10"
@@ -85,22 +86,28 @@ const Benefits: React.FC = () => {
               ))}
             </div>
           </div>
+
+          {/* Lottie-анимация */}
           <div
             className={`
               mt-12 md:mt-0 
-              transform transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-              ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}
+              md:transform md:transition-all md:duration-[1200ms] md:ease-[cubic-bezier(0.22,1,0.36,1)]
+              ${isVisible ? 'md:translate-x-0 md:opacity-100 opacity-100' : 'md:translate-x-20 md:opacity-0 opacity-100'}
             `}
           >
             <div className="relative w-full flex justify-center">
               {/* Синее мягкое свечение позади */}
               <div className="absolute w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10 animate-pulse-slow"></div>
 
-              {/* Lottie-анимация */}
+              {/* Lottie */}
               <Lottie
                 animationData={cybersecurity}
-                loop={true}
-                className="w-full max-w-lg"
+                loop
+                className="w-full max-w-xs md:max-w-lg"
+                rendererSettings={{
+                  preserveAspectRatio: 'xMidYMid slice',
+                  progressiveLoad: true,
+                }}
               />
             </div>
           </div>
