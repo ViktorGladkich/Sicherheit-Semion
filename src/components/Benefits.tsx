@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { CheckCircleIcon } from "./Icons";
+import React, { useRef } from 'react';
+import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
+import { CheckCircleIcon } from './Icons';
 import Lottie from "lottie-react";
 import cybersecurity from "../assets/cybersecurity.json";
 
@@ -86,24 +86,24 @@ const Benefits: React.FC = () => {
             </div>
           </div>
           <div
-  className={`
-    mt-12 md:mt-0 
-    transform transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-    ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}
-  `}
->
-  <div className="relative w-full flex justify-center">
-    {/* Синее мягкое свечение позади */}
-    <div className="absolute w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10 animate-pulse-slow"></div>
+            className={`
+              mt-12 md:mt-0 
+              transform transition-all duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+              ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}
+            `}
+          >
+            <div className="relative w-full flex justify-center">
+              {/* Синее мягкое свечение позади */}
+              <div className="absolute w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10 animate-pulse-slow"></div>
 
-    {/* Lottie-анимация */}
-    <Lottie
-      animationData={cybersecurity}
-      loop={true}
-      className="w-full max-w-lg animate-floating"
-    />
-  </div>
-</div>
+              {/* Lottie-анимация */}
+              <Lottie
+                animationData={cybersecurity}
+                loop={true}
+                className="w-full max-w-lg"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
