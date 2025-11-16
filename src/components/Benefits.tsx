@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { CheckCircleIcon } from './Icons';
 import Lottie from "lottie-react";
-import cybersecurity from "../assets/cybersecurity.json";
+import cybersecurity from "../assets/securiteBenefits.json";
 
 const benefits = [
   {
