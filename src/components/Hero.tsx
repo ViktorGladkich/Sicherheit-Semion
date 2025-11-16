@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 overflow-hidden">
           <img 
-            src="../public/sicherheitskraft3.jpg" 
+            src="/public/sicherheitskraft3.jpg" 
             alt="Abstrakter dunkler Hintergrund"
             className="absolute inset-0 w-full h-full object-cover kenburns-effect"
             loading="eager"

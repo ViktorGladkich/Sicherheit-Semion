@@ -4,22 +4,22 @@ import LazyLottie from './LazyLottie';
 
 const steps = [
     { 
-        icon: <LazyLottie animationPath="../assets/search.json" loop={true} className="w-14 h-14 animate-floating" />, 
+        icon: <LazyLottie animationPath="/assets/search.json" loop={true} className="w-14 h-14 animate-floating" />, 
         title: "Analyse & Beratung",
         description: "Jeder Einsatz beginnt mit einer gründlichen Analyse Ihrer spezifischen Sicherheitsbedürfnisse."
     },
     { 
-        icon: <LazyLottie animationPath="../assets/document.json" loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="/assets/document.json" loop={true} className="w-14 h-14 " />, 
         title: "Konzeptentwicklung",
         description: "Wir entwickeln ein maßgeschneidertes Sicherheitskonzept, das alle Eventualitäten berücksichtigt."
     },
     { 
-        icon: <LazyLottie animationPath="../assets/securedeal.json" loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="/assets/securedeal.json" loop={true} className="w-14 h-14 " />, 
         title: "Implementierung",
         description: "Unsere Experten setzen das Konzept vor Ort professionell und diskret um."
     },
     { 
-        icon: <LazyLottie animationPath="../assets/247stunden.json" loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="/assets/247stunden.json" loop={true} className="w-14 h-14 " />, 
         title: "Laufende Betreuung",
         description: "Regelmäßige Kontrollen und 24/7-Erreichbarkeit garantieren nachhaltige Sicherheit."
     }

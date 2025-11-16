@@ -6,7 +6,7 @@ const services = [
   {
     icon: (
       <LazyLottie 
-        animationPath="../assets/safecity.json"
+        animationPath="/assets/safecity.json"
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />
@@ -18,7 +18,7 @@ const services = [
   {
     icon: (
       <LazyLottie 
-        animationPath="../assets/cctv.json"
+        animationPath="/assets/cctv.json"
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />
@@ -30,7 +30,7 @@ const services = [
   {
     icon: (
       <LazyLottie 
-        animationPath="../assets/security.json"
+        animationPath="/assets/security.json"
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />
@@ -42,7 +42,7 @@ const services = [
   {
     icon: (
       <LazyLottie 
-        animationPath="../assets/dataprivacy.json" 
+        animationPath="/assets/dataprivacy.json" 
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />

@@ -101,7 +101,7 @@ const Benefits: React.FC = () => {
 
               {/* Lottie */}
             <LazyLottie
-                animationPath="../assets/securiteBenefits.json"
+                animationPath="/assets/securiteBenefits.json"
                 loop={true}
                 className="w-full max-w-lg"
               />
