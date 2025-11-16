@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute inset-0 overflow-hidden">
           <img 
-            src="/sicherheitskraft3.jpg" 
+            src="../public/sicherheitskraft3.jpg" 
             alt="Abstrakter dunkler Hintergrund"
             className="absolute inset-0 w-full h-full object-cover kenburns-effect"
             loading="eager"
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
         className="relative z-10 text-center text-white px-4 transition-transform duration-300 ease-out"
         style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
           <span className="block text-gray-200">
             {'Es ist immer schön, ein'.split(' ').map((word, i) => (
               <span key={i} className="inline-block overflow-hidden pb-2 -mb-2">
@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
                 ASS&nbsp;
               </span>
             </span>
-            {'im Ärmel zu haben'.split(' ').map((word, i) => (
+            {'im Ärmel zu haben.'.split(' ').map((word, i) => (
               <span key={i} className="inline-block overflow-hidden pb-2 -mb-2">
                 <span className="inline-block animate-word-reveal" style={{ animationDelay: `${0.9 + i * 0.1}s` }}>
                   {word}&nbsp;
@@ -80,7 +80,7 @@ const Hero: React.FC = () => {
         
         <a
           href="#contact"
-          className="btn-shine relative inline-block py-3 px-8 bg-blue-600 text-white uppercase font-bold tracking-[1.5px] rounded-lg shadow-lg hover:shadow-2xl hover:shadow-blue-500/40 transition-shadow duration-300 transform hover:scale-105 animate-fade-in-up"
+          className="btn-shine relative inline-block py-3 px-6 sm:px-8 bg-blue-600 text-white uppercase font-bold tracking-[1.5px] rounded-lg shadow-lg hover:shadow-2xl hover:shadow-blue-500/40 transition-shadow duration-300 transform hover:scale-105 animate-fade-in-up"
           style={{ animationDelay: '1.6s' }}
         >
           Kostenloses Beratungsgespräch

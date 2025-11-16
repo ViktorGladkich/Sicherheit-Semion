@@ -55,7 +55,11 @@ const About: React.FC = () => {
                         <div className="w-full h-full rounded-xl overflow-hidden relative">
                            {slides.map((slide, index) => (
                                 <div key={index} className="absolute top-0 left-0 w-full h-full transition-opacity duration-700 ease-in-out" style={{ opacity: index === currentIndex ? 1 : 0, zIndex: index === currentIndex ? 10 : 1 }}>
-                                    <img src={slide.image} alt={slide.caption} className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" />
+                                    <img src={slide.image} alt={slide.caption} className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105" loading="lazy"
+                                        decoding="async"
+                                        width="800"
+                                        height="600"/>
+                                    
                                 </div>
                             ))}
                              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/60 to-transparent pointer-events-none z-20">

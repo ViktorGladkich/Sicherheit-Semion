@@ -1,16 +1,12 @@
 import React, { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import Lottie from "lottie-react";
-import objektschutz from "../assets/safecity.json";
-import veranstaltungsschutz from "../assets/cctv.json";
-import personenschutz from "../assets/security.json";
-import alarmaufschaltung from "../assets/dataprivacy.json";
+import LazyLottie from './LazyLottie';
 
 const services = [
   {
     icon: (
-      <Lottie 
-        animationData={objektschutz} 
+      <LazyLottie 
+        animationPath="../assets/safecity.json"
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />
@@ -21,8 +17,8 @@ const services = [
   },
   {
     icon: (
-      <Lottie 
-        animationData={veranstaltungsschutz} 
+      <LazyLottie 
+        animationPath="../assets/cctv.json"
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />
@@ -33,8 +29,8 @@ const services = [
   },
   {
     icon: (
-      <Lottie 
-        animationData={personenschutz} 
+      <LazyLottie 
+        animationPath="../assets/security.json"
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />
@@ -45,8 +41,8 @@ const services = [
   },
   {
     icon: (
-      <Lottie 
-        animationData={alarmaufschaltung} 
+      <LazyLottie 
+        animationPath="../assets/dataprivacy.json" 
         loop={true} 
         className="w-28 h-28 mx-auto transform transition-transform duration-300 group-hover:scale-110"
       />

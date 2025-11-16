@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -20,12 +20,12 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); // Продолжительность предзагрузчика в миллисекундах
+    }, 3000); 
 
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     if (totalHeight > 0) {
       const scrollPosition = window.scrollY;
@@ -34,14 +34,14 @@ function App() {
     } else {
       setScrollProgress(0);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (!isLoading) {
       window.addEventListener('scroll', handleScroll);
       return () => window.removeEventListener('scroll', handleScroll);
     }
-  }, [isLoading]);
+  }, [isLoading, handleScroll]);
 
   if (isLoading) {
     return <Preloader />;

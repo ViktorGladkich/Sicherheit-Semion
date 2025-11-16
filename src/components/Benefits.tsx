@@ -1,8 +1,8 @@
 import React, { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import { CheckCircleIcon } from './Icons';
-import Lottie from "lottie-react";
-import cybersecurity from "../assets/securiteBenefits.json";
+import LazyLottie from './LazyLottie';
+
 
 const benefits = [
   {
@@ -100,14 +100,10 @@ const Benefits: React.FC = () => {
               <div className="absolute w-72 h-72 bg-blue-500/20 blur-3xl rounded-full -z-10 animate-pulse-slow"></div>
 
               {/* Lottie */}
-              <Lottie
-                animationData={cybersecurity}
-                loop
-                className="w-full max-w-xs md:max-w-lg"
-                rendererSettings={{
-                  preserveAspectRatio: 'xMidYMid slice',
-                  progressiveLoad: true,
-                }}
+            <LazyLottie
+                animationPath="../assets/securiteBenefits.json"
+                loop={true}
+                className="w-full max-w-lg"
               />
             </div>
           </div>

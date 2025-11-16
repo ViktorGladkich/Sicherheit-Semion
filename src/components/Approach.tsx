@@ -1,29 +1,25 @@
 import React, { useRef } from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import Lottie from 'lottie-react';
-import analysisAnimation from '../assets/search.json';
-import conceptAnimation from '../assets/document.json';
-import implementationAnimation from '../assets/securedeal.json';
-import supportAnimation from '../assets/247stunden.json';
+import LazyLottie from './LazyLottie';
 
 const steps = [
     { 
-        icon: <Lottie animationData={analysisAnimation} loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="../assets/search.json" loop={true} className="w-14 h-14 animate-floating" />, 
         title: "Analyse & Beratung",
         description: "Jeder Einsatz beginnt mit einer gründlichen Analyse Ihrer spezifischen Sicherheitsbedürfnisse."
     },
     { 
-        icon: <Lottie animationData={conceptAnimation} loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="../assets/document.json" loop={true} className="w-14 h-14 " />, 
         title: "Konzeptentwicklung",
         description: "Wir entwickeln ein maßgeschneidertes Sicherheitskonzept, das alle Eventualitäten berücksichtigt."
     },
     { 
-        icon: <Lottie animationData={implementationAnimation} loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="../assets/securedeal.json" loop={true} className="w-14 h-14 " />, 
         title: "Implementierung",
         description: "Unsere Experten setzen das Konzept vor Ort professionell und diskret um."
     },
     { 
-        icon: <Lottie animationData={supportAnimation} loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="../assets/247stunden.json" loop={true} className="w-14 h-14 " />, 
         title: "Laufende Betreuung",
         description: "Regelmäßige Kontrollen und 24/7-Erreichbarkeit garantieren nachhaltige Sicherheit."
     }

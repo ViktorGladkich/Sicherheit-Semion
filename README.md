@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# A.S.S Security UG - Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dies ist der Quellcode für die offizielle Landing Page der A.S.S Security UG. Das Projekt wurde als moderner, professioneller und performanter Single-Page-Auftritt entwickelt, um das Dienstleistungsportfolio des Unternehmens zu präsentieren und potenzielle Kunden zu gewinnen.
 
-Currently, two official plugins are available:
+## ✨ Hauptmerkmale
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **Modernes & Premium Design:** Eine klare, vertrauenswürdige Ästhetik, die Professionalität und Sicherheit ausstrahlt.
+-   **Vollständig Responsiv:** Optimierte Darstellung auf allen Geräten – vom Desktop-Monitor bis zum Smartphone.
+-   **Dunkel-/Hell-Modus:** Ein umschaltbares Farbschema für optimalen Lesekomfort bei allen Lichtverhältnissen.
+-   **Interaktive Animationen:** Flüssige Übergänge und Lottie-Animationen, die die Benutzererfahrung verbessern, ohne die Leistung zu beeinträchtigen.
+-   **Performance-Optimierung:**
+    -   **Lazy Loading:** Bilder und Lottie-Animationen werden erst geladen, wenn sie im sichtbaren Bereich des Nutzers sind, was die Ladezeit der Seite drastisch reduziert.
+    -   **Code-Splitting & Optimierung:** Effizienter, sauberer Code für schnelle Lade- und Reaktionszeiten.
+-   **SEO-Optimiert:** Implementierung von Meta-Tags, strukturierten Daten (Schema.org) und Best Practices für eine hohe Sichtbarkeit in Suchmaschinen.
+-   **Barrierefreiheit (Accessibility):** Verbesserte Tastaturnavigation (Focus Trap im mobilen Menü) und semantisches HTML für eine breitere Nutzerbasis.
 
-## React Compiler
+## 🚀 Technologie-Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+-   **Frontend-Framework:** [React](https://react.dev/) (mit TypeScript)
+-   **Build-Tool:** [Vite](https://vitejs.dev/)
+-   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+-   **Animationen:** [Lottie](https://lottiefiles.com/)
+-   **Hosting-Umgebung:** Interaktive Online-Entwicklungsumgebung
 
-## Expanding the ESLint configuration
+## 📂 Projektstruktur
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+.
+├── assets/                 # Lottie-Animationen (.json) und Bilder
+├── components/             # Wiederverwendbare React-Komponenten (Header, Footer, Sections, etc.)
+├── contexts/               # React Context für globales State-Management (z.B. ThemeContext)
+├── hooks/                  # Benutzerdefinierte React Hooks (z.B. useIntersectionObserver)
+├── App.tsx                 # Hauptkomponente, die das Layout der Seite zusammenfügt
+├── index.html              # HTML-Einstiegspunkt
+├── index.tsx               # React-Einstiegspunkt (rendert die App)
+├── metadata.json           # Metadaten für die Entwicklungsplattform
+├── tsconfig.json           # TypeScript-Konfiguration
+└── README.md               # Diese Datei
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎯 Ziel des Projekts
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Das Ziel war die Schaffung einer digitalen Visitenkarte, die nicht nur informiert, sondern auch Vertrauen aufbaut und die Professionalität der A.S.S Security UG widerspiegelt. Jeder Aspekt, von der Farbwahl bis zur kleinsten Animation, wurde sorgfältig geplant, um dieses Ziel zu erreichen.
