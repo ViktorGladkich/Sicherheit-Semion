@@ -1,12 +1,15 @@
 import React from 'react';
-import Lottie from "lottie-react";
-import loadingAnimation from "../assets/loading.json";
+import LazyLottie from './LazyLottie';
 
 const Preloader: React.FC = () => {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white">
       <div className="w-58 h-58">
-        <Lottie animationData={loadingAnimation} loop={true} />
+        <LazyLottie 
+          animationPath="/assets/loading.json"
+          loop={true} 
+          className="w-full h-full" 
+        />
       </div>
     </div>
   );

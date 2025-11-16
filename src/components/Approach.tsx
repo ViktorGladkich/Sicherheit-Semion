@@ -9,7 +9,7 @@ const steps = [
         description: "Jeder Einsatz beginnt mit einer gründlichen Analyse Ihrer spezifischen Sicherheitsbedürfnisse."
     },
     { 
-        icon: <LazyLottie animationPath="/assets/document.json" loop={true} className="w-14 h-14 " />, 
+        icon: <LazyLottie animationPath="../assets/document.json" loop={true} className="w-14 h-14 " />, 
         title: "Konzeptentwicklung",
         description: "Wir entwickeln ein maßgeschneidertes Sicherheitskonzept, das alle Eventualitäten berücksichtigt."
     },
