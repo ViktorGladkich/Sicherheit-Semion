@@ -3,7 +3,7 @@ import Lottie, { LottieComponentProps } from 'lottie-react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 
 interface LazyLottieProps extends Omit<LottieComponentProps, 'animationData'> {
-  animationPath: string; // путь из public, например: "/assets/sun.json"
+  animationPath: string; // путь из public
 }
 
 const LazyLottie: React.FC<LazyLottieProps> = ({ animationPath, className, ...props }) => {
@@ -12,12 +12,12 @@ const LazyLottie: React.FC<LazyLottieProps> = ({ animationPath, className, ...pr
 
   const isVisible = useIntersectionObserver(ref, {
     threshold: 0,
-    rootMargin: '200px 0px 200px 0px',
-    triggerOnce: true,
+    rootMargin: '200px 0px',
+    triggerOnce: false, // Важно! Чтобы при смене animationPath загрузка происходила снова
   });
 
   useEffect(() => {
-    if (isVisible && !animationData) {
+    if (isVisible) {
       let active = true;
 
       fetch(animationPath)
@@ -28,17 +28,25 @@ const LazyLottie: React.FC<LazyLottieProps> = ({ animationPath, className, ...pr
         .then((data) => {
           if (active) setAnimationData(data);
         })
-        .catch((err) => console.error(`Failed to load animation: ${animationPath}`, err));
+        .catch((err) =>
+          console.error(`Failed to load animation: ${animationPath}`, err)
+        );
 
       return () => {
         active = false;
       };
     }
-  }, [isVisible, animationPath, animationData]);
+  }, [isVisible, animationPath]); // ЗАГРУЖАЕМ ПРИ ИЗМЕНЕНИИ animationPath
 
   return (
     <div ref={ref} className={className}>
-      {animationData && <Lottie animationData={animationData} {...props} className="w-full h-full" />}
+      {animationData && (
+        <Lottie
+          animationData={animationData}
+          {...props}
+          className="w-full h-full"
+        />
+      )}
     </div>
   );
 };
