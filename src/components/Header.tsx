@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
