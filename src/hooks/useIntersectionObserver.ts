@@ -10,7 +10,7 @@ interface ObserverOptions {
 }
 
 export const useIntersectionObserver = (
-    elementRef: RefObject<Element>,
+    elementRef: RefObject<Element | null>,
     {
         threshold = 0.1,
         root = null,

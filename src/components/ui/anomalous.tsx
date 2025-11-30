@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect, Suspense } from "react";
+import { useRef, useEffect, Suspense } from "react";
 import * as THREE from "three";
 import { useTheme } from "../../contexts/ThemeContext";
 
@@ -210,7 +210,7 @@ export function GenerativeArtScene() {
 
     const pointLight = new THREE.PointLight(0xffffff, 1, 100);
     pointLight.position.set(0, 0, 5);
-    // @ts-ignore
+    
     lightRef.current = pointLight;
     scene.add(pointLight);
 
