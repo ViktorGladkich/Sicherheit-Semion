@@ -1,28 +1,35 @@
-import React from "react";
-import { useTheme } from "../contexts/ThemeContext";
-import LazyLottie from "./LazyLottie";
+
+import React from 'react';
+import { useTheme } from '../contexts/ThemeContext';
+import { SunIcon, MoonIcon } from './Icons';
 
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
 
   const toggleTheme = () => {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(theme === 'light' ? 'dark' : 'light');
   };
-
-  const iconPath = theme === "light" ? "/assets/moon.json" : "/assets/sun.json";
 
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-gray-600 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors"
-      aria-label="Toggle theme"
+      className="p-2 rounded-full text-background hover:bg-background/10 focus:outline-none focus:ring-2 focus:ring-background transition-all duration-300 relative w-full h-full flex items-center justify-center overflow-hidden"
+      aria-label={`Wechseln zu ${theme === 'light' ? 'dunklem' : 'hellem'} Modus`}
     >
-      <LazyLottie
-        key={iconPath}       // <— важно! Обновляет компонент при смене темы
-        animationPath={iconPath}
-        loop={true}
-        className="w-10 h-10 animate-floating"
-      />
+      <div 
+        className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform ${
+            theme === 'dark' ? 'translate-y-0 opacity-100 rotate-0' : 'translate-y-full opacity-0 rotate-90'
+        }`}
+      >
+        <SunIcon className="w-6 h-6 text-background" />
+      </div>
+      <div 
+        className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform ${
+            theme === 'light' ? 'translate-y-0 opacity-100 rotate-0' : '-translate-y-full opacity-0 -rotate-90'
+        }`}
+      >
+        <MoonIcon className="w-6 h-6 text-background" />
+      </div>
     </button>
   );
 };

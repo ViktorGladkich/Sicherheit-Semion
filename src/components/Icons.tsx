@@ -1,35 +1,28 @@
+
 import React from 'react';
 
-// Icons for Header (Note: MenuIcon and XIcon are no longer used by the animated burger)
-export const MenuIcon = (props: React.SVGProps<SVGSVGElement>) => (
+// Theme Toggle Icons
+export const SunIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <line x1="3" y1="12" x2="21" y2="12"></line>
-    <line x1="3" y1="6" x2="21" y2="6"></line>
-    <line x1="3" y1="18" x2="21" y2="18"></line>
+    <circle cx="12" cy="12" r="5"></circle>
+    <line x1="12" y1="1" x2="12" y2="3"></line>
+    <line x1="12" y1="21" x2="12" y2="23"></line>
+    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+    <line x1="1" y1="12" x2="3" y2="12"></line>
+    <line x1="21" y1="12" x2="23" y2="12"></line>
+    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
   </svg>
 );
-export const XIcon = (props: React.SVGProps<SVGSVGElement>) => (
+
+export const MoonIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <line x1="18" y1="6" x2="6" y2="18"></line>
-    <line x1="6" y1="6" x2="18" y2="18"></line>
+    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
   </svg>
 );
 
-// Icons for Benefits
-export const CheckCircleIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-);
-
-// Icon for Testimonials
-export const QuoteIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg fill="currentColor" viewBox="0 0 32 32" aria-hidden="true" {...props}>
-        <path d="M9.33 8.211C9.33 6.1 11.1 4 13.5 4s4.17 2.1 4.17 4.211c0 2.544-1.28 4.633-3.25 5.522l-1.68 1.411v2.856h4.18v8H9.33V16.85l3.42-3.233c-1.33-.856-2.42-2.2-2.42-4.406zM24.33 8.211C24.33 6.1 26.1 4 28.5 4s4.17 2.1 4.17 4.211c0 2.544-1.28 4.633-3.25 5.522l-1.68 1.411v2.856h4.18v8H24.33V16.85l3.42-3.233c-1.33-.856-2.42-2.2-2.42-4.406z" transform="translate(-8 -4)" />
-    </svg>
-);
-
-// Icons for Contact
+// Icons for Contact & Forms
 export const MailIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
 );
@@ -60,7 +53,7 @@ export const ArrowUpIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-// Icons for About
+// Icons for Sliders/Carousels
 export const ChevronLeftIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
         <polyline points="15 18 9 12 15 6"></polyline>
@@ -92,67 +85,65 @@ export const MinusCircleIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-// FIX: Add missing icons for News component
-export const CalendarIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-        <line x1="16" y1="2" x2="16" y2="6"></line>
-        <line x1="8" y1="2" x2="8" y2="6"></line>
-        <line x1="3" y1="10" x2="21" y2="10"></line>
-    </svg>
-);
-export const ArrowRightIcon = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <line x1="5" y1="12" x2="19" y2="12"></line>
-        <polyline points="12 5 19 12 12 19"></polyline>
-    </svg>
-);
-
-// FIX: Add missing icons for Certifications component (Placeholders)
+// Certification Logos
 export const VdsLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="currentColor">VdS</text>
-    </svg>
-);
-export const IsoLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="currentColor">ISO 9001</text>
-    </svg>
-);
-export const TuvLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="bold" fill="currentColor">TÜV Rheinland</text>
-    </svg>
-);
-export const BdsLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 100 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="Arial, sans-serif" fontSize="24" fontWeight="bold" fill="currentColor">BDSW</text>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" fill="currentColor" {...props}>
+    <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontSize="24" fontWeight="bold">VdS</text>
+  </svg>
 );
 
-// FIX: Add missing icons for Partners component (Placeholders)
+export const IsoLogo = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" fill="currentColor" {...props}>
+    <rect x="10" y="5" width="80" height="30" rx="4" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <text x="50%" y="55%" dominantBaseline="middle" textAnchor="middle" fontSize="16" fontWeight="bold">ISO 9001</text>
+  </svg>
+);
+
+export const TuvLogo = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" fill="currentColor" {...props}>
+    <polygon points="50,5 90,35 10,35" stroke="currentColor" strokeWidth="2" fill="none"/>
+    <text x="50%" y="65%" dominantBaseline="middle" textAnchor="middle" fontSize="12" fontWeight="bold">TÜV</text>
+  </svg>
+);
+
+export const BdsLogo = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 40" fill="currentColor" {...props}>
+     <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle" fontSize="20" fontWeight="bold">BDSW</text>
+  </svg>
+);
+
+// Partner Logos
 export const InnovateAgLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="sans-serif" fontSize="24" fill="currentColor">Innovate AG</text>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="currentColor" {...props}>
+      <path d="M10,20 L30,5 L30,35 Z" fill="currentColor"/>
+      <text x="40" y="25" fontSize="18" fontWeight="bold" fontFamily="sans-serif">Innovate</text>
+  </svg>
 );
+
 export const ConstructGmbhLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="sans-serif" fontSize="24" fill="currentColor">Construct GmbH</text>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="currentColor" {...props}>
+      <rect x="5" y="10" width="20" height="20" fill="currentColor"/>
+      <rect x="28" y="5" width="20" height="30" fill="currentColor" opacity="0.7"/>
+      <text x="55" y="25" fontSize="18" fontWeight="bold" fontFamily="sans-serif">Construct</text>
+  </svg>
 );
+
 export const EventProLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 150 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="sans-serif" fontSize="24" fill="currentColor">EventPro</text>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="currentColor" {...props}>
+      <circle cx="20" cy="20" r="12" stroke="currentColor" strokeWidth="3" fill="none"/>
+      <text x="40" y="25" fontSize="18" fontWeight="bold" fontFamily="sans-serif">EventPro</text>
+  </svg>
 );
+
 export const NextGenCorpLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="sans-serif" fontSize="24" fill="currentColor">NextGen Corp.</text>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" fill="currentColor" {...props}>
+      <path d="M10,20 L25,5 L40,20 L25,35 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
+      <text x="50" y="25" fontSize="18" fontWeight="bold" fontFamily="sans-serif">NextGen</text>
+  </svg>
 );
+
 export const AlphaRetailLogo = (props: React.SVGProps<SVGSVGElement>) => (
-    <svg viewBox="0 0 180 40" xmlns="http://www.w3.org/2000/svg" {...props}>
-        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fontFamily="sans-serif" fontSize="24" fill="currentColor">AlphaRetail</text>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 40" fill="currentColor" {...props}>
+      <text x="5" y="28" fontSize="24" fontWeight="bold" fontFamily="serif">α Alpha</text>
+  </svg>
 );

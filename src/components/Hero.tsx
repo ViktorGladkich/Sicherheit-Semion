@@ -1,144 +1,66 @@
-import React, { useState } from "react";
+
+import React from 'react';
+import { SplineScene } from './ui/splite';
+import { Spotlight } from './ui/spotlight';
+import { useTheme } from '../contexts/ThemeContext';
+import { CinematicText } from './ui/cinematic-text';
 
 const Hero: React.FC = () => {
-  const [offset, setOffset] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const { clientX, clientY } = e;
-    const { innerWidth, innerHeight } = window;
-
-    // Normalize position from -0.5 to 0.5
-    const xPos = clientX / innerWidth - 0.5;
-    const yPos = clientY / innerHeight - 0.5;
-
-    // Set effect strength
-    const strength = 30;
-    setOffset({ x: -xPos * strength, y: -yPos * strength });
-  };
-
-  const handleMouseLeave = () => {
-    setOffset({ x: 0, y: 0 });
-  };
+  const { theme } = useTheme();
 
   return (
-    <section
-      id="home"
-      className="relative flex items-center justify-center min-h-screen bg-slate-900 overflow-hidden"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <div className="absolute inset-0 overflow-hidden">
-  
-  <video
-    src="/heroVideo-mobile.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-    className="absolute inset-0 w-full h-full object-cover md:hidden"
-  ></video>
-
-  <video
-    src="/heroVideo-desktop.mp4"
-    autoPlay
-    muted
-    loop
-    playsInline
-    preload="auto"
-    className="absolute inset-0 w-full h-full object-cover hidden md:block"
-  ></video>
-</div>
-
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 100 100'%3E%3Ctext x='50' y='50' font-size='50' fill='rgba(255,255,255,0.03)' text-anchor='middle' dominant-baseline='middle'%3E♠%3C/text%3E%3C/svg%3E")`,
-          }}
-        ></div>
-      </div>
-
-      <div className="absolute inset-0 bg-black/50 z-1"></div>
-
-      <div
-        className="relative z-10 text-center text-white px-4 transition-transform duration-300 ease-out"
-        style={{ transform: `translate3d(${offset.x}px, ${offset.y}px, 0)` }}
-      >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-          <span className="block text-gray-200">
-            {"Es ist immer schön, ein".split(" ").map((word, i) => (
-              <span key={i} className="inline-block overflow-hidden pb-2 -mb-2">
-                <span
-                  className="inline-block animate-word-reveal"
-                  style={{ animationDelay: `${0.2 + i * 0.1}s` }}
-                >
-                  {word}&nbsp;
-                </span>
-              </span>
-            ))}
-          </span>
-          <span className="block">
-            <span className="inline-block overflow-hidden pb-2 -mb-2">
-              <span
-                className="inline-block animate-word-reveal text-blue-400"
-                style={{ animationDelay: `0.8s` }}
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20 md:pt-0">
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20 z-10"
+        fill={theme === 'dark' ? "white" : "#a1a1aa"}
+      />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full h-full flex flex-col-reverse md:flex-row items-center">
+        {/* Left content */}
+        <div className="flex-1 py-8 md:py-0 relative z-30 flex flex-col justify-center text-center md:text-left pointer-events-none md:pointer-events-auto">
+          <div className="pointer-events-auto">
+            
+            <div className="mb-6 min-h-[80px] md:min-h-[100px] flex items-center justify-center md:justify-start">
+               <CinematicText 
+                 words={["A.S.S SECURITY"]} 
+                 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]"
+                 alignment="left"
+               />
+            </div>
+            
+            <div className="mt-6 border-l-2 border-foreground/20 pl-6 max-w-lg mx-auto md:mx-0 text-left">
+              <p className="text-xl md:text-2xl font-bold text-foreground mb-2 animate-fade-in-long delay-100">
+                Sicherheit ist kein Glücksspiel.
+              </p>
+              <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed animate-fade-in-long delay-200">
+                In kritischen Momenten zählt jeder Vorteil. Vertrauen Sie auf Profis, die vorbereitet sind. <br/>
+                <span className="text-foreground font-medium">Es ist immer schön, ein ASS im Ärmel zu haben.</span>
+              </p>
+            </div>
+            
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 animate-fade-in-long delay-300">
+              <a
+                href="#contact"
+                className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-background bg-foreground rounded-none overflow-hidden transition-all duration-300 shadow-lg hover:shadow-foreground/20"
               >
-                ASS&nbsp;
-              </span>
-            </span>
-            {"im Ärmel zu haben.".split(" ").map((word, i) => (
-              <span key={i} className="inline-block overflow-hidden pb-2 -mb-2">
-                <span
-                  className="inline-block animate-word-reveal"
-                  style={{ animationDelay: `${0.9 + i * 0.1}s` }}
-                >
-                  {word}&nbsp;
-                </span>
-              </span>
-            ))}
-          </span>
-        </h1>
+                <div className="absolute inset-0 w-0 bg-background transition-all duration-[250ms] ease-out group-hover:w-full opacity-10"></div>
+                <span className="relative z-10">Kontakt aufnehmen</span>
+                <div className="absolute bottom-0 right-0 w-3 h-3 bg-background transform rotate-45 translate-x-1.5 translate-y-1.5"></div>
+              </a>
+            </div>
+          </div>
+        </div>
 
-        <p
-          className="max-w-2xl mx-auto text-lg md:text-xl text-gray-300 mb-8 animate-fade-in-up"
-          style={{ animationDelay: "1.4s" }}
-        >
-          Professioneller Schutz, auf den Sie sich verlassen können. Ihre
-          Sicherheit ist unser höchster Trumpf.
-        </p>
-
-        <a
-          href="#contact"
-          className="btn-shine relative inline-block py-3 px-6 sm:px-8 bg-blue-600 text-white uppercase font-bold tracking-[1.5px] rounded-lg shadow-lg hover:shadow-2xl hover:shadow-blue-500/40 transition-shadow duration-300 transform hover:scale-105 animate-fade-in-up"
-          style={{ animationDelay: "1.6s" }}
-        >
-          Kostenloses Beratungsgespräch
-        </a>
+        {/* Right content - Spline */}
+        <div className="flex-1 w-full h-[50vh] md:h-screen relative z-20 mask-gradient-to-b">
+          <SplineScene 
+            scene="/scene.splinecode"
+            className="w-full h-full scale-100 md:scale-110"
+          />
+          {/* Gradient overlay for mobile blending */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent md:hidden pointer-events-none"></div>
+        </div>
       </div>
-
-      <style>{`
-        @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out forwards; opacity: 0; }
-        
-        @keyframes word-reveal {
-          from { transform: translateY(110%); }
-          to { transform: translateY(0); }
-        }
-        .animate-word-reveal {
-          transform: translateY(110%);
-          animation: word-reveal 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-
-        @keyframes kenburns-effect {
-            0% { transform: scale(1) translate(0, 0); }
-            100% { transform: scale(1.1) translate(-1%, 1%); }
-        }
-        .kenburns-effect { animation: kenburns-effect 20s ease-out infinite alternate; }
-      `}</style>
     </section>
   );
 };

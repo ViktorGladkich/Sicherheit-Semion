@@ -1,4 +1,6 @@
-import { useState, useEffect, type RefObject } from 'react';
+
+import { useState, useEffect } from 'react';
+import type { RefObject } from 'react';
 
 interface ObserverOptions {
     threshold?: number;
@@ -7,8 +9,8 @@ interface ObserverOptions {
     triggerOnce?: boolean;
 }
 
-export const useIntersectionObserver = <T extends Element>(
-    elementRef: RefObject<T | null>,
+export const useIntersectionObserver = (
+    elementRef: RefObject<Element>,
     {
         threshold = 0.1,
         root = null,

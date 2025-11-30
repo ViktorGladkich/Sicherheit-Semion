@@ -1,10 +1,12 @@
-import { useState, useEffect, useCallback } from 'react';
+
+import { useState, useEffect } from 'react';
+import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import Benefits from './components/Benefits';
 import About from './components/About';
-import Testimonials from './components/Testimonials';
+import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CookieConsent from './components/CookieConsent';
@@ -15,55 +17,50 @@ import Preloader from './components/Preloader';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  
+  // Performance Optimization: Use Framer Motion hook instead of State + Event Listener
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
 
   useEffect(() => {
+    // Sync with Preloader animation duration
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000); 
+    }, 2800); 
 
     return () => clearTimeout(timer);
   }, []);
 
-  const handleScroll = useCallback(() => {
-    const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    if (totalHeight > 0) {
-      const scrollPosition = window.scrollY;
-      const progress = (scrollPosition / totalHeight) * 100;
-      setScrollProgress(progress);
-    } else {
-      setScrollProgress(0);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (!isLoading) {
-      window.addEventListener('scroll', handleScroll);
-      return () => window.removeEventListener('scroll', handleScroll);
-    }
-  }, [isLoading, handleScroll]);
-
-  if (isLoading) {
-    return <Preloader />;
-  }
-
   return (
-    <div className="bg-white dark:bg-slate-900 text-gray-700 dark:text-gray-200 font-sans transition-colors duration-300 overflow-x-hidden animate-fade-in">
-      <div 
-        className="fixed top-0 left-0 z-[60] h-1 bg-blue-500 transition-all duration-300 ease-linear"
-        style={{ width: `${scrollProgress}%` }}
+    <div className="bg-background text-foreground font-sans transition-colors duration-300 overflow-x-hidden animate-fade-in relative bg-dot-pattern">
+      
+      <AnimatePresence mode="wait">
+        {isLoading && <Preloader key="preloader" />}
+      </AnimatePresence>
+
+      {/* Optimized Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 z-[60] h-1 bg-foreground origin-left"
+        style={{ scaleX }}
       />
+
       <Header />
+      
       <main>
         <Hero />
         <Services />
         <Benefits />
         <Approach />
         <About />
-        <Testimonials />
+        <Team />
         <FAQ />
         <Contact />
       </main>
+
       <Footer />
       <CookieConsent />
       <BackToTopButton />

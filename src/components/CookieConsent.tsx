@@ -32,14 +32,14 @@ const CookieConsent: React.FC = () => {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-white/90 dark:bg-slate-950/90 backdrop-blur-sm border-t border-gray-200 dark:border-slate-700/50 shadow-lg animate-fade-in-up">
+    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/90 backdrop-blur-sm border-t border-border shadow-lg animate-fade-in-up">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-gray-700 dark:text-gray-300 text-center sm:text-left">
+        <p className="text-sm text-foreground text-center sm:text-left">
           Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.
           <a 
             href="#footer" 
             onClick={handlePrivacyLinkClick}
-            className="underline text-blue-600 dark:text-blue-400 hover:text-blue-500 dark:hover:text-blue-300 ml-2"
+            className="underline text-foreground hover:text-muted-foreground ml-2"
           >
             Datenschutzrichtlinie
           </a>.
@@ -47,13 +47,13 @@ const CookieConsent: React.FC = () => {
         <div className="flex items-center gap-4 flex-shrink-0">
           <button
             onClick={handleDecline}
-            className="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
             Ablehnen
           </button>
           <button
             onClick={handleAccept}
-            className="px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded-md hover:bg-blue-700 transition-colors"
+            className="px-4 py-2 bg-foreground text-background text-sm font-semibold rounded-md hover:bg-foreground/80 transition-colors"
           >
             Akzeptieren
           </button>
