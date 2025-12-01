@@ -13,7 +13,7 @@ const ThemeToggle: React.FC = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full text-background hover:bg-background/10 focus:outline-none focus:ring-2 focus:ring-background transition-all duration-300 relative w-full h-full flex items-center justify-center overflow-hidden"
+      className="p-2 cursor-pointer rounded-full text-background hover:bg-background/10 focus:outline-none focus:ring-2 focus:ring-background transition-all duration-300 relative w-full h-full flex items-center justify-center overflow-hidden"
       aria-label={`Wechseln zu ${theme === 'light' ? 'dunklem' : 'hellem'} Modus`}
     >
       <div 
