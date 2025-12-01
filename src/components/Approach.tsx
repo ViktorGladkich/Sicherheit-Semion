@@ -51,7 +51,7 @@ const Approach: React.FC = () => {
       ref={containerRef}
     >
       {/* Background elements - Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
@@ -66,6 +66,7 @@ const Approach: React.FC = () => {
               words={["UNSER PROZESS"]}
               className="text-4xl md:text-5xl font-extrabold"
               alignment="center"
+              as="h2"
             />
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -80,7 +81,7 @@ const Approach: React.FC = () => {
             {/* Core Beam - Linked to Scroll */}
             <motion.div
               style={{ scaleY, originY: 0 }}
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-foreground via-foreground/50 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-linear-to-b from-foreground via-foreground/50 to-transparent shadow-[0_0_15px_rgba(255,255,255,0.5)]"
             ></motion.div>
           </div>
 
@@ -88,7 +89,7 @@ const Approach: React.FC = () => {
           <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-neutral-200 dark:bg-neutral-800 md:hidden">
             <motion.div
               style={{ scaleY, originY: 0 }}
-              className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-gradient-to-b from-foreground via-foreground/50 to-transparent"
+              className="absolute top-0 left-1/2 -translate-x-1/2 w-[2px] h-full bg-linear-to-b from-foreground via-foreground/50 to-transparent"
             ></motion.div>
           </div>
 

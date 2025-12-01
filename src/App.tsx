@@ -39,12 +39,12 @@ function App() {
     <div className="bg-background text-foreground font-sans transition-colors duration-300 overflow-x-hidden animate-fade-in relative bg-dot-pattern">
       
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader key="preloader" />}
+       {isLoading && <Preloader setIsLoading={setIsLoading} />}
       </AnimatePresence>
 
       {/* Optimized Progress Bar */}
       <motion.div 
-        className="fixed top-0 left-0 z-[60] h-1 bg-foreground origin-left"
+        className="fixed top-0 left-0 z-60 h-1 bg-foreground origin-left"
         style={{ scaleX }}
       />
 

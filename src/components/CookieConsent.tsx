@@ -44,7 +44,7 @@ const CookieConsent: React.FC = () => {
             Datenschutzrichtlinie
           </a>.
         </p>
-        <div className="flex items-center gap-4 flex-shrink-0">
+        <div className="flex items-center gap-4 shrink-0">
           <button
             onClick={handleDecline}
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"

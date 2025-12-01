@@ -5,20 +5,20 @@ import { CinematicText } from "./ui/cinematic-text";
 
 const teamMembers = [
   {
-    name: "Semjon Raskin",
+    name: "Semion Raskin",
     role: "Geschäftsführung",
     image:
       "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
   },
   {
-    name: "Andrej Pagasyan",
+    name: "Alexander Calutcov",
     role: "Geschäftsführung",
     image:
       "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
   },
   {
-    name: "Alexander",
-    role: "Geschäftsführung",
+    name: "Andre Pogosan",
+    role: "Prokurist",
     image:
       "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop",
   },
@@ -38,7 +38,7 @@ const Team: React.FC = () => {
       ref={sectionRef}
     >
       {/* Background Texture */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
@@ -54,7 +54,7 @@ const Team: React.FC = () => {
             />
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Erfahrene Köpfe für Ihre Sicherheit.
+           Hinter modernster Technik und taktischer Ausrüstung stehen Menschen, die Verantwortung übernehmen. Unsere Führungsebene vereint jahrzehntelange Erfahrung aus operativem Risikomanagement und strategischer Unternehmensführung. Wir verstecken uns nicht hinter Konzernen – wir stehen persönlich mit unserem Namen für Ihre Sicherheit ein.
           </p>
         </div>
 
@@ -84,8 +84,8 @@ const Team: React.FC = () => {
               className="group relative bg-white/50 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               {/* Image Container with Metal Border Effect */}
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10 opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
+              <div className="relative aspect-4/5 overflow-hidden">
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-10 opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
                 <img
                   src={member.image}
                   alt={member.name}
@@ -93,11 +93,11 @@ const Team: React.FC = () => {
                 />
 
                 {/* Metallic Shine Overlay on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/10 to-white/0 translate-x-[-100%] group-hover:animate-shine z-20 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-linear-to-tr from-white/0 via-white/10 to-white/0 translate-x-full group-hover:animate-shine z-20 pointer-events-none"></div>
 
                 {/* Scanning Line Effect */}
                 <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-foreground/50 shadow-[0_0_15px_rgba(255,255,255,0.5)] animate-scan-line"></div>
+                  <div className="absolute top-0 left-0 w-full h-2px bg-foreground/50 shadow-[0_0_15px_rgba(255,255,255,0.5)] animate-scan-line"></div>
                 </div>
               </div>
 

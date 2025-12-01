@@ -24,7 +24,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="fixed top-6 left-0 right-0 z-[99] px-4 md:px-8 flex items-center justify-between pointer-events-none w-full">
+      <div className="fixed top-6 left-0 right-0 z-99 px-4 md:px-8 flex items-center justify-between pointer-events-none w-full">
         {/* LEFT: Logo */}
         <Logo />
 
@@ -32,7 +32,7 @@ const Header: React.FC = () => {
         <DesktopNav items={NAV_ITEMS} activeHref={activeHref} />
 
         {/* RIGHT: Controls */}
-        <div className="flex items-center gap-3 pointer-events-auto z-[100]">
+        <div className="flex items-center gap-3 pointer-events-auto z-100">
           {/* Theme Toggle */}
           <div className="bg-foreground rounded-full w-[50px] h-[50px] flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
             <ThemeToggle />

@@ -59,12 +59,12 @@ const Benefits: React.FC = () => {
   return (
     <section id="benefits" className="relative bg-background py-24">
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center justify-center text-center mb-16">
              <CinematicText 
-                words={["WARUM A.S.S?", "IHRE VORTEILE"]} 
+                words={["WARUM A.S.S?"]} 
                 className="text-4xl md:text-6xl font-extrabold"
                 alignment="center"
              />

@@ -1,10 +1,14 @@
 import React, { useRef } from "react";
 import gsap from "gsap";
+import { useTheme } from "../../contexts/ThemeContext";
 
 export const Logo: React.FC = () => {
   const logoImgRef = useRef<HTMLImageElement>(null);
   const logoRef = useRef<HTMLAnchorElement>(null);
-  const logoSrc = "/logotip.svg";
+  const { theme } = useTheme();
+
+  // Выбираем логотип в зависимости от темы
+  const logoSrc = theme === "dark" ? "/logotip-dark.svg" : "/logotip-light.png";
 
   const handleLogoEnter = () => {
     const img = logoImgRef.current;
@@ -15,14 +19,12 @@ export const Logo: React.FC = () => {
       duration: 0.6,
       ease: "power3.easeOut",
       overwrite: "auto",
-      // Fix: Wrap in block to return void, satisfying TypeScript Callback type
       onComplete: () => {
         gsap.set(img, { rotate: 0 });
       },
     });
   };
 
-  // Initial entrance
   React.useEffect(() => {
     if (logoRef.current) {
       gsap.fromTo(
@@ -34,10 +36,10 @@ export const Logo: React.FC = () => {
   }, []);
 
   return (
-    <div className="pointer-events-auto z-[100]">
+    <div className="pointer-events-auto z-100">
       <a
         ref={logoRef}
-        className="w-[55px] h-[55px] rounded-full bg-foreground p-2 inline-flex items-center justify-center overflow-hidden shadow-lg group hover:scale-105 transition-transform duration-300"
+        className="w-[60px] h-[60px] rounded-full bg-foreground p-2 inline-flex items-center justify-center overflow-hidden shadow-lg group hover:scale-105 transition-transform duration-300"
         href="#home"
         aria-label="Home"
         onMouseEnter={handleLogoEnter}

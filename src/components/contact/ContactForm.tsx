@@ -133,7 +133,7 @@ export const ContactForm: React.FC = () => {
                 </span>
                 {/* Shine effect on button */}
                 {!isLoading && !isSuccess && (
-                    <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-shine" style={{ animationDuration: '1s' }}></div>
+                    <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-shine" style={{ animationDuration: '1s' }}></div>
                 )}
             </button>
         </form>

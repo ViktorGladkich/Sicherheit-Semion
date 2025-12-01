@@ -21,7 +21,9 @@ const Contact: React.FC = () => {
                alignment="center"
              />
           </div>
-          <p className="text-lg text-muted-foreground">Wir sind für Sie da. Jederzeit.</p>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Sicherheit beginnt mit einem Gespräch. Ob dringende Anfrage, langfristige Planung oder eine unverbindliche Risikoanalyse – unser Leitstand ist 24/7 besetzt. Zögern Sie nicht, uns anzusprechen. Wir entwickeln Lösungen, bevor Probleme entstehen.
+          </p>
         </div>
 
         <motion.div
