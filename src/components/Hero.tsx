@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
                 className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-background bg-foreground rounded-none overflow-hidden transition-all duration-300 shadow-lg hover:shadow-foreground/20"
               >
                 <div className="absolute inset-0 w-0 bg-background transition-all duration-[250ms] ease-out group-hover:w-full opacity-10"></div>
-                <span className="relative z-10">Kontakt aufnehmen</span>
+                <span className="relative z-10">KONTAKT AUFNEHMEN</span>
                 <div className="absolute bottom-0 right-0 w-3 h-3 bg-background transform rotate-45 translate-x-1.5 translate-y-1.5"></div>
               </a>
             </div>
