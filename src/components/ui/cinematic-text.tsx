@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../../lib/utils";
@@ -7,12 +6,14 @@ interface CinematicTextProps {
   words: string[];
   className?: string;
   alignment?: "left" | "center" | "right";
+  as?: "h1" | "h2" | "h3" | "div";
 }
 
 export const CinematicText: React.FC<CinematicTextProps> = ({
   words,
   className,
   alignment = "center",
+  as: Component = "h2"
 }) => {
   const [index, setIndex] = useState(0);
 
@@ -48,19 +49,19 @@ export const CinematicText: React.FC<CinematicTextProps> = ({
           className={cn("relative w-full", textAlignClass)}
         >
           <div className="relative inline-block">
-             {/* Main Text */}
-            <h2
-              className="font-sans font-black tracking-tight text-transparent bg-clip-text text-gradient-cinematic select-none"
+             {/* Main Text - Read by Screen Readers */}
+            <Component
+              className="font-sans font-black tracking-tight text-transparent bg-clip-text text-gradient-cinematic select-none margin-0"
               style={{
                 WebkitBackgroundClip: "text",
                 filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.1))",
               }}
             >
               {words[index]}
-            </h2>
+            </Component>
 
-            {/* Shine Overlay */}
-            <h2
+            {/* Shine Overlay - Hidden from Screen Readers to avoid duplicate readout */}
+            <Component
               className="absolute inset-0 font-sans font-black tracking-tight text-transparent bg-clip-text select-none pointer-events-none text-shine-cinematic"
               aria-hidden="true"
               style={{
@@ -70,7 +71,7 @@ export const CinematicText: React.FC<CinematicTextProps> = ({
               }}
             >
               {words[index]}
-            </h2>
+            </Component>
           </div>
         </motion.div>
       </AnimatePresence>

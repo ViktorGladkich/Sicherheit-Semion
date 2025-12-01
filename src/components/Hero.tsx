@@ -25,6 +25,7 @@ const Hero: React.FC = () => {
                  words={["A.S.S SECURITY"]} 
                  className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.1]"
                  alignment="left"
+                 as="h1"
                />
             </div>
             

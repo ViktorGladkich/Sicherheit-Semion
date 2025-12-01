@@ -81,7 +81,7 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
+      "@type": "ProfessionalService",
       "name": "A.S.S Security UG",
       "image": "https://images.unsplash.com/photo-1516026672322-78ab2db9a8e2",
       "@id": "https://ass-security.de",
@@ -102,6 +102,10 @@
         "latitude": 51.0603,
         "longitude": 13.7383
       },
+      "areaServed": {
+        "@type": "City",
+        "name": "Dresden"
+      },
       "openingHoursSpecification": {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": [
@@ -119,7 +123,34 @@
       "sameAs": [
         "https://www.facebook.com/ass-security",
         "https://www.instagram.com/ass-security"
-      ] 
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Sicherheitsdienstleistungen",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Objektschutz"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Veranstaltungsschutz"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Baustellenbewachung"
+            }
+          }
+        ]
+      }
     }
     </script>
     
