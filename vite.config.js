@@ -1,28 +1,22 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
-  build: {
-    // Code splitting optimization
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ["react", "react-dom", "framer-motion"],
-          "ui-components": ["lucide-react"],
+    plugins: [react(), tailwindcss()],
+    build: {
+        rollupOptions: {
+            output: {
+                manualChunks: {
+                    'vendor': ['react', 'react-dom', 'framer-motion'],
+                    'ui-components': ['lucide-react'],
+                },
+            },
         },
-      },
+        cssCodeSplit: true,
+        sourcemap: false,
+        chunkSizeWarningLimit: 500,
     },
-    // CSS code splitting
-    cssCodeSplit: true,
-    // Generate source maps for production debugging
-    sourcemap: false,
-    // Optimize chunk size
-    chunkSizeWarningLimit: 500,
-  },
-  // Optimize dependencies
-  optimizeDeps: {
-    include: ["react", "react-dom", "framer-motion", "lucide-react"],
-  },
+    optimizeDeps: {
+        include: ['react', 'react-dom', 'framer-motion', 'lucide-react'],
+    },
 });
