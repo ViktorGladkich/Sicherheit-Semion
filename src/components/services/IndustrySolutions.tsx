@@ -60,11 +60,11 @@ export const IndustrySolutions: React.FC = () => {
               onClick={() => setActiveId(industry.id)}
               className={`
                                 relative overflow-hidden rounded-2xl cursor-pointer border border-neutral-200 dark:border-neutral-800
-                                transition-all duration-500 ease-in-out transform-gpu
+                                transition-all duration-1000 ease-out transform-gpu
                                 ${
                                   isActive
-                                    ? "flex-[3]"
-                                    : "flex-[1] hover:flex-[1.2] opacity-80 hover:opacity-100"
+                                    ? "flex-3"
+                                    : "flex-1 hover:flex-[1.2] opacity-80 hover:opacity-100"
                                 }
                             `}
               role="button"
@@ -76,7 +76,7 @@ export const IndustrySolutions: React.FC = () => {
                   src={industry.image}
                   alt={industry.alt}
                   className={`
-                                        w-full h-full object-cover transition-transform duration-1000
+                                        w-full h-full object-cover transition-all duration-1000 ease-out
                                         ${
                                           isActive
                                             ? "scale-100 grayscale-0"
@@ -86,7 +86,7 @@ export const IndustrySolutions: React.FC = () => {
                   loading="lazy"
                 />
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-500 ${
+                  className={`absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-1000 ease-out ${
                     isActive ? "opacity-80" : "opacity-60"
                   }`}
                 ></div>
@@ -97,14 +97,14 @@ export const IndustrySolutions: React.FC = () => {
                 <div className="flex items-center gap-3 mb-2">
                   <div
                     className={`
-                                        p-2 rounded-lg bg-foreground text-background transition-transform duration-500
+                                        p-2 rounded-lg bg-foreground text-background transition-transform duration-1000 ease-out
                                         ${isActive ? "scale-100" : "scale-90"}
                                      `}
                   >
                     {industry.icon}
                   </div>
                   <h3
-                    className={`text-xl font-bold text-white whitespace-nowrap transition-all duration-500 ${
+                    className={`text-xl font-bold text-white whitespace-nowrap transition-all duration-1000 ease-out delay-75 ${
                       isActive
                         ? "opacity-100 translate-x-0"
                         : "opacity-100 lg:opacity-0 lg:-translate-x-10"
@@ -116,7 +116,7 @@ export const IndustrySolutions: React.FC = () => {
 
                 <div
                   className={`
-                                        overflow-hidden transition-all duration-500 ease-in-out
+                                        overflow-hidden transition-all duration-1000 ease-out delay-150
                                         ${
                                           isActive
                                             ? "max-h-40 opacity-100"
@@ -124,7 +124,7 @@ export const IndustrySolutions: React.FC = () => {
                                         }
                                     `}
                 >
-                  <p className="text-neutral-300 text-sm leading-relaxed max-w-lg pt-2 border-t border-white/20">
+                  <p className="text-neutral-300 text-sm leading-relaxed max-w-lg pt-2 border-t border-white/20 transition-all duration-1000 ease-out">
                     {industry.desc}
                   </p>
                 </div>
@@ -133,7 +133,7 @@ export const IndustrySolutions: React.FC = () => {
               {/* Inactive Vertical Title (Desktop Only) */}
               {!isActive && (
                 <div className="hidden lg:flex absolute inset-0 items-center justify-center pointer-events-none">
-                  <span className="rotate-[-90deg] text-neutral-400 font-bold tracking-widest whitespace-nowrap uppercase text-sm">
+                  <span className="-rotate-90 text-neutral-400 font-bold tracking-widest whitespace-nowrap uppercase text-sm">
                     {industry.title}
                   </span>
                 </div>

@@ -4,17 +4,6 @@ import App from './App';
 import { ThemeProvider } from './contexts/ThemeContext';
 import './index.css';
 
-// FIX: Обновляем высоту для динамической адресной строки Chrome/мобильных браузеров
-function updateAppHeight() {
-  const vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--app-height', `${vh * 100}px`);
-}
-
-updateAppHeight();
-window.addEventListener('resize', updateAppHeight);
-window.addEventListener('scroll', updateAppHeight, true);
-window.addEventListener('orientationchange', updateAppHeight);
-
 if (process.env.NODE_ENV === 'production') {
   // Use native Performance API instead of web-vitals
   if ('PerformanceObserver' in window) {
