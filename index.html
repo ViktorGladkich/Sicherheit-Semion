@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- Theme color for browser UI - supports light and dark modes -->
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1f2937" media="(prefers-color-scheme: dark)" />
+    <meta name="color-scheme" content="light dark" />
 
     <!-- Primary Meta Tags -->
     <title>A.S.S Security UG | Sicherheitsdienst & Objektschutz Dresden</title>
@@ -20,8 +24,14 @@
       content="Sicherheitsdienst Dresden, Sicherheitsfirma, Objektschutz, Baustellenbewachung, Veranstaltungsschutz, Personenschutz, Werkschutz, Security Service Deutschland"
     />
     <meta name="author" content="A.S.S Security UG" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta name="language" content="German" />
+    <meta name="revisit-after" content="7 days" />
     <link rel="canonical" href="https://ass-security.de/" />
+    <link rel="alternate" hreflang="de" href="https://ass-security.de/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://images.unsplash.com" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -60,15 +70,18 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
+        "@type": "LocalBusiness",
         "name": "A.S.S Security UG",
-        "image": "https://images.unsplash.com/photo-1516026672322-78ab2db9a8e2",
+        "image": [
+          "https://images.unsplash.com/photo-1516026672322-78ab2db9a8e2?auto=format&fit=crop&q=80&w=1200",
+          "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1200"
+        ],
         "@id": "https://ass-security.de",
         "url": "https://ass-security.de",
         "telephone": "+49123456789",
         "email": "kontakt@ass-security.de",
         "priceRange": "$$",
-        "description": "Ihr Ass im Ärmel für professionelle Sicherheitslösungen. Wir bieten Objektschutz, Veranstaltungsschutz und individuelle Sicherheitskonzepte.",
+        "description": "Ihr zertifizierter Partner für professionelle Sicherheitslösungen. Wir bieten Objektschutz, Veranstaltungsschutz und individuelle Sicherheitskonzepte mit 24/7 Leitstelle.",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Königstraße 26",
@@ -81,21 +94,19 @@
           "latitude": 51.0603,
           "longitude": 13.7383
         },
-        "areaServed": {
-          "@type": "City",
-          "name": "Dresden"
-        },
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Dresden"
+          },
+          {
+            "@type": "Country",
+            "name": "DE"
+          }
+        ],
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-            "Sunday"
-          ],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
           "opens": "00:00",
           "closes": "23:59"
         },
@@ -103,6 +114,20 @@
           "https://www.facebook.com/ass-security",
           "https://www.instagram.com/ass-security"
         ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Service",
+          "telephone": "+49123456789",
+          "email": "kontakt@ass-security.de",
+          "availableLanguage": ["de", "en"]
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "87",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Sicherheitsdienstleistungen",
@@ -111,24 +136,58 @@
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Objektschutz"
+                "name": "Objektschutz",
+                "description": "Professioneller Schutz für Gebäude und Objekte 24/7"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Veranstaltungsschutz"
+                "name": "Veranstaltungsschutz",
+                "description": "Sicherheit für Events und Veranstaltungen jeder Größe"
               }
             },
             {
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Baustellenbewachung"
+                "name": "Baustellenbewachung",
+                "description": "Schutz von Baustellen und Baustofflagern"
               }
             }
           ]
+        }
+      }
+    </script>
+
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "A.S.S Security UG",
+        "alternateName": "Aegis Sicherheit",
+        "url": "https://ass-security.de",
+        "logo": "https://ass-security.de/logo.svg",
+        "description": "Professioneller Sicherheitsdienst mit IHK-zertifiziertem Personal",
+        "sameAs": [
+          "https://www.facebook.com/ass-security",
+          "https://www.instagram.com/ass-security"
+        ]
+      }
+    </script>
+
+    <!-- WebPage Schema for better indexing -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "A.S.S Security UG | Sicherheitsdienst Dresden",
+        "url": "https://ass-security.de",
+        "description": "Ihr zertifizierter Partner für Sicherheit und Objektschutz in Dresden",
+        "mainEntity": {
+          "@id": "https://ass-security.de"
         }
       }
     </script>

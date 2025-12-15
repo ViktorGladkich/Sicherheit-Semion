@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
-
 // Config & Hooks
 import { NAV_ITEMS } from "./header/header-config";
 import { useActiveSection } from "../hooks/useActiveSection";
@@ -24,12 +23,14 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="fixed top-6 left-0 right-0 z-99 px-4 md:px-8 flex items-center justify-between pointer-events-none w-full">
+      <header className="fixed top-6 left-0 right-0 z-99 px-4 md:px-8 flex items-center justify-between pointer-events-none w-full" role="banner">
         {/* LEFT: Logo */}
         <Logo />
 
         {/* CENTER: Desktop Nav Pill */}
-        <DesktopNav items={NAV_ITEMS} activeHref={activeHref} />
+        <nav className="pointer-events-auto z-100">
+          <DesktopNav items={NAV_ITEMS} activeHref={activeHref} />
+        </nav>
 
         {/* RIGHT: Controls */}
         <div className="flex items-center gap-3 pointer-events-auto z-100">
@@ -41,7 +42,7 @@ const Header: React.FC = () => {
           {/* Hamburger Button */}
           <Hamburger isOpen={isMobileMenuOpen} toggle={toggleMobileMenu} />
         </div>
-      </div>
+      </header>
 
       {/* FULLSCREEN MOBILE MENU */}
       <MobileMenu

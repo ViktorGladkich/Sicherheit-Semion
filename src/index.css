@@ -1,6 +1,50 @@
 @import "tailwindcss";
 @variant dark (&:where(.dark, .dark *));
 
+/* FIX для мобильной адресной строки Chrome */
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  /* Используем dvh (dynamic viewport height) для мобилей, fallback на 100vh */
+  --app-height: 100dvh;
+}
+
+body {
+  height: var(--app-height);
+  overflow-x: hidden;
+  /* Предотвращаем перерисовку при изменении высоты viewport */
+  position: fixed;
+  width: 100%;
+}
+
+#root {
+  height: var(--app-height);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  /* Smooth scrolling for mobile - modern browsers use scroll-behavior */
+  scroll-behavior: smooth;
+}
+
+/* Для элементов на полный экран */
+.h-screen {
+  height: 100dvh;
+}
+
+/* Для половины экрана */
+.h-\[50vh\] {
+  height: 50dvh;
+}
+
+/* Дополнительные фиксы для vh */
+.min-h-screen {
+  min-height: 100dvh;
+}
+
 @theme {
   /* Colors Mapping */
   --color-border: hsl(var(--border));
@@ -8,22 +52,22 @@
   --color-ring: hsl(var(--ring));
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
-  
+
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-  
+
   --color-secondary: hsl(var(--secondary));
   --color-secondary-foreground: hsl(var(--secondary-foreground));
-  
+
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
-  
+
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-  
+
   --color-popover: hsl(var(--popover));
   --color-popover-foreground: hsl(var(--popover-foreground));
-  
+
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
@@ -34,7 +78,7 @@
   --radius: 0.5rem;
 
   /* Animations */
-  --animate-spotlight: spotlight 2s ease .75s 1 forwards;
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
   --animate-shine: shine 4s linear infinite;
   --animate-fade-in-long: fadeIn 1.2s ease-out forwards;
   --animate-spin-slow: spin-slow 10s linear infinite;

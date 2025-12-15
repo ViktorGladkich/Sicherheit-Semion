@@ -1,0 +1,15 @@
+# Allow all robots to crawl and index
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# XML Sitemap
+Sitemap: https://ass-security.de/sitemap.xml
+
+# Crawl delay for heavy crawlers
+Request-rate: 1/10
+
+# Global rules
+Crawl-delay: 0

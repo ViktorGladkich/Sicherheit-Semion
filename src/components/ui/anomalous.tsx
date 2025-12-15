@@ -327,7 +327,7 @@ export function AnomalousMatterHero({
         </div>
         
         {/* Gradient for mobile to blend bottom of canvas into text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background md:hidden pointer-events-none z-10" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background md:hidden pointer-events-none z-10" />
       </div>
     </section>
   );
