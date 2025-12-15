@@ -105,8 +105,17 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ items, activeHref }) => 
         });
     };
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const id = href.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
-        <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto max-lg:hidden z-[100]">
+        <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto max-lg:hidden z-100">
             <div 
                 ref={navRef}
                 className="relative flex items-center h-[50px] bg-foreground rounded-full shadow-lg p-1.5"
@@ -117,6 +126,7 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({ items, activeHref }) => 
                             <a
                                 role="menuitem"
                                 href={item.href}
+                                onClick={(e) => handleNavClick(e, item.href)}
                                 className={`
                                     relative inline-flex items-center justify-center h-full px-5 
                                     bg-transparent text-background decoration-0 rounded-full 
