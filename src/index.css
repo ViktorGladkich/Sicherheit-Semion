@@ -2,31 +2,29 @@
 @variant dark (&:where(.dark, .dark *));
 
 /* FIX для мобильной адресной строки Chrome */
-html,
+html {
+  height: 100%;
+}
+
 body {
   height: 100%;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 html {
-  /* Используем dvh (dynamic viewport height) для мобилей, fallback на 100vh */
+  /* Используем dvh (dynamic viewport height) для мобилей */
   --app-height: 100dvh;
 }
 
-body {
-  height: var(--app-height);
-  overflow-x: hidden;
-  /* Предотвращаем перерисовку при изменении высоты viewport */
-  position: fixed;
-  width: 100%;
-}
-
 #root {
-  height: var(--app-height);
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  /* Smooth scrolling for mobile - modern browsers use scroll-behavior */
+  -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 }
 
