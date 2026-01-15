@@ -112,7 +112,7 @@ export const ContactForm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLoading || isSuccess) return;
     const validationErrors = validate();
@@ -120,21 +120,55 @@ export const ContactForm: React.FC = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-        setIsSuccess(true);
-        setTimeout(() => {
-          setIsSubmitted(true);
-          setIsSuccess(false);
-          setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            phone: "",
-            message: "",
+
+      try {
+        // Web3Forms API endpoint
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual key from web3forms.com
+            name: `${formData.firstName} ${formData.lastName}`,
+            email: formData.email,
+            phone: formData.phone || "Nicht angegeben",
+            message: formData.message,
+            subject: `Neue Kontaktanfrage von ${formData.firstName} ${formData.lastName}`,
+          }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setIsSuccess(true);
+          setTimeout(() => {
+            setIsSubmitted(true);
+            setIsSuccess(false);
+            setFormData({
+              firstName: "",
+              lastName: "",
+              email: "",
+              phone: "",
+              message: "",
+            });
+          }, 2000);
+        } else {
+          // Show error message
+          setErrors({
+            message:
+              result.message ||
+              "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
           });
-        }, 2000);
-      }, 1500);
+        }
+      } catch (error) {
+        console.error("Form submission error:", error);
+        setErrors({
+          message: "Netzwerkfehler. Bitte überprüfen Sie Ihre Verbindung.",
+        });
+      } finally {
+        setIsLoading(false);
+      }
     }
   };
 
@@ -293,7 +327,7 @@ export const ContactForm: React.FC = () => {
         {/* Shine effect on button */}
         {!isLoading && !isSuccess && (
           <div
-            className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-shine"
+            className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-shine"
             style={{ animationDuration: "1s" }}
           ></div>
         )}

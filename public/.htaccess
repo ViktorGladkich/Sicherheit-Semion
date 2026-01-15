@@ -51,13 +51,15 @@
 # Rewrite engine
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
   
   # Redirect HTTP to HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
   
-  # Remove trailing slash
+  # Remove trailing slash (except for root)
   RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/$
   RewriteRule ^(.+)/$ /$1 [L,R=301]
   
   # Serve WebP images automatically
@@ -65,4 +67,14 @@
   RewriteCond %{REQUEST_FILENAME} !\.webp$
   RewriteCond %{REQUEST_FILENAME}\.webp -f
   RewriteRule ^(.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
+  
+  # SPA Routing - redirect all requests to index.html
+  # Skip if file exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  # Skip if directory exists
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Skip if it's a file with extension (assets)
+  RewriteCond %{REQUEST_URI} !\.(css|js|jpg|jpeg|png|gif|svg|webp|woff|woff2|ttf|eot|ico|json|xml|txt|pdf|map|wasm)$
+  # Redirect to index.html
+  RewriteRule ^ index.html [L]
 </IfModule>
