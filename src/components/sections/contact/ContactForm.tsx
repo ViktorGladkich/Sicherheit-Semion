@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { SpinnerIcon, CheckIcon } from "../Icons";
+import { SpinnerIcon, CheckIcon } from "../../ui/Icons";
+import { sendContactEmail } from "../../../services/email";
 
 interface FormState {
   firstName: string;
@@ -31,7 +32,7 @@ const InputField = ({
   value: string;
   error?: string;
   onChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => void;
 }) => (
   <div className="relative group w-full">
@@ -106,7 +107,7 @@ export const ContactForm: React.FC = () => {
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -122,25 +123,9 @@ export const ContactForm: React.FC = () => {
       setIsLoading(true);
 
       try {
-        // Web3Forms API endpoint
-        const response = await fetch("https://api.web3forms.com/submit", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Replace with actual key from web3forms.com
-            name: `${formData.firstName} ${formData.lastName}`,
-            email: formData.email,
-            phone: formData.phone || "Nicht angegeben",
-            message: formData.message,
-            subject: `Neue Kontaktanfrage von ${formData.firstName} ${formData.lastName}`,
-          }),
-        });
+        const result = await sendContactEmail(formData);
 
-        const result = await response.json();
-
-        if (response.ok && result.success) {
+        if (result.success) {
           setIsSuccess(true);
           setTimeout(() => {
             setIsSubmitted(true);
@@ -157,7 +142,6 @@ export const ContactForm: React.FC = () => {
           // Show error message
           setErrors({
             message:
-              result.message ||
               "Fehler beim Senden. Bitte versuchen Sie es später erneut.",
           });
         }

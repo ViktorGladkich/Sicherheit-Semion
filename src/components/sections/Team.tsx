@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
-import { CinematicText } from "./ui/cinematic-text";
+import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
+import { SectionHeader } from "../ui/SectionHeader";
 
 const teamMembers = [
   {
@@ -41,22 +41,10 @@ const Team: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div
-          className={`text-center mb-16 transition-opacity duration-1000 ${
-            isVisible ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <div className="flex justify-center mb-4">
-            <CinematicText
-              words={["UNSERE FÜHRUNG"]}
-              className="text-4xl md:text-5xl font-extrabold"
-              alignment="center"
-            />
-          </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-           Hinter modernster Technik und taktischer Ausrüstung stehen Menschen, die Verantwortung übernehmen. Unsere Führungsebene vereint jahrzehntelange Erfahrung aus operativem Risikomanagement und strategischer Unternehmensführung. Wir verstecken uns nicht hinter Konzernen – wir stehen persönlich mit unserem Namen für Ihre Sicherheit ein.
-          </p>
-        </div>
+        <SectionHeader
+          title="UNSERE FÜHRUNG"
+          description="Hinter modernster Technik und taktischer Ausrüstung stehen Menschen, die Verantwortung übernehmen. Unsere Führungsebene vereint jahrzehntelange Erfahrung aus operativem Risikomanagement und strategischer Unternehmensführung. Wir verstecken uns nicht hinter Konzernen – wir stehen persönlich mit unserem Namen für Ihre Sicherheit ein."
+        />
 
         <motion.div
           initial="hidden"

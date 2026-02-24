@@ -1,10 +1,11 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../../contexts/ThemeContext";
 
 export const Logo: React.FC = () => {
   const logoImgRef = useRef<HTMLImageElement>(null);
-  const logoRef = useRef<HTMLAnchorElement>(null);
+  const logoRef = useRef<HTMLAnchorElement | null>(null);
   const { theme } = useTheme();
 
   // Выбираем логотип в зависимости от темы
@@ -30,17 +31,17 @@ export const Logo: React.FC = () => {
       gsap.fromTo(
         logoRef.current,
         { scale: 0 },
-        { scale: 1, duration: 0.6, ease: "back.out(1.7)" }
+        { scale: 1, duration: 0.6, ease: "back.out(1.7)" },
       );
     }
   }, []);
 
   return (
     <div className="pointer-events-auto z-100">
-      <a
+      <Link
         ref={logoRef}
         className="w-[60px] h-[60px] rounded-full bg-foreground p-2 inline-flex items-center justify-center overflow-hidden shadow-lg group hover:scale-105 transition-transform duration-300"
-        href="#home"
+        to="/"
         aria-label="Home"
         onMouseEnter={handleLogoEnter}
       >
@@ -50,7 +51,7 @@ export const Logo: React.FC = () => {
           alt="A.S.S Security"
           className="w-full h-full object-contain block grayscale contrast-125"
         />
-      </a>
+      </Link>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "../ui/ThemeToggle";
 
 // Config & Hooks
 import { NAV_ITEMS } from "./header/header-config";
-import { useActiveSection } from "../hooks/useActiveSection";
+import { useActiveSection } from "../../hooks/useActiveSection";
 
 // Sub-components
 import { Logo } from "./header/Logo";
@@ -23,7 +23,10 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-6 left-0 right-0 z-99 px-4 md:px-8 flex items-center justify-between pointer-events-none w-full" role="banner">
+      <header
+        className="fixed top-6 left-0 right-0 z-99 px-4 md:px-8 flex items-center justify-between pointer-events-none w-full"
+        role="banner"
+      >
         {/* LEFT: Logo */}
         <Logo />
 

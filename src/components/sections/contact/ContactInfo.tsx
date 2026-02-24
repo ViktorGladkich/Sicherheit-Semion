@@ -1,5 +1,5 @@
 import React from "react";
-import { PhoneIcon, MailIcon, LocationIcon } from "../Icons";
+import { PhoneIcon, MailIcon, LocationIcon } from "../../ui/Icons";
 
 export const ContactInfo: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ export const ContactInfo: React.FC = () => {
           Kontaktinformationen
         </h3>
         <div className="space-y-8">
-          <a href="tel:+4916097553090" className="flex items-center group">
+          <a href="tel:+4917640153293" className="flex items-center group">
             <div className="w-12 h-12 rounded-lg bg-background border border-neutral-200 dark:border-neutral-700 flex items-center justify-center mr-5 group-hover:border-foreground transition-colors shadow-sm">
               <PhoneIcon className="w-5 h-5 text-foreground" />
             </div>
@@ -21,12 +21,12 @@ export const ContactInfo: React.FC = () => {
                 Telefon
               </p>
               <span className="text-foreground group-hover:text-foreground/80 transition-colors font-medium">
-                +49 (0) 123 456 789
+                +49 176 40153293
               </span>
             </div>
           </a>
           <a
-            href="mailto:kontakt@ass-security.de"
+            href="mailto:info@ass-security.de"
             className="flex items-center group"
           >
             <div className="w-12 h-12 rounded-lg bg-background border border-neutral-200 dark:border-neutral-700 flex items-center justify-center mr-5 group-hover:border-foreground transition-colors shadow-sm">
@@ -37,7 +37,7 @@ export const ContactInfo: React.FC = () => {
                 E-Mail
               </p>
               <span className="text-foreground group-hover:text-foreground/80 transition-colors font-medium">
-                kontakt@ass-security.de
+                info@ass-security.de
               </span>
             </div>
           </a>

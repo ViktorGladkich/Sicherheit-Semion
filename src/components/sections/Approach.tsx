@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { CinematicText } from "./ui/cinematic-text";
+import { SectionHeader } from "../ui/SectionHeader";
 import { ScanSearch, FileText, ShieldCheck, Activity } from "lucide-react";
 import { ApproachStep } from "./approach/ApproachStep";
 
@@ -51,29 +51,13 @@ const Approach: React.FC = () => {
       ref={containerRef}
     >
       {/* Background elements - Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-24"
-        >
-          <div className="mb-6 flex justify-center">
-            <CinematicText
-              words={["UNSER PROZESS"]}
-              className="text-4xl md:text-5xl font-extrabold"
-              alignment="center"
-              as="h2"
-            />
-          </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ein strukturierter Ablauf für maximale Sicherheit. Präzision in
-            jedem Schritt.
-          </p>
-        </motion.div>
+        <SectionHeader
+          title="UNSER PROZESS"
+          description="Ein strukturierter Ablauf für maximale Sicherheit. Präzision in jedem Schritt."
+        />
 
         <div className="relative max-w-5xl mx-auto">
           {/* --- CENTRAL SPINE (DESKTOP) --- */}
