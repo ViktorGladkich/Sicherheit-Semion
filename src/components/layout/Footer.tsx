@@ -16,22 +16,14 @@ const Footer: React.FC = () => {
     ],
     company: [
       { name: "Über uns", href: "#about" },
-      { name: "Unser Team", href: "#team" },
       { name: "Karriere", href: "#contact" },
       { name: "FAQ", href: "#faq" },
     ],
     legal: [
       { name: "Impressum", href: "/impressum" },
       { name: "Datenschutz", href: "/datenschutz" },
-      { name: "AGB", href: "/agb" },
     ],
   };
-
-  const socialLinks = [
-    { name: "Instagram", href: "#" },
-    { name: "LinkedIn", href: "#" },
-    { name: "Facebook", href: "#" },
-  ];
 
   return (
     <footer
@@ -108,9 +100,9 @@ const Footer: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-16"
+            className="flex flex-wrap justify-center gap-16 lg:gap-24"
           >
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 text-center">
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/40">
                 Leistungen
               </h4>
@@ -119,7 +111,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-sm font-semibold hover:text-muted-foreground transition-all duration-300 hover:translate-x-1 inline-block"
+                      className="text-sm font-semibold hover:text-muted-foreground transition-all duration-300 hover:scale-105 inline-block"
                     >
                       {link.name}
                     </a>
@@ -127,7 +119,7 @@ const Footer: React.FC = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col gap-8 text-center">
               <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/40">
                 Firma
               </h4>
@@ -136,24 +128,7 @@ const Footer: React.FC = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-sm font-semibold hover:text-muted-foreground transition-all duration-300 hover:translate-x-1 inline-block"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col gap-8 col-span-2 sm:col-span-1">
-              <h4 className="text-xs font-bold uppercase tracking-widest text-muted-foreground/40">
-                Folgen
-              </h4>
-              <ul className="flex flex-col gap-4">
-                {socialLinks.map((link) => (
-                  <li key={link.name}>
-                    <a
-                      href={link.href}
-                      className="text-sm font-semibold hover:text-muted-foreground transition-all duration-300 hover:translate-x-1 inline-block"
+                      className="text-sm font-semibold hover:text-muted-foreground transition-all duration-300 hover:scale-105 inline-block"
                     >
                       {link.name}
                     </a>
@@ -223,8 +198,16 @@ const Footer: React.FC = () => {
         {/* Bottom Section: Legal & Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-6">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground/40">
-              &copy; {currentYear} A.S.S SECURITY UG &mdash; MADE BY VANTURA
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground/60">
+              &copy; {currentYear} A.S.S SECURITY UG &mdash; MADE BY{" "}
+              <a
+                href="https://invertadigital.de"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground/80 hover:text-foreground transition-colors font-black underline decoration-current/20 underline-offset-4"
+              >
+                INVERTA
+              </a>
             </p>
           </div>
 
@@ -233,7 +216,7 @@ const Footer: React.FC = () => {
               <Link
                 key={link.name}
                 to={link.href}
-                className="text-[10px] font-black uppercase tracking-[0.3em] text-muted-foreground/40 hover:text-foreground transition-all duration-300"
+                className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/60 hover:text-foreground transition-all duration-300"
               >
                 {link.name}
               </Link>

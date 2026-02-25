@@ -7,8 +7,7 @@ const teamMembers = [
   {
     name: "Semion Raskin",
     role: "Geschäftsführung",
-    image:
-      "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop",
+    image: "/team_semion_nano_v1_1772039706807.png",
   },
   {
     name: "Alexander Calutcov",

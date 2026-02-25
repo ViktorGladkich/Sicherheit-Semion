@@ -7,8 +7,7 @@ const industries = [
     title: "Bauwesen",
     icon: <HardHat className="w-6 h-6" />,
     desc: "Sicherung von Rohbauten, Materiallagern und Maschinenpark gegen Diebstahl und Vandalismus.",
-    image:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop",
+    image: "/security_construction_nano_v4_1772039625688.png",
     alt: "Sicherheitsdienst für Baustellen und Rohbauüberwachung",
   },
   {
@@ -16,8 +15,7 @@ const industries = [
     title: "Einzelhandel",
     icon: <ShoppingBag className="w-6 h-6" />,
     desc: "Doorman-Dienste, Ladendetektive und Prävention von Inventurdifferenzen.",
-    image:
-      "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
+    image: "/security_retail_nano_v2_1772039184233.png",
     alt: "Ladendetektiv und Sicherheitsdienst für Einzelhandel",
   },
   {
@@ -25,8 +23,7 @@ const industries = [
     title: "Büro & Gewerbe",
     icon: <Building2 className="w-6 h-6" />,
     desc: "Empfangsdienste, Pförtnerlogen und nächtliche Revierstreifen.",
-    image:
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    image: "/security_office_nano_v2_1772039433239.png",
     alt: "Objektschutz für Bürogebäude und Gewerbeparks",
   },
   {
@@ -34,8 +31,7 @@ const industries = [
     title: "Events",
     icon: <PartyPopper className="w-6 h-6" />,
     desc: "Einlasskontrollen, VIP-Betreuung und Crowd Management für Veranstaltungen.",
-    image:
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069&auto=format&fit=crop",
+    image: "/security_events_nano_v2_1772039557568.png",
     alt: "Event-Security und Einlasskontrollen bei Großveranstaltungen",
   },
 ];
@@ -76,35 +72,38 @@ export const IndustrySolutions: React.FC = () => {
                   src={industry.image}
                   alt={industry.alt}
                   className={`
-                                        w-full h-full object-cover transition-all duration-1000 ease-out
-                                        ${
-                                          isActive
-                                            ? "scale-100 grayscale-0"
-                                            : "scale-110 grayscale brightness-[0.4]"
-                                        }
-                                    `}
+                    w-full h-full object-cover transition-all duration-1000 ease-out
+                    ${
+                      isActive
+                        ? "scale-100 grayscale-0"
+                        : "scale-110 grayscale brightness-[0.4] lg:scale-110 md:scale-100 sm:scale-100"
+                    }
+                    /* Disable zoom on mobile for smoother feel */
+                    max-md:scale-100
+                  `}
                   loading="lazy"
                 />
                 <div
-                  className={`absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent transition-opacity duration-1000 ease-out ${
-                    isActive ? "opacity-80" : "opacity-60"
+                  className={`absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-1000 ease-out ${
+                    isActive ? "opacity-90" : "opacity-70"
                   }`}
                 ></div>
               </div>
 
-              {/* Content */}
-              <div className="absolute inset-0 p-6 flex flex-col justify-end">
-                <div className="flex items-center gap-3 mb-2">
+              {/* Content Wrapper */}
+              <div className="absolute inset-0 p-8 flex flex-col justify-end pointer-events-none">
+                {/* Heading (Icon + Title) */}
+                <div className="flex items-center gap-4 mb-2">
                   <div
                     className={`
-                                        p-2 rounded-lg bg-foreground text-background transition-transform duration-1000 ease-out
-                                        ${isActive ? "scale-100" : "scale-90"}
-                                     `}
+                      p-2 rounded-lg bg-foreground text-background transition-all duration-1000 ease-out
+                      ${isActive ? "scale-100 opacity-100" : "scale-90 opacity-100 lg:opacity-0"}
+                    `}
                   >
                     {industry.icon}
                   </div>
                   <h3
-                    className={`text-xl font-bold text-white whitespace-nowrap transition-all duration-1000 ease-out delay-75 ${
+                    className={`text-2xl font-black text-white whitespace-nowrap transition-all duration-1000 ease-out ${
                       isActive
                         ? "opacity-100 translate-x-0"
                         : "opacity-100 lg:opacity-0 lg:-translate-x-10"
@@ -114,17 +113,18 @@ export const IndustrySolutions: React.FC = () => {
                   </h3>
                 </div>
 
+                {/* Description - Slides out smoothly to the right */}
                 <div
                   className={`
-                                        overflow-hidden transition-all duration-1000 ease-out delay-150
-                                        ${
-                                          isActive
-                                            ? "max-h-40 opacity-100"
-                                            : "max-h-0 opacity-0"
-                                        }
-                                    `}
+                    overflow-hidden transition-all duration-1000 ease-out
+                    ${
+                      isActive
+                        ? "max-h-40 opacity-100 translate-x-0 delay-300"
+                        : "max-h-0 opacity-0 -translate-x-8"
+                    }
+                  `}
                 >
-                  <p className="text-neutral-300 text-sm leading-relaxed max-w-lg pt-2 border-t border-white/20 transition-all duration-1000 ease-out">
+                  <p className="text-neutral-400 text-sm leading-relaxed max-w-[320px] pt-4 border-t border-white/20">
                     {industry.desc}
                   </p>
                 </div>

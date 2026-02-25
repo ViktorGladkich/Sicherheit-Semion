@@ -17,7 +17,6 @@ import Hero from "./components/sections/Hero";
 import Services from "./components/sections/Services";
 import Benefits from "./components/sections/Benefits";
 import About from "./components/sections/About";
-import Team from "./components/sections/Team";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/layout/Footer";
 import CookieConsent from "./components/layout/CookieConsent";
@@ -61,7 +60,6 @@ const HomePage = ({ scaleX }: { scaleX: MotionValue<number> }) => (
         <Approach />
       </Suspense>
       <About />
-      <Team />
       <Suspense fallback={<SectionFallback />}>
         <FAQ />
       </Suspense>
@@ -123,7 +121,6 @@ function App() {
           <Route path="/" element={<HomePage scaleX={scaleX} />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
-          <Route path="/agb" element={<Impressum />} /> {/* Fallback for AGB */}
         </Routes>
 
         <Footer />

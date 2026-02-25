@@ -4,18 +4,15 @@ import { ChevronLeftIcon, ChevronRightIcon } from "../../ui/Icons";
 
 const slides = [
   {
-    image:
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop",
+    image: "/security_planning_nano_1772038717290.png",
     caption: "Strategische Planung",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=1770&auto=format&fit=crop",
+    image: "/security_monitoring_nano_1772038883542.png",
     caption: "Echtzeit Überwachung",
   },
   {
-    image:
-      "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1769&auto=format&fit=crop",
+    image: "/security_leitstelle_nano_v2_1772039073107.png",
     caption: "Leitstelle",
   },
 ];
