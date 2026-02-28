@@ -1,12 +1,11 @@
-
 import { useRef, useEffect, Suspense } from "react";
 import * as THREE from "three";
-import { } from " } from "../../../hooks/} from "";
+import { useTheme } from "../../hooks/useTheme";
 
 export function GenerativeArtScene() {
   const mountRef = useRef<HTMLDivElement>(null);
   const lightRef = useRef<THREE.PointLight>(null);
-  const { theme } = } from "();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const currentMount = mountRef.current;
@@ -14,12 +13,12 @@ export function GenerativeArtScene() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
-      50, 
+      50,
       currentMount.clientWidth / currentMount.clientHeight,
       0.1,
-      1000
+      1000,
     );
-    camera.position.z = 6; 
+    camera.position.z = 6;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
@@ -30,39 +29,42 @@ export function GenerativeArtScene() {
     const geometry = new THREE.PlaneGeometry(3.5, 4.0, 128, 128);
     const pos = geometry.attributes.position;
     const v = new THREE.Vector3();
-    
+
     // Shield Parameters
     const width = 1.3;
     const yTop = 1.1;
     const yBottom = -1.4;
-    const yShoulder = 0.3; 
+    const yShoulder = 0.3;
 
-    for(let i = 0; i < pos.count; i++){
-        v.fromBufferAttribute(pos, i);
-        
-        if (v.y > yTop) v.y = yTop;
-        if (v.y < yBottom) v.y = yBottom;
-        
-        let targetX = width;
-        if (v.y < yShoulder) {
-            const t = Math.max(0, Math.min(1, (yShoulder - v.y) / (yShoulder - yBottom)));
-            targetX = width * Math.cos(t * Math.PI * 0.5); 
-        }
-        
-        if (v.x > targetX) v.x = targetX;
-        if (v.x < -targetX) v.x = -targetX;
-        
-        const xFactor = (v.x / width);
-        v.z = 0.6 * (1.0 - xFactor * xFactor);
-        v.z -= 0.1 * Math.pow((v.y - 0.0) / 1.5, 2);
+    for (let i = 0; i < pos.count; i++) {
+      v.fromBufferAttribute(pos, i);
 
-        pos.setXYZ(i, v.x, v.y, v.z);
+      if (v.y > yTop) v.y = yTop;
+      if (v.y < yBottom) v.y = yBottom;
+
+      let targetX = width;
+      if (v.y < yShoulder) {
+        const t = Math.max(
+          0,
+          Math.min(1, (yShoulder - v.y) / (yShoulder - yBottom)),
+        );
+        targetX = width * Math.cos(t * Math.PI * 0.5);
+      }
+
+      if (v.x > targetX) v.x = targetX;
+      if (v.x < -targetX) v.x = -targetX;
+
+      const xFactor = v.x / width;
+      v.z = 0.6 * (1.0 - xFactor * xFactor);
+      v.z -= 0.1 * Math.pow((v.y - 0.0) / 1.5, 2);
+
+      pos.setXYZ(i, v.x, v.y, v.z);
     }
     geometry.computeVertexNormals();
 
     // --- LOCK GEOMETRY ---
     const lockGroup = new THREE.Group();
-    
+
     // 1. Lock Body
     const bodyGeometry = new THREE.BoxGeometry(0.8, 0.7, 0.2, 10, 10, 2);
     const bodyMesh = new THREE.Mesh(bodyGeometry); // Material applied later
@@ -75,7 +77,7 @@ export function GenerativeArtScene() {
     shackleMesh.position.z = 0;
     shackleMesh.rotation.y = Math.PI; // Face front
     lockGroup.add(shackleMesh);
-    
+
     // 3. Keyhole (Custom Shape)
     const keyholeShape = new THREE.Shape();
     // Circle top
@@ -85,26 +87,26 @@ export function GenerativeArtScene() {
     keyholeShape.lineTo(-0.06, -0.15);
     keyholeShape.lineTo(0.06, -0.15);
     keyholeShape.lineTo(0.04, 0);
-    
+
     const keyholeGeometry = new THREE.ShapeGeometry(keyholeShape);
     const keyholeMesh = new THREE.Mesh(keyholeGeometry);
     keyholeMesh.position.z = 0.11; // Slightly in front of body
     keyholeMesh.scale.set(1, 1, 1);
-    
+
     // We want the keyhole to be visible, so we add it to the group
     lockGroup.add(keyholeMesh);
 
     lockGroup.position.z = 0.8; // Push lock out from shield surface
     scene.add(lockGroup);
 
-
     // --- MATERIAL ---
-    const initialColor = theme === 'dark' ? new THREE.Color(0xe0e0e0) : new THREE.Color(0x1a1a1a);
+    const initialColor =
+      theme === "dark" ? new THREE.Color(0xe0e0e0) : new THREE.Color(0x1a1a1a);
 
     const shaderUniforms = {
-        time: { value: 0 },
-        pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
-        color: { value: initialColor }, 
+      time: { value: 0 },
+      pointLightPos: { value: new THREE.Vector3(0, 0, 5) },
+      color: { value: initialColor },
     };
 
     const shaderMaterial = new THREE.ShaderMaterial({
@@ -173,7 +175,7 @@ export function GenerativeArtScene() {
             vec3 newPosition = position + normal * (displacement + pulse);
             
             gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
-        }`,    
+        }`,
       fragmentShader: `
         uniform vec3 color;
         uniform vec3 pointLightPosition;
@@ -191,10 +193,10 @@ export function GenerativeArtScene() {
             vec3 finalColor = color * (diffuse * 0.5 + 0.2) + color * fresnel * 0.8;
             
             gl_FragColor = vec4(finalColor, 1.0);
-        }`, 
+        }`,
       wireframe: true,
       side: THREE.DoubleSide,
-      transparent: true
+      transparent: true,
     });
 
     // Apply material to Shield
@@ -210,25 +212,25 @@ export function GenerativeArtScene() {
 
     const pointLight = new THREE.PointLight(0xffffff, 1, 100);
     pointLight.position.set(0, 0, 5);
-    
+
     lightRef.current = pointLight;
     scene.add(pointLight);
 
     let frameId: number;
     const animate = (t: number) => {
       shaderMaterial.uniforms.time.value = t * 0.0005;
-      
+
       // Majestic rotation
       const rotY = Math.sin(t * 0.0003) * 0.15;
       const rotX = Math.sin(t * 0.0002) * 0.05;
-      
-      shieldMesh.rotation.y = rotY; 
+
+      shieldMesh.rotation.y = rotY;
       shieldMesh.rotation.x = rotX;
 
       // Lock moves with shield but stays centered
       lockGroup.rotation.y = rotY;
       lockGroup.rotation.x = rotX;
-      
+
       renderer.render(scene, camera);
       frameId = requestAnimationFrame(animate);
     };
@@ -287,7 +289,6 @@ export function AnomalousMatterHero({
   subtitle = "Sicherheit in stetigem Wandel",
   description = "Wir bieten maßgeschneiderte Sicherheitskonzepte für höchste Ansprüche. Ihr Schutz ist unsere Mission.",
 }: AnomalousMatterHeroProps) {
-
   return (
     <section
       id="home"
@@ -306,7 +307,7 @@ export function AnomalousMatterHero({
           <p className="text-lg text-muted-foreground leading-relaxed mb-8 max-w-lg">
             {description}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a
               href="#contact"
@@ -325,7 +326,7 @@ export function AnomalousMatterHero({
             <GenerativeArtScene />
           </Suspense>
         </div>
-        
+
         {/* Gradient for mobile to blend bottom of canvas into text */}
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-background md:hidden pointer-events-none z-10" />
       </div>
