@@ -6,7 +6,7 @@ Disallow: /private/
 Disallow: /temp/
 
 # XML Sitemap
-Sitemap: https://ass-security.de/sitemap.xml
+Sitemap: https://ass-sicurity.de/sitemap.xml
 
 # Crawl delay for heavy crawlers
 Request-rate: 1/10

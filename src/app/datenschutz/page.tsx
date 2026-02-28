@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+"use client";
+
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const Datenschutz: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function Datenschutz() {
   return (
     <div className="min-h-screen bg-background pt-32 pb-24 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-dot-pattern opacity-50 pointer-events-none" />
@@ -203,7 +201,7 @@ const Datenschutz: React.FC = () => {
           </div>
 
           <div className="mt-20">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-4 py-4 px-8 bg-foreground text-background font-bold uppercase tracking-widest text-sm hover:gap-6 transition-all duration-300 shadow-xl"
             >
@@ -224,12 +222,10 @@ const Datenschutz: React.FC = () => {
                 />
               </svg>
               Zurück zur Startseite
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
     </div>
   );
-};
-
-export default Datenschutz;
+}

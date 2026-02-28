@@ -1,5 +1,6 @@
+"use client";
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { MailIcon, PhoneIcon, LocationIcon } from "../ui/Icons";
 import { CinematicText } from "../ui/cinematic-text";
@@ -32,7 +33,10 @@ const Footer: React.FC = () => {
       role="contentinfo"
     >
       {/* Background Large Text - Styled with Text Stroke for Premium Feel */}
-      <div className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.03] dark:opacity-[0.05]">
+      <div
+        className="absolute bottom-[-5%] left-1/2 -translate-x-1/2 w-full text-center pointer-events-none select-none opacity-[0.03] dark:opacity-[0.05]"
+        aria-hidden="true"
+      >
         <h2
           className="text-[20vw] font-black leading-none whitespace-nowrap tracking-tighter uppercase"
           style={{
@@ -186,10 +190,10 @@ const Footer: React.FC = () => {
                 E-Mail
               </p>
               <a
-                href="mailto:info@ass-security.de"
+                href="mailto:info@ass-sicurity.de"
                 className="text-lg font-bold hover:text-muted-foreground transition-colors"
               >
-                info@ass-security.de
+                info@ass-sicurity.de
               </a>
             </div>
           </div>
@@ -215,7 +219,7 @@ const Footer: React.FC = () => {
             {footerLinks.legal.map((link) => (
               <Link
                 key={link.name}
-                to={link.href}
+                href={link.href}
                 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/60 hover:text-foreground transition-all duration-300"
               >
                 {link.name}

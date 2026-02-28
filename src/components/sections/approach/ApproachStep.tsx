@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -28,7 +29,9 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
             `}
     >
       {/* CONTENT SIDE (Width 50%) */}
-      <div className="w-full md:w-1/2 pl-16 md:pl-0 md:px-12 flex flex-col justify-center">
+      <div
+        className={`w-full md:w-1/2 pl-24 md:pl-0 flex flex-col justify-center ${isEven ? "md:pr-16" : "md:pl-16"}`}
+      >
         <div
           className={`
                     relative p-6 md:p-8 
@@ -89,10 +92,10 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
           initial={{ scaleX: 0, opacity: 0 }}
           whileInView={{ scaleX: 1, opacity: 0.3 }}
           transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-          style={{ originX: isEven ? 0 : 1 }}
+          style={{ originX: isEven ? 1 : 0 }}
           className={`
                         hidden md:block absolute top-1/2 h-px bg-linear-to-r from-foreground/80 to-transparent w-12
-                        ${isEven ? "left-full" : "right-full rotate-180"}
+                        ${isEven ? "right-full rotate-180" : "left-full"}
                         group-hover:opacity-100 group-hover:w-16 transition-all duration-500
                     `}
         >

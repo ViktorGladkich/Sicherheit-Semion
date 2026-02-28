@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
@@ -15,9 +16,16 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="py-24 relative overflow-hidden"
+      className="py-24 relative overflow-hidden "
       ref={sectionRef}
+      role="region"
+      aria-label="Kontaktbereich"
     >
+      {/* Unified Background Gradient Blob */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/5 blur-[120px] rounded-full -z-10 pointer-events-none"
+        aria-hidden="true"
+      />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           title="KONTAKT"
@@ -40,7 +48,7 @@ const Contact: React.FC = () => {
           <ContactInfo />
 
           {/* Form Side */}
-          <div className="p-10 md:p-14 relative bg-background/50">
+          <div className="p-10 md:p-14 relative /50">
             <ContactForm />
           </div>
         </motion.div>

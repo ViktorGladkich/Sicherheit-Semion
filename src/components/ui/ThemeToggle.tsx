@@ -1,13 +1,25 @@
+"use client";
+
 import React from "react";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../hooks/useTheme";
+import { useIsMounted } from "../../hooks/useIsMounted";
 import { SunIcon, MoonIcon } from "./Icons";
 
 const ThemeToggle: React.FC = () => {
   const { theme, setTheme } = useTheme();
+  const mounted = useIsMounted();
 
   const toggleTheme = () => {
     setTheme(theme === "light" ? "dark" : "light");
   };
+
+  if (!mounted) {
+    return (
+      <div className="p-2 w-full h-full flex items-center justify-center">
+        <div className="w-6 h-6 rounded-full bg-background/20 animate-pulse" />
+      </div>
+    );
+  }
 
   return (
     <button

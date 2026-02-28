@@ -4,8 +4,6 @@ import { PhoneIcon, MailIcon, LocationIcon } from "../../ui/Icons";
 export const ContactInfo: React.FC = () => {
   return (
     <div className="p-10 md:p-14 flex flex-col justify-between bg-neutral-50 dark:bg-black/40 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-neutral-800 relative overflow-hidden">
-      {/* Decorative Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(100,100,100,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,100,0.05)_1px,transparent_1px)] bg-size-[40px_40px] pointer-events-none"></div>
 
       <div className="relative z-10">
         <h3 className="text-2xl font-bold text-foreground mb-8 tracking-tight">
@@ -26,7 +24,7 @@ export const ContactInfo: React.FC = () => {
             </div>
           </a>
           <a
-            href="mailto:info@ass-security.de"
+            href="mailto:info@ass-sicurity.de"
             className="flex items-center group"
           >
             <div className="w-12 h-12 rounded-lg bg-background border border-neutral-200 dark:border-neutral-700 flex items-center justify-center mr-5 group-hover:border-foreground transition-colors shadow-sm">
@@ -37,7 +35,7 @@ export const ContactInfo: React.FC = () => {
                 E-Mail
               </p>
               <span className="text-foreground group-hover:text-foreground/80 transition-colors font-medium">
-                info@ass-security.de
+                info@ass-sicurity.de
               </span>
             </div>
           </a>

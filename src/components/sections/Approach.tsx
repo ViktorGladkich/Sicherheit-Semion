@@ -1,3 +1,4 @@
+"use client";
 import React, { useRef } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -47,11 +48,9 @@ const Approach: React.FC = () => {
   return (
     <section
       id="approach"
-      className="py-24 relative overflow-hidden bg-background"
+      className="py-24 relative overflow-hidden "
       ref={containerRef}
     >
-      {/* Background elements - Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-size-[64px_64px] mask-[radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader

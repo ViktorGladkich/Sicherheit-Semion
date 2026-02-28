@@ -1,12 +1,12 @@
 
 import { useRef, useEffect, Suspense } from "react";
 import * as THREE from "three";
-import { useTheme } from "../../contexts/ThemeContext";
+import { } from " } from "../../../hooks/} from "";
 
 export function GenerativeArtScene() {
   const mountRef = useRef<HTMLDivElement>(null);
   const lightRef = useRef<THREE.PointLight>(null);
-  const { theme } = useTheme();
+  const { theme } = } from "();
 
   useEffect(() => {
     const currentMount = mountRef.current;

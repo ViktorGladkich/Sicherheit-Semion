@@ -1,4 +1,6 @@
+"use client";
 import React, { useRef } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useIntersectionObserver } from "../../hooks/useIntersectionObserver";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -33,11 +35,9 @@ const Team: React.FC = () => {
   return (
     <section
       id="team"
-      className="py-24 relative overflow-hidden bg-background"
+      className="py-24 relative overflow-hidden "
       ref={sectionRef}
     >
-      {/* Background Texture */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none"></div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
@@ -73,10 +73,12 @@ const Team: React.FC = () => {
               {/* Image Container with Metal Border Effect */}
               <div className="relative aspect-4/5 overflow-hidden">
                 <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-10 opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
                 {/* Metallic Shine Overlay on Hover */}
@@ -84,7 +86,7 @@ const Team: React.FC = () => {
 
                 {/* Scanning Line Effect */}
                 <div className="absolute inset-0 z-20 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="absolute top-0 left-0 w-full h-2px bg-foreground/50 shadow-[0_0_15px_rgba(255,255,255,0.5)] animate-scan-line"></div>
+                  <div className="absolute top-0 left-0 w-full h-px bg-foreground/50 shadow-[0_0_15px_rgba(255,255,255,0.5)] animate-scan-line"></div>
                 </div>
               </div>
 

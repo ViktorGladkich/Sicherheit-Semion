@@ -1,4 +1,6 @@
+"use client";
 import React, { useState, useEffect, useCallback } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "../../ui/Icons";
 
@@ -12,6 +14,7 @@ const slides = [
     caption: "Echtzeit Überwachung",
   },
   {
+    id: "leitstelle",
     image: "/security_leitstelle_nano_v2_1772039073107.png",
     caption: "Leitstelle",
   },
@@ -46,10 +49,12 @@ export const ImageSlider: React.FC = () => {
           key={index}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100" : "opacity-0"}`}
         >
-          <img
+          <Image
             src={slide.image}
             alt={slide.caption}
-            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform scale-105 group-hover:scale-100"
+            fill
+            className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform scale-105 group-hover:scale-100"
+            sizes="(max-width: 1024px) 100vw, 50vw"
           />
           <div className="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-500"></div>
         </div>

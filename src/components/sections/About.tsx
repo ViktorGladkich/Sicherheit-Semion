@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { motion } from "framer-motion";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -6,15 +7,18 @@ import { ValuesGrid } from "./about/ValuesGrid";
 
 const About: React.FC = () => {
   return (
-    <section
-      id="about"
-      className="py-24 relative overflow-hidden bg-neutral-100/50 dark:bg-black/20"
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 relative overflow-hidden ">
+      {/* Unified Background Gradient Blob */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/5 blur-[120px] rounded-full -z-10 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* --- HEADER --- */}
         <SectionHeader
           title="WER WIR SIND"
-          alignment="left"
+          alignment="center"
           description="Mehr als nur ein Sicherheitsdienst. Wir sind Ihr strategischer Partner für Risikomanagement."
         />
 
@@ -32,10 +36,11 @@ const About: React.FC = () => {
           >
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Seit über einem Jahrzehnt definiert A.S.S Security Standards
-                neu. Was als spezialisierter Dienstleister begann, hat sich zu
-                einem umfassenden Sicherheitsunternehmen entwickelt, das
-                Technologie und menschliche Expertise vereint.
+                Seit über einem Jahrzehnt definiert A.S.S Security als führender
+                Sicherheitsdienst in Dresden Standards neu. Was als
+                spezialisierter Partner für Wachdienst begann, hat sich zu einem
+                umfassenden Experten für Objektschutz und Risikomanagement in
+                Sachsen entwickelt.
               </p>
               <p>
                 Wir verstehen Sicherheit nicht als statisches Produkt, sondern

@@ -1,4 +1,6 @@
+"use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Linkedin, Mail, ShieldCheck } from "lucide-react";
 
@@ -30,11 +32,12 @@ export const TeamMember: React.FC<TeamMemberProps> = ({ member }) => {
       {/* Image Container */}
       <div className="relative aspect-4/3 overflow-hidden">
         <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent z-10 opacity-60 transition-opacity duration-500 group-hover:opacity-40"></div>
-        <img
+        <Image
           src={member.image}
           alt={member.name}
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
-          loading="lazy"
+          fill
+          className="object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
 
         {/* Scanning Line Effect */}

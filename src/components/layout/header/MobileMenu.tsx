@@ -1,6 +1,9 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { NavItem } from "./header-config";
+import { useIsMounted } from "../../../hooks/useIsMounted";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -17,6 +20,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 }) => {
   const menuRef = useRef<HTMLDivElement>(null);
   const linksRef = useRef<Array<HTMLAnchorElement | null>>([]);
+  const mounted = useIsMounted();
 
   const handleNavClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -33,6 +37,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   // Open/Close Animation Logic
   useEffect(() => {
+    if (!mounted) return;
     const menu = menuRef.current;
     const links = linksRef.current;
 
@@ -80,7 +85,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
       // CLOSE
       const tl = gsap.timeline({
         onComplete: () => {
-          gsap.set(menu, { visibility: "hidden" });
+          if (menu) gsap.set(menu, { visibility: "hidden" });
           document.body.style.overflow = "";
         },
       });
@@ -103,7 +108,9 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
         "-=0.1",
       );
     }
-  }, [isOpen]);
+  }, [isOpen, mounted]);
+
+  if (!mounted) return null;
 
   return (
     <div
@@ -111,8 +118,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
       ref={menuRef}
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
     >
-      {/* Background Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(128,128,128,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(128,128,128,0.05)_1px,transparent_1px)] bg-size-[40px_40px] pointer-events-none"></div>
+      {/* Background Dot Pattern */}
+      <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none"></div>
 
       <div className="flex-1 flex flex-col justify-center px-6 relative overflow-y-auto">
         <div className="menu-decoration absolute left-6 top-24 bottom-24 w-px bg-foreground/20 origin-top"></div>
@@ -155,10 +162,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               Kontakt
             </span>
             <a
-              href="mailto:info@ass-security.de"
+              href="mailto:info@ass-sicurity.de"
               className="text-sm font-bold text-foreground"
             >
-              info@ass-security.de
+              info@ass-sicurity.de
             </a>
           </div>
           <div className="flex flex-col gap-1">

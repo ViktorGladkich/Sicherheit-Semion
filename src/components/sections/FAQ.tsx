@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
@@ -144,10 +145,12 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-background relative overflow-hidden">
-      {/* Background Map/Grid */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[32px_32px] pointer-events-none"></div>
-
+    <section
+      id="faq"
+      className="py-24  relative overflow-hidden"
+      role="region"
+      aria-label="Häufig gestellte Fragen"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <SectionHeader
           title="HÄUFIGE FRAGEN"

@@ -1,35 +1,30 @@
-import React, { useEffect } from "react";
+"use client";
+
+import React from "react";
 import { SplineScene } from "../ui/splite";
 import { Spotlight } from "../ui/spotlight";
-import { useTheme } from "../../contexts/ThemeContext";
+import { useTheme } from "../../hooks/useTheme";
 import { CinematicText } from "../ui/cinematic-text";
+import { useIsMounted } from "../../hooks/useIsMounted";
 
 const Hero: React.FC = () => {
   const { theme } = useTheme();
-
-  // SEO: Update document title and meta tags
-  useEffect(() => {
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Ihr zertifizierter Partner für Sicherheit: Objektschutz, Baustellenbewachung & Eventschutz in Dresden und bundesweit. 24/7 Leitstelle & IHK-geprüftes Personal.",
-      );
-    }
-  }, []);
+  const mounted = useIsMounted();
 
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-background pt-20 md:pt-0"
+      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden  pt-20 md:pt-0"
       role="region"
       aria-label="Hero-Bereich"
     >
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20 z-10"
-        fill={theme === "dark" ? "white" : "#a1a1aa"}
-        aria-hidden="true"
-      />
+      {mounted && (
+        <Spotlight
+          className="-top-40 left-0 md:left-60 md:-top-20 z-10"
+          fill={theme === "dark" ? "white" : "#a1a1aa"}
+          aria-hidden="true"
+        />
+      )}
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20 w-full h-full flex flex-col-reverse md:flex-row items-center">
         {/* Left content */}
@@ -46,11 +41,12 @@ const Hero: React.FC = () => {
 
             <div className="mt-6 border-l-2 border-foreground/20 pl-6 max-w-lg mx-auto md:mx-0 text-left">
               <h2 className="text-xl md:text-2xl font-bold text-foreground mb-2 animate-fade-in-long delay-100">
-                Sicherheit ist kein Glücksspiel.
+                Ihr Sicherheitsdienst in Dresden & Sachsen.
               </h2>
               <p className="text-muted-foreground text-lg md:text-xl font-light leading-relaxed animate-fade-in-long delay-200">
-                In kritischen Momenten zählt jeder Vorteil. Vertrauen Sie auf
-                Profis, die vorbereitet sind. <br />
+                In kritischen Momenten zählt jeder Vorteil. Wir bieten
+                hochqualifizierten Objektschutz und Wachdienst für Dresden.{" "}
+                <br />
                 <span className="text-foreground font-medium">
                   Es ist immer schön, ein ASS im Ärmel zu haben.
                 </span>
@@ -63,9 +59,9 @@ const Hero: React.FC = () => {
                 className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-background bg-foreground rounded-none overflow-hidden transition-all duration-300 shadow-lg hover:shadow-foreground/20 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2"
                 aria-label="Zur Kontaktsektion navigieren"
               >
-                <div className="absolute inset-0 w-0 bg-background transition-all duration-250ms ease-out group-hover:w-full opacity-10"></div>
+                <div className="absolute inset-0 w-0  transition-all duration-250ms ease-out group-hover:w-full opacity-10"></div>
                 <span className="relative z-10">KONTAKT AUFNEHMEN</span>
-                <div className="absolute bottom-0 right-0 w-3 h-3 bg-background transform rotate-45 translate-x-1.5 translate-y-1.5"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3  transform rotate-45 translate-x-1.5 translate-y-1.5"></div>
               </a>
             </div>
           </div>
@@ -77,14 +73,13 @@ const Hero: React.FC = () => {
           role="img"
           aria-label="3D-Animierte Sicherheitsszene"
         >
-          <SplineScene
-            scene="/scene.splinecode"
-            className="w-full h-full scale-100 md:scale-110"
-          />
+          {mounted && (
+            <SplineScene
+              scene="/scene.splinecode"
+              className="w-full h-full scale-100 md:scale-110"
+            />
+          )}
         </div>
-
-        {/* Mobile placeholder or lighter animation could go here if needed, 
-            but for now we just remove the heavy 3D scene */}
       </div>
     </section>
   );

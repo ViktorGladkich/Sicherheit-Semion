@@ -1,11 +1,9 @@
-import React, { useEffect } from "react";
+"use client";
+
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-const Impressum: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+export default function Impressum() {
   return (
     <div className="min-h-screen bg-background pt-32 pb-24 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full bg-dot-pattern opacity-50 pointer-events-none" />
@@ -129,9 +127,9 @@ const Impressum: React.FC = () => {
                 hinweisen. Verpflichtungen zur Entfernung oder Sperrung der
                 Nutzung von Informationen nach den allgemeinen Gesetzen bleiben
                 hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst
-                ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung
-                möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen
-                werden wir diese Inhalte umgehend entfernen.
+                ab dem Zeitpunkt einer konkreten Rechtsverletzung möglich. Bei
+                Bekanntwerden von entsprechenden Rechtsverletzungen werden wir
+                diese Inhalte umgehend entfernen.
               </p>
             </section>
 
@@ -193,7 +191,7 @@ const Impressum: React.FC = () => {
           </div>
 
           <div className="mt-20">
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-4 py-4 px-8 bg-foreground text-background font-bold uppercase tracking-widest text-sm hover:gap-6 transition-all duration-300"
             >
@@ -214,12 +212,10 @@ const Impressum: React.FC = () => {
                 />
               </svg>
               Zurück zur Startseite
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
     </div>
   );
-};
-
-export default Impressum;
+}

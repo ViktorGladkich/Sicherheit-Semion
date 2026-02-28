@@ -1,33 +1,44 @@
-import React, { useState } from 'react';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { useIsMounted } from "../../hooks/useIsMounted";
 
 const CookieConsent: React.FC = () => {
-  const [showBanner, setShowBanner] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const consent = localStorage.getItem('cookie_consent');
-      return consent === null;
+  const mounted = useIsMounted();
+  const [showBanner, setShowBanner] = useState(false);
+
+  useEffect(() => {
+    if (mounted) {
+      const consent = localStorage.getItem("cookie_consent");
+      if (consent === null) {
+        // We use setTimeout to defer the state update and avoid the
+        // "cascading render" lint warning while ensuring the banner
+        // only shows up once we know it's needed on the client.
+        const timer = setTimeout(() => setShowBanner(true), 100);
+        return () => clearTimeout(timer);
+      }
     }
-    return false;
-  });
+  }, [mounted]);
 
   const handleAccept = () => {
-    localStorage.setItem('cookie_consent', 'accepted');
+    localStorage.setItem("cookie_consent", "accepted");
     setShowBanner(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('cookie_consent', 'declined');
+    localStorage.setItem("cookie_consent", "declined");
     setShowBanner(false);
   };
 
   const handlePrivacyLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const targetElement = document.getElementById('footer');
+    const targetElement = document.getElementById("footer");
     if (targetElement) {
-        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
-  if (!showBanner) {
+  if (!mounted || !showBanner) {
     return null;
   }
 
@@ -35,14 +46,16 @@ const CookieConsent: React.FC = () => {
     <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/90 backdrop-blur-sm border-t border-border shadow-lg animate-fade-in-up">
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-sm text-foreground text-center sm:text-left">
-          Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern.
-          <a 
-            href="#footer" 
+          Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu
+          verbessern.
+          <a
+            href="#footer"
             onClick={handlePrivacyLinkClick}
             className="underline text-foreground hover:text-muted-foreground ml-2"
           >
             Datenschutzrichtlinie
-          </a>.
+          </a>
+          .
         </p>
         <div className="flex items-center gap-4 shrink-0">
           <button

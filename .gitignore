@@ -8,15 +8,20 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.DS_Store
 dist
 dist-ssr
 *.local
+
+# Next.js
+.next/
+out/
+build/
 
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
@@ -29,20 +34,15 @@ dist-ssr
 tsconfig.*.tsbuildinfo
 
 # Build artifacts
-dist/
-build/
 *.tgz
 
-# IDE
-.vscode/
-.idea/
-*.code-workspace
-
 # OS
-.DS_Store
 Thumbs.db
 
 # Environment
 .env
 .env.local
 .env.*.local
+
+# Vercel
+.vercel

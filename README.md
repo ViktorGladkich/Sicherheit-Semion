@@ -1,43 +1,71 @@
-# A.S.S Security UG - Landing Page
+# A.S.S Security — High-End Sicherheitsdienst Dresden
 
-Dies ist der Quellcode für die offizielle Landing Page der A.S.S Security UG. Das Projekt wurde als moderner, professioneller und performanter Single-Page-Auftritt entwickelt, um das Dienstleistungsportfolio des Unternehmens zu präsentieren und potenzielle Kunden zu gewinnen.
+[ass-sicurity.de](https://ass-sicurity.de)
 
-## ✨ Hauptmerkmale
+Dies ist der offizielle Webauftritt der **A.S.S SECURITY UG (haftungsbeschränkt)**, einem führenden Sicherheitsdienstleister mit Sitz in Dresden. Die Plattform wurde mit einer "High-End Noir"-Ästhetik entwickelt, die modernste Webtechnologie mit höchster Professionalität im Sicherheitsbereich verbindet.
 
--   **Modernes & Premium Design:** Eine klare, vertrauenswürdige Ästhetik, die Professionalität und Sicherheit ausstrahlt.
--   **Vollständig Responsiv:** Optimierte Darstellung auf allen Geräten – vom Desktop-Monitor bis zum Smartphone.
--   **Dunkel-/Hell-Modus:** Ein umschaltbares Farbschema für optimalen Lesekomfort bei allen Lichtverhältnissen.
--   **Interaktive Animationen:** Flüssige Übergänge und Lottie-Animationen, die die Benutzererfahrung verbessern, ohne die Leistung zu beeinträchtigen.
--   **Performance-Optimierung:**
-    -   **Lazy Loading:** Bilder und Lottie-Animationen werden erst geladen, wenn sie im sichtbaren Bereich des Nutzers sind, was die Ladezeit der Seite drastisch reduziert.
-    -   **Code-Splitting & Optimierung:** Effizienter, sauberer Code für schnelle Lade- und Reaktionszeiten.
--   **SEO-Optimiert:** Implementierung von Meta-Tags, strukturierten Daten (Schema.org) und Best Practices für eine hohe Sichtbarkeit in Suchmaschinen.
--   **Barrierefreiheit (Accessibility):** Verbesserte Tastaturnavigation (Focus Trap im mobilen Menü) und semantisches HTML für eine breitere Nutzerbasis.
+## ⚡️ Kernidentität
 
-## 🚀 Technologie-Stack
+- **Standort:** Dresden & Sachsen, Deutschland.
+- **Fokus:** Objektschutz, Baustellenbewachung, Eventschutz, Personenschutz.
+- **Design:** Premium Dark Mode, Cinematic UI, Technische Präzision.
 
--   **Frontend-Framework:** [React](https://react.dev/) (mit TypeScript)
--   **Build-Tool:** [Vite](https://vitejs.dev/)
--   **Styling:** [Tailwind CSS](https://tailwindcss.com/)
--   **Animationen:** [Lottie](https://lottiefiles.com/)
--   **Hosting-Umgebung:** Interaktive Online-Entwicklungsumgebung
+## 🛠 Technologie-Stack
 
-## 📂 Projektstruktur
+- **Framework:** [Next.js 15](https://nextjs.org/) (App Router, Server Components)
+- **Engine:** React 19
+- **Sprache:** TypeScript
+- **Styling:** Tailwind CSS (Custom Design System)
+- **Animationen:** [Framer Motion](https://www.framer.com/motion/), GSAP
+- **E-Mail Service:** [Resend](https://resend.com/)
+- **Icons:** Lucide React
 
+## 🎯 Hauptmerkmale
+
+- **High-End UI:** Handgefertigte Animationen, Glassmorphism und cineastische Übergänge (Awwwards-Level).
+- **Lokal SEO-Optimiert:** Zielgerichtete Ausrichtung auf Suchanfragen wie "Sicherheitsdienst Dresden".
+- **Performance:** Hybride Rendering-Strategien, optimierte Bilder (`next/image`) und Lazy-Loading.
+- **Semantisches HTML:** Volle Barrierefreiheit (WCAG) und saubere Tab-Navigation.
+- **Interaktive Elemente:** 3D-Szenen (Spline) und Echtzeit-Parallax-Effekte.
+
+## 📂 Projektstruktur (Next.js App Router)
+
+```text
+src/
+├── app/            # Routen, Metadaten & Layout
+├── components/
+│   ├── layout/     # Header, Footer, Providers
+│   ├── sections/   # Business Logic & Website-Sektionen
+│   └── ui/         # Wiederverwendbare atomare Komponenten
+├── hooks/          # Custom UX Hooks (Scroll, Theme, Observer)
+└── lib/            # Utilities (Tailwind CN, Validierung)
+public/             # Optimierte Assets (Bilder, Icons, Spline-Dateien)
 ```
-.
-├── assets/                 # Lottie-Animationen (.json) und Bilder
-├── components/             # Wiederverwendbare React-Komponenten (Header, Footer, Sections, etc.)
-├── contexts/               # React Context für globales State-Management (z.B. ThemeContext)
-├── hooks/                  # Benutzerdefinierte React Hooks (z.B. useIntersectionObserver)
-├── App.tsx                 # Hauptkomponente, die das Layout der Seite zusammenfügt
-├── index.html              # HTML-Einstiegspunkt
-├── index.tsx               # React-Einstiegspunkt (rendert die App)
-├── metadata.json           # Metadaten für die Entwicklungsplattform
-├── tsconfig.json           # TypeScript-Konfiguration
-└── README.md               # Diese Datei
-```
 
-## 🎯 Ziel des Projekts
+## 🚀 Installation & Entwicklung
 
-Das Ziel war die Schaffung einer digitalen Visitenkarte, die nicht nur informiert, sondern auch Vertrauen aufbaut und die Professionalität der A.S.S Security UG widerspiegelt. Jeder Aspekt, von der Farbwahl bis zur kleinsten Animation, wurde sorgfältig geplant, um dieses Ziel zu erreichen.
+1. **Abhängigkeiten installieren**
+   ```bash
+   npm install
+   ```
+2. **Umgebungsvariablen**
+   Erstellen Sie eine `.env.local` Datei:
+   ```env
+   RESEND_API_KEY=re_ihr_api_key
+   ```
+3. **Entwicklungsserver starten**
+   ```bash
+   npm run dev
+   ```
+
+## ⚖️ Rechtliches
+
+Diese Website entspricht den Anforderungen des TMG (§ 5) und der DSGVO.
+
+- [Impressum](https://ass-sicurity.de/impressum)
+- [Datenschutz](https://ass-sicurity.de/datenschutz)
+
+---
+
+© 2026 A.S.S SECURITY UG — Präzision im Schutz.  
+Design & Development by [INVERTA](https://invertadigital.de)

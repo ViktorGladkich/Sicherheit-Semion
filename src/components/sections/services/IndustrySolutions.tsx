@@ -1,4 +1,6 @@
+"use client";
 import React, { useState } from "react";
+import Image from "next/image";
 import { HardHat, ShoppingBag, Building2, PartyPopper } from "lucide-react";
 
 const industries = [
@@ -7,7 +9,7 @@ const industries = [
     title: "Bauwesen",
     icon: <HardHat className="w-6 h-6" />,
     desc: "Sicherung von Rohbauten, Materiallagern und Maschinenpark gegen Diebstahl und Vandalismus.",
-    image: "/security_construction_nano_v4_1772039625688.png",
+    image: "/security_construction_nano_v5.png",
     alt: "Sicherheitsdienst für Baustellen und Rohbauüberwachung",
   },
   {
@@ -40,8 +42,14 @@ export const IndustrySolutions: React.FC = () => {
   const [activeId, setActiveId] = useState<string | null>(industries[0].id);
 
   return (
-    <div className="mt-32">
-      <div className="mb-12 flex items-center justify-between border-b border-neutral-200 dark:border-neutral-800 pb-4">
+    <div className="mt-32 relative">
+      {/* Background Gradient Blob to match Services */}
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-foreground/5 blur-[120px] rounded-full -z-10 pointer-events-none"
+        aria-hidden="true"
+      />
+
+      <div className="mb-12 border-b border-neutral-200 dark:border-neutral-800 pb-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
           BRANCHENLÖSUNGEN
         </h2>
@@ -55,24 +63,25 @@ export const IndustrySolutions: React.FC = () => {
               key={industry.id}
               onClick={() => setActiveId(industry.id)}
               className={`
-                                relative overflow-hidden rounded-2xl cursor-pointer border border-neutral-200 dark:border-neutral-800
-                                transition-all duration-1000 ease-out transform-gpu
-                                ${
-                                  isActive
-                                    ? "flex-3"
-                                    : "flex-1 hover:flex-[1.2] opacity-80 hover:opacity-100"
-                                }
-                            `}
+                                 relative overflow-hidden rounded-2xl cursor-pointer border border-neutral-200 dark:border-neutral-800
+                                 transition-all duration-1000 ease-out transform-gpu
+                                 ${
+                                   isActive
+                                     ? "flex-3"
+                                     : "flex-1 hover:flex-[1.2] opacity-80 hover:opacity-100"
+                                 }
+                             `}
               role="button"
               aria-label={`${industry.title} anzeigen`}
             >
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
-                <img
+                <Image
                   src={industry.image}
                   alt={industry.alt}
+                  fill
                   className={`
-                    w-full h-full object-cover transition-all duration-1000 ease-out
+                    object-cover transition-all duration-1000 ease-out
                     ${
                       isActive
                         ? "scale-100 grayscale-0"
@@ -81,7 +90,7 @@ export const IndustrySolutions: React.FC = () => {
                     /* Disable zoom on mobile for smoother feel */
                     max-md:scale-100
                   `}
-                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
                 <div
                   className={`absolute inset-0 bg-linear-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-1000 ease-out ${
