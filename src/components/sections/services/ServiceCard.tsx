@@ -31,13 +31,17 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "0px" }}
       transition={{ 
         duration: 0.8, 
-        delay: index * 0.1,
+        delay: 0,
         ease: [0.16, 1, 0.3, 1] 
       }}
-      style={{ willChange: "transform, opacity", opacity: 0 }}
+      style={{ 
+        willChange: "transform, opacity", 
+        opacity: 0,
+        transform: "translateY(40px)"
+      }}
       ref={divRef}
       onMouseMove={handleMouseMove}
       className="relative overflow-hidden rounded-4xl border border-black/8 dark:border-white/15 bg-white/80 dark:bg-white/5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] backdrop-blur-2xl p-8 group h-full transition-all duration-500 hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)]"
