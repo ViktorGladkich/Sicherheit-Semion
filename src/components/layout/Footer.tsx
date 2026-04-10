@@ -201,8 +201,8 @@ const Footer: React.FC = () => {
 
         {/* Bottom Section: Legal & Copyright */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-6">
-            <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground/60">
+          <div className="flex items-center justify-center md:justify-start w-full md:w-auto">
+            <p className="text-[10px] md:text-xs font-bold uppercase tracking-widest md:tracking-[0.2em] text-foreground/60 whitespace-nowrap">
               &copy; {currentYear} A.S.S SECURITY UG &mdash; MADE BY{" "}
               <a
                 href="https://invertadigital.de"

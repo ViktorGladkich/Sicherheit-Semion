@@ -20,13 +20,17 @@ export const TeamMember: React.FC<TeamMemberProps> = ({ member }) => {
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, y: 30 },
+        hidden: { opacity: 0, y: 40 },
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.6, ease: "easeOut" },
+          transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
         },
       }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      style={{ willChange: "transform, opacity" }}
       className="group relative bg-white dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
     >
       {/* Image Container */}

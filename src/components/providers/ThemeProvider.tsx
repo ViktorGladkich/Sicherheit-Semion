@@ -16,10 +16,9 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({
       const storedTheme = localStorage.getItem("theme") as Theme | null;
       if (storedTheme) {
         setTheme(storedTheme);
-      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        setTheme("dark");
       } else {
-        setTheme("light");
+        // Default to dark theme for new visitors
+        setTheme("dark");
       }
     }
   }, [mounted]);
