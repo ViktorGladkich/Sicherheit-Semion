@@ -33,11 +33,11 @@ const Contact: React.FC = () => {
         />
 
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={
-            isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }
-          }
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ willChange: "transform, opacity" }}
           className={`
             max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0
             bg-white/80 dark:bg-white/5 backdrop-blur-2xl rounded-4xl overflow-hidden
