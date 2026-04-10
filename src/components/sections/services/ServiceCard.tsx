@@ -10,9 +10,10 @@ export interface ServiceItem {
 
 interface ServiceCardProps {
   service: ServiceItem;
+  index: number;
 }
 
-export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
+export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const divRef = useRef<HTMLDivElement>(null);
@@ -28,14 +29,15 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
 
   return (
     <motion.div
-      variants={{
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
-      }}
-      initial="hidden"
-      whileInView="visible"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      style={{ willChange: "transform, opacity" }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.1,
+        ease: [0.16, 1, 0.3, 1] 
+      }}
+      style={{ willChange: "transform, opacity", opacity: 0 }}
       ref={divRef}
       onMouseMove={handleMouseMove}
       className="relative overflow-hidden rounded-4xl border border-black/8 dark:border-white/15 bg-white/80 dark:bg-white/5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] backdrop-blur-2xl p-8 group h-full transition-all duration-500 hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)]"

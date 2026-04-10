@@ -38,7 +38,7 @@ export const ValuesGrid: React.FC = () => {
                         delay: idx * 0.1, 
                         ease: [0.16, 1, 0.3, 1] 
                     }}
-                    style={{ willChange: "transform, opacity" }}
+                    style={{ willChange: "transform, opacity", opacity: 0 }}
                     className="relative overflow-hidden group bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-black/8 dark:border-white/15 p-8 rounded-4xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] transition-all duration-500 hover:-translate-y-1"
                 >
                     {/* Liquid Glass Highlight Sweep */}

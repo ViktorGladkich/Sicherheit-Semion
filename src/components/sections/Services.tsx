@@ -61,27 +61,13 @@ const Services: React.FC = () => {
           description="Maßgeschneiderte Sicherheitslösungen für höchste Ansprüche. Wir analysieren, planen und schützen mit bewährten Methoden und modernster technologie."
         />
 
-        <motion.div
-          initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.15,
-              },
-            },
-          }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          role="list"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
           {servicesData.map((service, index) => (
             <div key={index} role="listitem">
-              <ServiceCard service={service} />
+              <ServiceCard service={service} index={index} />
             </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Industry Solutions Section */}
         <motion.div
