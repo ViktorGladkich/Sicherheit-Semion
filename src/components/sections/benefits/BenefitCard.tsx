@@ -26,7 +26,7 @@ export const BenefitCard: React.FC<CardProps> = ({
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px" }}
       transition={{ 
@@ -37,7 +37,7 @@ export const BenefitCard: React.FC<CardProps> = ({
       style={{ 
         willChange: "transform, opacity", 
         opacity: 0,
-        transform: "translateY(40px)"
+        transform: "translateY(50px)"
       }}
       className={`group relative flex flex-col justify-between p-6 md:p-8 h-full bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-black/8 dark:border-white/15 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] rounded-4xl hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] transition-all duration-500 overflow-hidden ${className}`}
     >

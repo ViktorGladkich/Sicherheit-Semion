@@ -8,16 +8,21 @@ export async function POST(request: Request) {
     const { firstName, lastName, email, phone, message } = await request.json();
 
     const { data, error } = await resend.emails.send({
-      from: "A.S.S Security <onboarding@resend.dev>", // Change or verify domain later
+      from: "A.S.S Security <website@ass-security-ug.de>",
       to: ["info@ass-security-ug.de"],
-      subject: `Neue Anfrage von ${firstName} ${lastName}`,
+      replyTo: email,
+      subject: `Neue Kontaktanfrage: ${firstName} ${lastName}`,
       html: `
-        <h2>Neue Kontaktanfrage</h2>
-        <p><strong>Name:</strong> ${firstName} ${lastName}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Telefon:</strong> ${phone || "N/A"}</p>
-        <p><strong>Nachricht:</strong></p>
-        <p>${message}</p>
+        <div style="font-family: sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
+          <h2 style="color: #000; border-bottom: 2px solid #eee; padding-bottom: 10px;">Neue Kontaktanfrage</h2>
+          <p><strong>Name:</strong> ${firstName} ${lastName}</p>
+          <p><strong>E-Mail:</strong> ${email}</p>
+          <p><strong>Telefon:</strong> ${phone || "Nicht angegeben"}</p>
+          <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; margin-top: 20px;">
+            <p><strong>Nachricht:</strong></p>
+            <p style="white-space: pre-wrap;">${message}</p>
+          </div>
+        </div>
       `,
     });
 

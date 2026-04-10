@@ -29,7 +29,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px" }}
       transition={{ 
@@ -40,7 +40,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
       style={{ 
         willChange: "transform, opacity", 
         opacity: 0,
-        transform: "translateY(40px)"
+        transform: "translateY(50px)"
       }}
       ref={divRef}
       onMouseMove={handleMouseMove}
