@@ -1,6 +1,6 @@
 # A.S.S Security — High-End Sicherheitsdienst Dresden
 
-[ass-sicurity.de](https://ass-sicurity.de)
+[ass-security-ug.de](https://ass-security-ug.de)
 
 Dies ist der offizielle Webauftritt der **A.S.S SECURITY UG (haftungsbeschränkt)**, einem führenden Sicherheitsdienstleister mit Sitz in Dresden. Die Plattform wurde mit einer "High-End Noir"-Ästhetik entwickelt, die modernste Webtechnologie mit höchster Professionalität im Sicherheitsbereich verbindet.
 
@@ -62,8 +62,8 @@ public/             # Optimierte Assets (Bilder, Icons, Spline-Dateien)
 
 Diese Website entspricht den Anforderungen des TMG (§ 5) und der DSGVO.
 
-- [Impressum](https://ass-sicurity.de/impressum)
-- [Datenschutz](https://ass-sicurity.de/datenschutz)
+- [Impressum](https://ass-security-ug.de/impressum)
+- [Datenschutz](https://ass-security-ug.de/datenschutz)
 
 ---
 

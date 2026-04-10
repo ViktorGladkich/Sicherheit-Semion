@@ -40,15 +40,19 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className={`
             max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-0
-            bg-white dark:bg-neutral-900/30 backdrop-blur-xl rounded-3xl overflow-hidden shadow-2xl
-            border border-neutral-200 dark:border-neutral-800
+            bg-white/80 dark:bg-white/5 backdrop-blur-2xl rounded-4xl overflow-hidden
+            shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)]
+            dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)]
+            border border-black/8 dark:border-white/15 relative group
         `}
         >
+          {/* Liquid Glass Highlight Sweep */}
+          <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
           {/* Info Side */}
           <ContactInfo />
 
           {/* Form Side */}
-          <div className="p-10 md:p-14 relative /50">
+          <div className="p-10 md:p-14 relative /50 order-1 lg:order-2">
             <ContactForm />
           </div>
         </motion.div>

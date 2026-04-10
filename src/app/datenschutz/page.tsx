@@ -117,8 +117,11 @@ export default function Datenschutz() {
                   </p>
                   <div className="mt-4 p-4 border border-foreground/5 rounded-lg text-foreground font-medium">
                     <p>A.S.S Security UG (haftungsbeschränkt)</p>
+                    <p>Geschäftsführer: Semion Raskin</p>
                     <p>Königstraße 26, 01097 Dresden</p>
-                    <p>E-Mail: info@ass-sicurity.de</p>
+                    <p>Handelsregister: Amtsgericht Dresden, HRB 47491</p>
+                    <p>Telefon: +49 176 40153293</p>
+                    <p>E-Mail: info@ass-security-ug.de</p>
                   </div>
                 </div>
                 <div>
@@ -131,6 +134,62 @@ export default function Datenschutz() {
                     erteilte Einwilligung jederzeit widerrufen. Die
                     Rechtmäßigkeit der bis zum Widerruf erfolgten
                     Datenverarbeitung bleibt vom Widerruf unberührt.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Beschwerderecht bei der zuständigen Aufsichtsbehörde
+                  </h3>
+                  <p className="text-sm">
+                    Im Falle von Verstößen gegen die DSGVO steht den Betroffenen
+                    ein Beschwerderecht bei einer Aufsichtsbehörde zu (Art. 77
+                    DSGVO). Das Beschwerderecht besteht unbeschadet
+                    anderweitiger verwaltungsrechtlicher oder gerichtlicher
+                    Rechtsbehelfe. Die zuständige Aufsichtsbehörde ist:
+                  </p>
+                  <div className="mt-4 p-4 border border-foreground/5 rounded-lg text-sm text-foreground">
+                    <p className="font-bold">
+                      Sächsischer Datenschutzbeauftragter
+                    </p>
+                    <p>Devrientstraße 1</p>
+                    <p>01067 Dresden</p>
+                    <p>
+                      Website:{" "}
+                      <a
+                        href="https://www.saechsdsb.de"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline hover:text-foreground/70"
+                      >
+                        www.saechsdsb.de
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    Recht auf Datenübertragbarkeit
+                  </h3>
+                  <p className="text-sm">
+                    Sie haben das Recht, Daten, die wir auf Grundlage Ihrer
+                    Einwilligung oder in Erfüllung eines Vertrags automatisiert
+                    verarbeiten, an sich oder an einen Dritten in einem
+                    gängigen, maschinenlesbaren Format aushändigen zu lassen
+                    (Art. 20 DSGVO).
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">
+                    SSL- bzw. TLS-Verschlüsselung
+                  </h3>
+                  <p className="text-sm">
+                    Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der
+                    Übertragung vertraulicher Inhalte, wie zum Beispiel
+                    Anfragen, die Sie an uns als Seitenbetreiber senden, eine
+                    SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte
+                    Verbindung erkennen Sie daran, dass die Adresszeile des
+                    Browsers von „http://" auf „https://" wechselt und an dem
+                    Schloss-Symbol in Ihrer Browserzeile.
                   </p>
                 </div>
               </div>
@@ -153,6 +212,8 @@ export default function Datenschutz() {
                     Referrer URL, Hostname des zugreifenden Rechners, Uhrzeit
                     der Serveranfrage, IP-Adresse. Eine Zusammenführung dieser
                     Daten mit anderen Datenquellen wird nicht vorgenommen.
+                    Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1
+                    lit. f DSGVO (berechtigtes Interesse).
                   </p>
                 </div>
                 <div>
@@ -165,7 +226,13 @@ export default function Datenschutz() {
                     von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung
                     der Anfrage und für den Fall von Anschlussfragen bei uns
                     gespeichert. Wir nutzen für den Mail-Versand den Anbieter{" "}
-                    <span className="font-bold">Resend</span>.
+                    <span className="font-bold">Resend</span> (Resend Inc.,
+                    USA). Die Datenübertragung in die USA erfolgt auf
+                    Grundlage der Standardvertragsklauseln der EU-Kommission.
+                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
+                    (vorvertragliche Maßnahmen). Ihre Daten werden nach
+                    abgeschlossener Bearbeitung Ihrer Anfrage gelöscht, sofern
+                    keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
                   </p>
                 </div>
               </div>
@@ -181,9 +248,12 @@ export default function Datenschutz() {
                 gespeicherten personenbezogenen Daten (Art. 15 DSGVO), deren
                 Herkunft und Empfänger und den Zweck der Datenverarbeitung und
                 ggf. ein Recht auf Berichtigung (Art. 16 DSGVO), Sperrung oder
-                Löschung (Art. 17 DSGVO) dieser Daten.
+                Löschung (Art. 17 DSGVO) dieser Daten. Ferner steht Ihnen ein
+                Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)
+                sowie ein Widerspruchsrecht gegen die Verarbeitung (Art. 21
+                DSGVO) zu.
               </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-foreground">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-[10px] font-black uppercase tracking-[0.2em] text-foreground">
                 <div className="p-4 bg-muted border border-foreground/5 rounded flex items-center justify-center text-center">
                   Auskunft
                 </div>
@@ -194,9 +264,109 @@ export default function Datenschutz() {
                   Löschung
                 </div>
                 <div className="p-4 bg-muted border border-foreground/5 rounded flex items-center justify-center text-center">
-                  Widerruf
+                  Einschränkung
+                </div>
+                <div className="p-4 bg-muted border border-foreground/5 rounded flex items-center justify-center text-center">
+                  Widerspruch
                 </div>
               </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
+                6. Cookies
+              </h2>
+              <div className="space-y-4">
+                <p className="text-sm">
+                  Diese Website verwendet keine Tracking-Cookies und setzt
+                  keine Marketing- oder Analyse-Cookies ein. Lediglich
+                  technisch notwendige Cookies können durch den Hosting-
+                  Anbieter (Vercel) gesetzt werden, um die Funktionalität
+                  der Website sicherzustellen. Diese Cookies dienen
+                  ausschließlich der technischen Bereitstellung und
+                  enthalten keine personenbezogenen Daten zu
+                  Marketingzwecken.
+                </p>
+                <p className="text-sm">
+                  Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+                  (berechtigtes Interesse an der technisch fehlerfreien
+                  Bereitstellung der Website).
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
+                7. Google Maps
+              </h2>
+              <div className="space-y-4">
+                <p className="text-sm">
+                  Diese Website nutzt den Kartendienst Google Maps über eine
+                  Einbettung (iFrame). Anbieter ist die Google Ireland
+                  Limited (&quot;Google&quot;), Gordon House, Barrow Street,
+                  Dublin 4, Irland.
+                </p>
+                <p className="text-sm">
+                  Zur Nutzung der Funktionen von Google Maps ist es
+                  notwendig, Ihre IP-Adresse zu speichern. Diese
+                  Informationen werden in der Regel an einen Server von
+                  Google in den USA übertragen und dort gespeichert. Der
+                  Anbieter dieser Seite hat keinen Einfluss auf diese
+                  Datenübertragung. Die Datenübertragung in die USA erfolgt
+                  auf Grundlage der Standardvertragsklauseln der
+                  EU-Kommission.
+                </p>
+                <p className="text-sm">
+                  Die Nutzung von Google Maps erfolgt im Interesse einer
+                  ansprechenden Darstellung unseres Standortes und einer
+                  leichten Auffindbarkeit der von uns auf der Website
+                  angegebenen Adresse. Dies stellt ein berechtigtes
+                  Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
+                </p>
+                <p className="text-sm">
+                  Mehr Informationen zum Umgang mit Nutzerdaten finden Sie
+                  in der Datenschutzerklärung von Google:{" "}
+                  <a
+                    href="https://policies.google.com/privacy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline hover:text-foreground/70"
+                  >
+                    https://policies.google.com/privacy
+                  </a>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
+                8. Speicherdauer
+              </h2>
+              <p className="text-sm">
+                Soweit innerhalb dieser Datenschutzerklärung keine speziellere
+                Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen
+                Daten bei uns, bis der Zweck für die Datenverarbeitung
+                entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend
+                machen oder eine Einwilligung zur Datenverarbeitung
+                widerrufen, werden Ihre Daten gelöscht, sofern wir keine
+                anderen rechtlich zulässigen Gründe für die Speicherung
+                Ihrer personenbezogenen Daten haben (z. B. steuer- oder
+                handelsrechtliche Aufbewahrungsfristen); im letztgenannten
+                Fall erfolgt die Löschung nach Fortfall dieser Gründe.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
+                9. Aktualität und Änderung dieser Datenschutzerklärung
+              </h2>
+              <p className="text-sm">
+                Diese Datenschutzerklärung ist aktuell gültig und hat den
+                Stand April 2026. Durch die Weiterentwicklung unserer Website
+                und Angebote oder aufgrund geänderter gesetzlicher
+                beziehungsweise behördlicher Vorgaben kann es notwendig
+                werden, diese Datenschutzerklärung zu ändern.
+              </p>
             </section>
           </div>
 

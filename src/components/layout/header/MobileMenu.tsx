@@ -162,10 +162,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               Kontakt
             </span>
             <a
-              href="mailto:info@ass-sicurity.de"
+              href="mailto:info@ass-security-ug.de"
               className="text-sm font-bold text-foreground"
             >
-              info@ass-sicurity.de
+              info@ass-security-ug.de
             </a>
           </div>
           <div className="flex flex-col gap-1">

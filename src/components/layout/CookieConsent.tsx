@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
 import { useIsMounted } from "../../hooks/useIsMounted";
 
 const CookieConsent: React.FC = () => {
@@ -11,10 +12,7 @@ const CookieConsent: React.FC = () => {
     if (mounted) {
       const consent = localStorage.getItem("cookie_consent");
       if (consent === null) {
-        // We use setTimeout to defer the state update and avoid the
-        // "cascading render" lint warning while ensuring the banner
-        // only shows up once we know it's needed on the client.
-        const timer = setTimeout(() => setShowBanner(true), 100);
+        const timer = setTimeout(() => setShowBanner(true), 800);
         return () => clearTimeout(timer);
       }
     }
@@ -30,54 +28,55 @@ const CookieConsent: React.FC = () => {
     setShowBanner(false);
   };
 
-  const handlePrivacyLinkClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetElement = document.getElementById("footer");
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
-
   if (!mounted || !showBanner) {
     return null;
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 p-4 bg-background/90 backdrop-blur-sm border-t border-border shadow-lg animate-fade-in-up">
-      <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p className="text-sm text-foreground text-center sm:text-left">
-          Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu
-          verbessern.
-          <a
-            href="#footer"
-            onClick={handlePrivacyLinkClick}
-            className="underline text-foreground hover:text-muted-foreground ml-2"
-          >
-            Datenschutzrichtlinie
-          </a>
-          .
-        </p>
-        <div className="flex items-center gap-4 shrink-0">
-          <button
-            onClick={handleDecline}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
-            Ablehnen
-          </button>
-          <button
-            onClick={handleAccept}
-            className="px-4 py-2 bg-foreground text-background text-sm font-semibold rounded-md hover:bg-foreground/80 transition-colors"
-          >
-            Akzeptieren
-          </button>
+    <div className="fixed bottom-4 left-4 right-4 md:bottom-6 md:left-auto md:right-6 md:max-w-md z-50 animate-fade-in-up">
+      <div className="bg-white/80 dark:bg-white/10 backdrop-blur-2xl rounded-3xl border border-black/8 dark:border-white/15 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.15),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_8px_32px_-8px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.1)] p-6 relative overflow-hidden">
+        {/* Glass highlight */}
+        <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
+        
+        <div className="relative z-10">
+          <p className="text-sm text-foreground leading-relaxed mb-1">
+            <span className="font-bold">Datenschutzhinweis</span>
+          </p>
+          <p className="text-xs text-muted-foreground leading-relaxed mb-4">
+            Diese Website verwendet ausschließlich technisch notwendige Cookies
+            und bindet Google Maps ein. Es werden keine Tracking- oder
+            Marketing-Cookies verwendet. Weitere Informationen finden Sie in
+            unserer{" "}
+            <Link
+              href="/datenschutz"
+              className="underline text-foreground hover:text-muted-foreground transition-colors"
+            >
+              Datenschutzerklärung
+            </Link>
+            .
+          </p>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={handleDecline}
+              className="flex-1 text-xs font-bold uppercase tracking-widest text-muted-foreground hover:text-foreground py-2.5 px-4 rounded-xl border border-black/8 dark:border-white/15 bg-white/50 dark:bg-white/5 hover:bg-white/80 dark:hover:bg-white/10 transition-all duration-300"
+            >
+              Ablehnen
+            </button>
+            <button
+              onClick={handleAccept}
+              className="flex-1 text-xs font-bold uppercase tracking-widest text-background bg-foreground py-2.5 px-4 rounded-xl hover:opacity-90 transition-all duration-300 shadow-sm"
+            >
+              Akzeptieren
+            </button>
+          </div>
         </div>
       </div>
       <style>{`
         @keyframes fade-in-up {
-          from { opacity: 0; transform: translateY(100%); }
-          to { opacity: 1; transform: translateY(0); }
+          from { opacity: 0; transform: translateY(20px) scale(0.95); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
         }
-        .animate-fade-in-up { animation: fade-in-up 0.5s ease-out forwards; }
+        .animate-fade-in-up { animation: fade-in-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
       `}</style>
     </div>
   );

@@ -95,12 +95,14 @@ const Benefits: React.FC = () => {
           />
 
           {/* DECO Tile: Pulsating Tech Scanner (Gap Filler) */}
-          <div className="hidden lg:flex lg:col-span-4 lg:row-span-1 relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40 p-10 flex-col justify-between group backdrop-blur-sm">
+          <div className="hidden lg:flex lg:col-span-4 lg:row-span-1 relative overflow-hidden rounded-4xl border border-black/8 dark:border-white/15 bg-white/80 dark:bg-white/5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] p-10 flex-col justify-between group backdrop-blur-2xl transition-all duration-500">
+            {/* Liquid Glass Highlight Sweep */}
+            <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,#22c55e_0%,transparent_70%)] group-hover:opacity-20 transition-opacity duration-1000 animate-pulse"></div>
             <div className="relative z-10 flex flex-col justify-between h-full">
               <div className="flex justify-between items-start">
                 <div className="text-[10px] font-mono tracking-tighter text-neutral-500 uppercase">
-                  SYS_PROT: AUTH_ERFOLGREICH
+                  STATUS: OBJEKT GESICHERT
                 </div>
                 <div className="flex gap-1">
                   <div className="w-1 h-3 bg-green-500/20"></div>
@@ -120,7 +122,7 @@ const Benefits: React.FC = () => {
 
               <div className="pt-4 mt-auto">
                 <div className="text-[10px] font-mono tracking-widest text-[#22c55e] animate-pulse">
-                  {">"} INITIALISIERE PROTOKOLL...
+                  {">"} WÄCHTERKONTROLLE AKTIV...
                 </div>
               </div>
             </div>

@@ -35,32 +35,33 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
         <div
           className={`
                     relative p-6 md:p-8 
-                    bg-white/70 dark:bg-neutral-900/40 backdrop-blur-md 
-                    rounded-xl border border-neutral-200 dark:border-neutral-800 
-                    shadow-[0_0_15px_-3px_rgba(0,0,0,0.1)] 
-                    hover:border-foreground/40 hover:shadow-[0_0_30px_-5px_rgba(0,0,0,0.2)]
-                    transition-all duration-300 group-hover:scale-[1.02]
-                    text-left
+                    bg-white/80 dark:bg-white/5 backdrop-blur-2xl 
+                    rounded-4xl border border-black/8 dark:border-white/15 
+                    shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] 
+                    dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)]
+                    hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)]
+                    dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)]
+                    transition-all duration-500 group-hover:scale-[1.02]
+                    text-left overflow-hidden
                 `}
         >
-          {/* Tech Corners */}
-          <div className="absolute -top-px -left-px w-4 h-4 border-t-2 border-l-2 border-foreground/20 rounded-tl-lg group-hover:border-foreground transition-colors"></div>
-          <div className="absolute -top-px -right-px w-4 h-4 border-t-2 border-r-2 border-foreground/20 rounded-tr-lg group-hover:border-foreground transition-colors"></div>
-          <div className="absolute -bottom-px -left-px w-4 h-4 border-b-2 border-l-2 border-foreground/20 rounded-bl-lg group-hover:border-foreground transition-colors"></div>
-          <div className="absolute -bottom-px -right-px w-4 h-4 border-b-2 border-r-2 border-foreground/20 rounded-br-lg group-hover:border-foreground transition-colors"></div>
+          {/* Liquid Glass Highlight Sweep */}
+          <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
 
-          <div className="flex items-baseline gap-3 mb-3">
-            <span className="font-mono text-3xl font-bold text-foreground/10 group-hover:text-foreground/30 transition-colors">
-              0{index + 1}
-            </span>
-            <h3 className="text-xl md:text-2xl font-bold text-foreground">
-              {step.title}
-            </h3>
+          <div className="relative z-10">
+            <div className="flex items-baseline gap-3 mb-3">
+              <span className="font-mono text-3xl font-bold text-foreground/10 group-hover:text-foreground/30 transition-colors">
+                0{index + 1}
+              </span>
+              <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                {step.title}
+              </h3>
+            </div>
+
+            <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              {step.description}
+            </p>
           </div>
-
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-            {step.description}
-          </p>
         </div>
       </div>
 

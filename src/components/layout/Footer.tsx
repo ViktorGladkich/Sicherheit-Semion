@@ -190,17 +190,17 @@ const Footer: React.FC = () => {
                 E-Mail
               </p>
               <a
-                href="mailto:info@ass-sicurity.de"
+                href="mailto:info@ass-security-ug.de"
                 className="text-lg font-bold hover:text-muted-foreground transition-colors"
               >
-                info@ass-sicurity.de
+                info@ass-security-ug.de
               </a>
             </div>
           </div>
         </motion.div>
 
         {/* Bottom Section: Legal & Copyright */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-6">
             <p className="text-xs font-bold uppercase tracking-[0.2em] text-foreground/60">
               &copy; {currentYear} A.S.S SECURITY UG &mdash; MADE BY{" "}

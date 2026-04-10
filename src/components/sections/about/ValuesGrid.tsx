@@ -34,13 +34,16 @@ export const ValuesGrid: React.FC = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.2 }}
-                    className="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 p-8 rounded-xl hover:shadow-xl transition-shadow duration-300"
+                    className="relative overflow-hidden group bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-black/8 dark:border-white/15 p-8 rounded-4xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] transition-all duration-500 hover:-translate-y-1"
                 >
-                    <div className="w-12 h-12 bg-neutral-100 dark:bg-neutral-800 rounded-lg flex items-center justify-center mb-6 text-foreground">
+                    {/* Liquid Glass Highlight Sweep */}
+                    <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
+                    
+                    <div className="relative z-10 w-12 h-12 bg-white/50 dark:bg-black/40 backdrop-blur-md border border-white/60 dark:border-white/20 rounded-2xl flex items-center justify-center mb-6 text-foreground shadow-sm">
                         {val.icon}
                     </div>
-                    <h5 className="text-xl font-bold mb-3">{val.title}</h5>
-                    <p className="text-muted-foreground leading-relaxed">{val.text}</p>
+                    <h5 className="relative z-10 text-xl font-bold mb-3">{val.title}</h5>
+                    <p className="relative z-10 text-muted-foreground leading-relaxed">{val.text}</p>
                 </motion.div>
             ))}
             </div>

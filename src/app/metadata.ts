@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ass-sicurity.de"),
+  metadataBase: new URL("https://ass-security-ug.de"),
   title:
     "Sicherheitsdienst Dresden | A.S.S Security - Ihr Partner für Wachschutz",
   description:
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "A.S.S Security",
   ],
   alternates: {
-    canonical: "https://ass-sicurity.de",
+    canonical: "https://ass-security-ug.de",
   },
   robots: {
     index: true,
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://ass-sicurity.de",
+    url: "https://ass-security-ug.de",
     title: "Sicherheitsdienst Dresden | A.S.S Security",
     description:
       "Zertifizierter Sicherheitsdienst in Dresden. Objektschutz, Baustellenbewachung & Eventschutz. 24/7 Service.",

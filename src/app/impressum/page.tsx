@@ -22,7 +22,7 @@ export default function Impressum() {
           <div className="grid gap-16 text-lg border-l border-foreground/10 pl-8 text-foreground/80">
             <section>
               <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-foreground/50 mb-6">
-                Angaben gemäß § 5 TMG
+                Angaben gemäß § 5 DDG
               </h2>
               <div className="space-y-2">
                 <p className="text-2xl font-black">
@@ -57,13 +57,13 @@ export default function Impressum() {
                   <span className="text-muted-foreground font-medium">
                     E-Mail:
                   </span>{" "}
-                  info@ass-sicurity.de
+                  info@ass-security-ug.de
                 </p>
                 <p>
                   <span className="text-muted-foreground font-medium">
                     Website:
                   </span>{" "}
-                  www.ass-sicurity.de
+                  www.ass-security-ug.de
                 </p>
               </div>
             </section>
@@ -83,8 +83,31 @@ export default function Impressum() {
                 <p>
                   Registernummer:{" "}
                   <span className="text-foreground font-semibold">
-                    [HRB Nummer wird nachgetragen]
+                    HRB 47491
                   </span>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-foreground/50 mb-6">
+                Aufsichtsbehörde (§ 34a GewO)
+              </h2>
+              <div className="space-y-2 text-muted-foreground">
+                <p>
+                  Zuständige Behörde für die Erlaubnis nach § 34a der
+                  Gewerbeordnung (Bewachungsgewerbe):
+                </p>
+                <p>
+                  <span className="text-foreground font-semibold">
+                    Landeshauptstadt Dresden
+                  </span>
+                  <br />
+                  Ordnungsamt / Gewerbeangelegenheiten
+                  <br />
+                  Theaterstraße 11–15
+                  <br />
+                  01067 Dresden
                 </p>
               </div>
             </section>
@@ -118,9 +141,9 @@ export default function Impressum() {
             <section className="pt-8 border-t border-foreground/5">
               <h2 className="text-xl font-bold mb-6">Haftung für Inhalte</h2>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene
+                Als Diensteanbieter sind wir gemäß § 7 Abs.1 DDG für eigene
                 Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
-                verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+                verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
                 Diensteanbieter jedoch nicht verpflichtet, übermittelte oder
                 gespeicherte fremde Informationen zu überwachen oder nach
                 Umständen zu forschen, die auf eine rechtswidrige Tätigkeit

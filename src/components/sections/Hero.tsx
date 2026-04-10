@@ -56,12 +56,21 @@ const Hero: React.FC = () => {
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 animate-fade-in-long delay-300">
               <a
                 href="#contact"
-                className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-bold text-background bg-foreground rounded-none overflow-hidden transition-all duration-300 shadow-lg hover:shadow-foreground/20 focus:outline-none focus:ring-2 focus:ring-foreground focus:ring-offset-2"
+                className="group relative inline-flex items-center justify-center px-10 py-5 text-sm md:text-base font-black uppercase tracking-[0.2em] text-foreground bg-white/80 dark:bg-white/10 backdrop-blur-2xl border border-black/8 dark:border-white/15 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] rounded-full overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.12),0_15px_30px_-5px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] focus:outline-none"
                 aria-label="Zur Kontaktsektion navigieren"
               >
-                <div className="absolute inset-0 w-0  transition-all duration-250ms ease-out group-hover:w-full opacity-10"></div>
-                <span className="relative z-10">KONTAKT AUFNEHMEN</span>
-                <div className="absolute bottom-0 right-0 w-3 h-3  transform rotate-45 translate-x-1.5 translate-y-1.5"></div>
+                {/* Liquid Glass Highlight Sweep */}
+                <div className="absolute inset-0 bg-linear-to-tr from-white/60 via-transparent to-white/20 dark:from-white/20 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
+                
+                {/* Animated Shine on Hover */}
+                <div className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/50 dark:via-white/20 to-transparent skew-x-[-20deg] group-hover:left-full transition-all duration-700 ease-in-out"></div>
+                
+                <span className="relative z-10 flex items-center gap-3">
+                  KONTAKT AUFNEHMEN
+                  <span className="inline-block transform group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-500 ease-out font-normal text-xl">
+                    &#8599;
+                  </span>
+                </span>
               </a>
             </div>
           </div>

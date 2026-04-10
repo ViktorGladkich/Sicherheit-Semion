@@ -34,19 +34,21 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       }}
       ref={divRef}
       onMouseMove={handleMouseMove}
-      className="relative overflow-hidden rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white/50 dark:bg-neutral-900/60 backdrop-blur-sm p-8 group h-full"
+      className="relative overflow-hidden rounded-4xl border border-black/8 dark:border-white/15 bg-white/80 dark:bg-white/5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] backdrop-blur-2xl p-8 group h-full transition-all duration-500 hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)]"
     >
+      <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
+
       {!isMobile && (
         <div
           className="pointer-events-none absolute -inset-px opacity-0 transition duration-300 group-hover:opacity-100"
           style={{
-            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(120,120,120,0.1), transparent 40%)`,
+            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.2), transparent 40%)`,
           }}
         />
       )}
 
       <div className="relative z-10 flex flex-col h-full items-center text-center">
-        <div className="mb-6 w-24 h-24 rounded-full bg-linear-to-b from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-900 flex items-center justify-center shadow-lg border border-neutral-200 dark:border-neutral-700 group-hover:scale-110 transition-transform duration-500">
+        <div className="mb-6 w-24 h-24 rounded-full bg-white/80 dark:bg-white/10 backdrop-blur-md flex items-center justify-center shadow-[0_4px_12px_rgba(0,0,0,0.08),inset_0_1px_4px_rgba(255,255,255,0.9)] dark:shadow-[0_4px_12px_rgba(0,0,0,0.3),inset_0_1px_3px_rgba(255,255,255,0.1)] border border-black/5 dark:border-white/10 group-hover:scale-110 transition-transform duration-500">
           <div className="w-12 h-12 text-foreground/70 group-hover:text-foreground transition-colors duration-300">
             {service.icon}
           </div>

@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: "A.S.S Security <onboarding@resend.dev>", // Change or verify domain later
-      to: ["info@ass-sicurity.de"],
+      to: ["info@ass-security-ug.de"],
       subject: `Neue Anfrage von ${firstName} ${lastName}`,
       html: `
         <h2>Neue Kontaktanfrage</h2>

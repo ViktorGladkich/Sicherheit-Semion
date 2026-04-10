@@ -260,18 +260,18 @@ export const ContactForm: React.FC = () => {
         type="submit"
         disabled={isLoading || isSuccess}
         className={`
-                    w-full py-4 cursor-pointer text-background font-bold uppercase tracking-widest rounded-lg mt-4
-                    transition-all duration-300 transform shadow-lg
-                    flex items-center justify-center overflow-hidden relative group
+                    w-full py-5 cursor-pointer font-black uppercase tracking-[0.2em] rounded-xl mt-6
+                    transition-all duration-500 ease-out transform
+                    flex items-center justify-center overflow-hidden relative group/btn
                     ${
                       isSuccess
-                        ? "bg-green-600"
-                        : "bg-foreground hover:bg-foreground/90 hover:scale-[1.01] hover:shadow-xl"
+                        ? "bg-green-600 text-white shadow-[0_0_40px_rgba(34,197,94,0.4)] border border-green-500/50"
+                        : "bg-foreground text-background border-2 border-transparent hover:bg-transparent hover:border-foreground hover:text-foreground hover:shadow-[0_0_30px_-5px_rgba(150,150,150,0.3)] hover:scale-[1.02]"
                     } 
                     ${(isLoading || isSuccess) && "cursor-not-allowed"}
                 `}
       >
-        <span className="relative z-10 flex items-center gap-2 h-6">
+        <span className="relative z-10 flex items-center justify-center gap-3 h-6 w-full">
           <AnimatePresence mode="wait">
             {isLoading ? (
               <motion.div
@@ -302,17 +302,20 @@ export const ContactForm: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
+                className="flex items-center gap-3"
               >
-                Nachricht senden
+                KONTAKT AUFNEHMEN
+                <span className="inline-block transform group-hover/btn:translate-x-2 group-hover/btn:-translate-y-2 transition-transform duration-500 ease-out font-normal text-xl">
+                  &#8599;
+                </span>
               </motion.span>
             )}
           </AnimatePresence>
         </span>
-        {/* Shine effect on button */}
+        {/* Animated Sweep Background on Hover (Secondary Effect) */}
         {!isLoading && !isSuccess && (
           <div
-            className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-[-20deg] group-hover:animate-shine"
-            style={{ animationDuration: "1s" }}
+            className="absolute top-0 -left-full w-full h-full bg-linear-to-r from-transparent via-foreground/10 to-transparent skew-x-[-20deg] group-hover/btn:left-full transition-all duration-700 ease-in-out"
           ></div>
         )}
       </button>

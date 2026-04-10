@@ -27,20 +27,14 @@ export const BenefitCard: React.FC<CardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group relative flex flex-col justify-between p-6 md:p-8 h-full bg-neutral-50 dark:bg-neutral-900/40 border border-neutral-200 dark:border-neutral-800 hover:border-foreground/50 transition-colors duration-300 overflow-hidden ${className}`}
+      className={`group relative flex flex-col justify-between p-6 md:p-8 h-full bg-white/80 dark:bg-white/5 backdrop-blur-2xl border border-black/8 dark:border-white/15 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] rounded-4xl hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.1),0_15px_30px_-5px_rgba(0,0,0,0.06),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)] transition-all duration-500 overflow-hidden ${className}`}
     >
-      {/* Hover Background Effect */}
-      <div className="absolute inset-0 bg-foreground/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-
-      {/* Technical Corners */}
-      <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-neutral-300 dark:border-neutral-700 group-hover:border-foreground transition-colors duration-300"></div>
-      <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-neutral-300 dark:border-neutral-700 group-hover:border-foreground transition-colors duration-300"></div>
-      <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-neutral-300 dark:border-neutral-700 group-hover:border-foreground transition-colors duration-300"></div>
-      <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-neutral-300 dark:border-neutral-700 group-hover:border-foreground transition-colors duration-300"></div>
+      {/* Liquid Glass Highlight Sweep */}
+      <div className="absolute inset-0 bg-linear-to-tr from-white/40 via-transparent to-white/10 dark:from-white/10 dark:via-transparent dark:to-transparent opacity-50 pointer-events-none rounded-[inherit]"></div>
 
       {/* Header */}
       <div className="flex justify-between items-start mb-6 relative z-10">
-        <div className="p-3 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg text-foreground group-hover:scale-110 transition-transform duration-300 shadow-sm">
+        <div className="p-3 bg-white/50 dark:bg-black/40 backdrop-blur-xl border border-white/80 dark:border-white/20 rounded-2xl shadow-[inset_1px_1px_2px_rgba(255,255,255,0.6)] text-foreground group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">
           {item.icon}
         </div>
         <span className="font-mono text-4xl font-bold text-neutral-200 dark:text-neutral-800 group-hover:text-neutral-300 dark:group-hover:text-neutral-700 transition-colors select-none">
