@@ -174,10 +174,10 @@ const Footer: React.FC = () => {
                 Telefon
               </p>
               <a
-                href="tel:+4917640153293"
+                href="tel:+4916097553090"
                 className="text-lg font-bold hover:text-muted-foreground transition-colors"
               >
-                +49 176 40153293
+                +49 160 97553090
               </a>
             </div>
           </div>

@@ -173,10 +173,10 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               Notfall
             </span>
             <a
-              href="tel:+4917640153293"
+              href="tel:+4916097553090"
               className="text-sm font-bold text-foreground"
             >
-              +49 176 40153293
+              +49 160 97553090
             </a>
           </div>
         </div>

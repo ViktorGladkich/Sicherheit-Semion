@@ -120,7 +120,7 @@ export default function Datenschutz() {
                     <p>Geschäftsführer: Semion Raskin</p>
                     <p>Königstraße 26, 01097 Dresden</p>
                     <p>Handelsregister: Amtsgericht Dresden, HRB 47491</p>
-                    <p>Telefon: +49 176 40153293</p>
+                    <p>Telefon: +49 160 97553090</p>
                     <p>E-Mail: info@ass-security-ug.de</p>
                   </div>
                 </div>

@@ -51,7 +51,7 @@ export default function Impressum() {
                   <span className="text-muted-foreground font-medium">
                     Telefon:
                   </span>{" "}
-                  +49 176 40153293
+                  +49 160 97553090
                 </p>
                 <p>
                   <span className="text-muted-foreground font-medium">
