@@ -81,11 +81,16 @@ export default function Datenschutz() {
                 </div>
                 <p className="text-sm font-light italic">
                   Vercel ist eine Cloud-Plattform, über die wir unsere Website
-                  bereitstellen. Zur Analyse der Performance и zur
+                  bereitstellen. Zur Analyse der Performance und zur
                   Gewährleistung der Sicherheit verarbeitet Vercel
-                  Verbindungsdaten (z. B. IP-Adressen) der Website-Besucher. Die
-                  Datenübertragung in die USA erfolgt auf Grundlage der
-                  Standardvertragsklauseln der EU-Kommission.
+                  Verbindungsdaten (z. B. IP-Adressen) der Website-Besucher.
+                  Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes
+                  Interesse am sicheren und störungsfreien Betrieb der Website).
+                  Die Datenübertragung in die USA erfolgt auf Grundlage der
+                  Standardvertragsklauseln der EU-Kommission (Art. 46 Abs. 2
+                  lit. c DSGVO). Mit Vercel wurde ein
+                  Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO
+                  abgeschlossen.
                 </p>
               </div>
             </section>
@@ -228,11 +233,16 @@ export default function Datenschutz() {
                     gespeichert. Wir nutzen für den Mail-Versand den Anbieter{" "}
                     <span className="font-bold">Resend</span> (Resend Inc.,
                     USA). Die Datenübertragung in die USA erfolgt auf
-                    Grundlage der Standardvertragsklauseln der EU-Kommission.
-                    Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
-                    (vorvertragliche Maßnahmen). Ihre Daten werden nach
-                    abgeschlossener Bearbeitung Ihrer Anfrage gelöscht, sofern
-                    keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                    Grundlage der Standardvertragsklauseln der EU-Kommission
+                    (Art. 46 Abs. 2 lit. c DSGVO). Mit Resend wurde ein
+                    Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO
+                    abgeschlossen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
+                    DSGVO (vorvertragliche Maßnahmen). Ihre Daten werden nach
+                    abgeschlossener Bearbeitung Ihrer Anfrage gelöscht. Soweit
+                    aus einer Anfrage ein Vertragsverhältnis entsteht, gelten
+                    die gesetzlichen Aufbewahrungsfristen: 6 Jahre gemäß
+                    § 257 HGB (Geschäftsbriefe) bzw. 10 Jahre gemäß § 147 AO
+                    (steuerrelevante Unterlagen).
                   </p>
                 </div>
               </div>
@@ -270,11 +280,76 @@ export default function Datenschutz() {
                   Widerspruch
                 </div>
               </div>
+              <div className="mt-6">
+                <h3 className="text-xl font-bold text-foreground mb-2">
+                  Automatisierte Entscheidungen (Art. 22 DSGVO)
+                </h3>
+                <p className="text-sm">
+                  Wir verwenden keine automatisierten Entscheidungsverfahren
+                  einschließlich Profiling im Sinne von Art. 22 DSGVO. Es
+                  findet keine automatisierte Verarbeitung statt, die Ihnen
+                  gegenüber rechtliche Wirkung entfaltet oder Sie in
+                  ähnlicher Weise erheblich beeinträchtigt.
+                </p>
+              </div>
             </section>
 
             <section>
               <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
-                6. Cookies
+                6. Widerspruchsrecht (Art. 21 DSGVO)
+              </h2>
+              <div className="space-y-4">
+                <div className="p-5 border border-foreground/20 rounded-xl bg-muted">
+                  <p className="text-sm font-bold text-foreground mb-2 uppercase tracking-wide">
+                    Hinweis gemäß Art. 21 DSGVO
+                  </p>
+                  <p className="text-sm">
+                    Soweit wir Ihre personenbezogenen Daten auf Grundlage von
+                    Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)
+                    verarbeiten – insbesondere Server-Log-Dateien –, haben Sie
+                    das Recht, jederzeit aus Gründen, die sich aus Ihrer
+                    besonderen Situation ergeben, Widerspruch gegen die
+                    Verarbeitung einzulegen (Art. 21 Abs. 1 DSGVO). Wir
+                    verarbeiten Ihre personenbezogenen Daten dann nicht mehr,
+                    es sei denn, wir können zwingende schutzwürdige Gründe für
+                    die Verarbeitung nachweisen, die Ihre Interessen, Rechte
+                    und Freiheiten überwiegen, oder die Verarbeitung dient der
+                    Geltendmachung, Ausübung oder Verteidigung von
+                    Rechtsansprüchen.
+                  </p>
+                  <p className="text-sm mt-3">
+                    Um Ihr Widerspruchsrecht auszuüben, wenden Sie sich bitte
+                    an: <span className="font-semibold">info@ass-security-ug.de</span>
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
+                7. Datenschutzbeauftragter
+              </h2>
+              <div className="space-y-4">
+                <p className="text-sm">
+                  Wir sind als kleines Unternehmen nach aktuellem Stand nicht
+                  verpflichtet, einen betrieblichen Datenschutzbeauftragten
+                  gemäß Art. 37 DSGVO i. V. m. § 38 BDSG zu benennen, da
+                  keine der gesetzlichen Voraussetzungen (insbesondere keine
+                  regelmäßige automatisierte Verarbeitung durch mehr als 20
+                  Personen, keine umfangreiche Verarbeitung besonderer
+                  Datenkategorien) erfüllt ist.
+                </p>
+                <p className="text-sm">
+                  Für datenschutzrechtliche Anfragen wenden Sie sich bitte
+                  direkt an den Verantwortlichen:{" "}
+                  <span className="font-semibold">info@ass-security-ug.de</span>
+                </p>
+              </div>
+            </section>
+
+            <section>
+              <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
+                8. Cookies
               </h2>
               <div className="space-y-4">
                 <p className="text-sm">
@@ -297,31 +372,36 @@ export default function Datenschutz() {
 
             <section>
               <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
-                7. Google Maps
+                9. Google Maps
               </h2>
               <div className="space-y-4">
                 <p className="text-sm">
-                  Diese Website nutzt den Kartendienst Google Maps über eine
-                  Einbettung (iFrame). Anbieter ist die Google Ireland
-                  Limited (&quot;Google&quot;), Gordon House, Barrow Street,
-                  Dublin 4, Irland.
+                  Diese Website bindet den Kartendienst Google Maps (iFrame)
+                  ein. Anbieter ist die Google Ireland Limited
+                  (&quot;Google&quot;), Gordon House, Barrow Street, Dublin 4,
+                  Irland.
                 </p>
                 <p className="text-sm">
-                  Zur Nutzung der Funktionen von Google Maps ist es
-                  notwendig, Ihre IP-Adresse zu speichern. Diese
-                  Informationen werden in der Regel an einen Server von
-                  Google in den USA übertragen und dort gespeichert. Der
-                  Anbieter dieser Seite hat keinen Einfluss auf diese
-                  Datenübertragung. Die Datenübertragung in die USA erfolgt
-                  auf Grundlage der Standardvertragsklauseln der
-                  EU-Kommission.
+                  Google Maps wird auf unserer Website erst nach Ihrer
+                  ausdrücklichen Einwilligung über unser Cookie-Consent-Banner
+                  geladen. Ohne Ihre Zustimmung wird kein iFrame eingebettet
+                  und es findet keine Datenübertragung an Google statt.
                 </p>
                 <p className="text-sm">
-                  Die Nutzung von Google Maps erfolgt im Interesse einer
-                  ansprechenden Darstellung unseres Standortes und einer
-                  leichten Auffindbarkeit der von uns auf der Website
-                  angegebenen Adresse. Dies stellt ein berechtigtes
-                  Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
+                  Sofern Sie eingewilligt haben, ist es zur Nutzung der
+                  Funktionen von Google Maps notwendig, Ihre IP-Adresse zu
+                  übermitteln. Diese Informationen werden in der Regel an
+                  einen Server von Google in den USA übertragen und dort
+                  gespeichert. Die Datenübertragung in die USA erfolgt auf
+                  Grundlage der Standardvertragsklauseln der EU-Kommission
+                  (Art. 46 Abs. 2 lit. c DSGVO).
+                </p>
+                <p className="text-sm">
+                  Rechtsgrundlage ist Art. 6 Abs. 1 lit. a DSGVO
+                  (Einwilligung). Sie können Ihre Einwilligung jederzeit mit
+                  Wirkung für die Zukunft widerrufen, indem Sie Ihren
+                  Browser-Speicher (localStorage) löschen oder die Seite neu
+                  laden.
                 </p>
                 <p className="text-sm">
                   Mehr Informationen zum Umgang mit Nutzerdaten finden Sie
@@ -340,7 +420,7 @@ export default function Datenschutz() {
 
             <section>
               <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
-                8. Speicherdauer
+                10. Speicherdauer
               </h2>
               <p className="text-sm">
                 Soweit innerhalb dieser Datenschutzerklärung keine speziellere
@@ -358,7 +438,7 @@ export default function Datenschutz() {
 
             <section>
               <h2 className="text-3xl font-black text-foreground mb-6 uppercase tracking-tight">
-                9. Aktualität und Änderung dieser Datenschutzerklärung
+                11. Aktualität und Änderung dieser Datenschutzerklärung
               </h2>
               <p className="text-sm">
                 Diese Datenschutzerklärung ist aktuell gültig und hat den

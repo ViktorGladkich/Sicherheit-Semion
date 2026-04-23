@@ -194,21 +194,15 @@ export default function Impressum() {
             </section>
 
             <section>
-              <h2 className="text-xl font-bold mb-6">EU-Streitschlichtung</h2>
+              <h2 className="text-xl font-bold mb-6">Streitschlichtung</h2>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Die Europäische Kommission stellt eine Plattform zur
-                Online-Streitbeilegung (OS) bereit:
-                <a
-                  href="https://ec.europa.eu/consumers/odr/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline hover:text-foreground ml-1"
-                >
-                  https://ec.europa.eu/consumers/odr/
-                </a>
-                . Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind
-                nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor
-                einer Verbraucherschlichtungsstelle teilzunehmen.
+                Die Online-Streitbeilegungs-Plattform der EU-Kommission (OS-Plattform)
+                wurde am 20. Juli 2024 abgeschaltet und steht nicht mehr zur Verfügung.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed mt-3">
+                Wir sind nicht bereit oder verpflichtet, an
+                Streitbeilegungsverfahren vor einer
+                Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG).
               </p>
             </section>
           </div>

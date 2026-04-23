@@ -20,11 +20,13 @@ const CookieConsent: React.FC = () => {
 
   const handleAccept = () => {
     localStorage.setItem("cookie_consent", "accepted");
+    window.dispatchEvent(new CustomEvent("cookie-consent-change", { detail: "accepted" }));
     setShowBanner(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem("cookie_consent", "declined");
+    window.dispatchEvent(new CustomEvent("cookie-consent-change", { detail: "declined" }));
     setShowBanner(false);
   };
 
