@@ -59,10 +59,10 @@ export const Hamburger: React.FC<HamburgerProps> = ({ isOpen, toggle }) => {
 
   if (!mounted) {
     return (
-      <div className="w-[50px] h-[50px] rounded-full bg-foreground flex flex-col items-center justify-center gap-[5px] opacity-50">
-        <span className="w-6 h-[2px] bg-background rounded-full"></span>
-        <span className="w-6 h-[2px] bg-background rounded-full"></span>
-        <span className="w-4 h-[2px] bg-background rounded-full self-end mr-[13px]"></span>
+      <div className="w-[50px] h-[50px] rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-3xl flex flex-col items-center justify-center gap-[5px] border border-black/10 dark:border-white/20 opacity-50">
+        <span className="w-6 h-[2px] bg-foreground rounded-full"></span>
+        <span className="w-6 h-[2px] bg-foreground rounded-full"></span>
+        <span className="w-4 h-[2px] bg-foreground rounded-full"></span>
       </div>
     );
   }
@@ -71,12 +71,12 @@ export const Hamburger: React.FC<HamburgerProps> = ({ isOpen, toggle }) => {
     <button
       ref={buttonRef}
       onClick={toggle}
-      className="w-[50px] h-[50px] rounded-full bg-foreground border-none hidden max-lg:flex flex-col items-center justify-center gap-[5px] cursor-pointer p-0 relative shadow-lg hover:bg-neutral-800 transition-colors duration-300 pointer-events-auto"
-      aria-label="Toggle menu"
+      className="w-[50px] h-[50px] rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-3xl border border-black/10 dark:border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.15)] hidden max-lg:flex flex-col items-center justify-center gap-[5px] cursor-pointer p-0 relative hover:scale-105 transition-transform duration-300 pointer-events-auto"
+      aria-label="Menü уmschalten"
     >
-      <span className="hamburger-line w-6 h-[2px] bg-background rounded-full origin-center"></span>
-      <span className="hamburger-line w-6 h-[2px] bg-background rounded-full origin-center"></span>
-      <span className="hamburger-line w-4 h-[2px] bg-background rounded-full origin-center self-end mr-[13px]"></span>
+      <span className="hamburger-line w-6 h-[2px] bg-foreground rounded-full origin-center"></span>
+      <span className="hamburger-line w-6 h-[2px] bg-foreground rounded-full origin-center"></span>
+      <span className="hamburger-line w-4 h-[2px] bg-foreground rounded-full origin-center self-center"></span>
     </button>
   );
 };
