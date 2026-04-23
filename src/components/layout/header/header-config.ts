@@ -10,6 +10,7 @@ export const NAV_ITEMS: NavItem[] = [
   { href: "#benefits", label: "Vorteile" },
   { href: "#approach", label: "Vorgehen" },
   { href: "#about", label: "Über Uns" },
+  { href: "#team", label: "Team" },
   { href: "#faq", label: "FAQ" },
   { href: "#contact", label: "Kontakt" },
 ];

@@ -34,7 +34,7 @@ const ThemeToggle: React.FC = () => {
             : "translate-y-full opacity-0 rotate-90"
         }`}
       >
-        <SunIcon className="w-6 h-6 text-background" />
+        <SunIcon className="w-6 h-6 text-foreground" />
       </div>
       <div
         className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ease-in-out transform ${
@@ -43,7 +43,7 @@ const ThemeToggle: React.FC = () => {
             : "-translate-y-full opacity-0 -rotate-90"
         }`}
       >
-        <MoonIcon className="w-6 h-6 text-background" />
+        <MoonIcon className="w-6 h-6 text-foreground" />
       </div>
     </button>
   );

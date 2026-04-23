@@ -43,7 +43,7 @@ const InputField = ({
       value={value}
       onChange={onChange}
       className={`
-            peer w-full bg-neutral-100 dark:bg-neutral-900/50 border-b-2 border-t-0 border-x-0 border-neutral-300 dark:border-neutral-700 rounded-none px-4 py-3.5 text-foreground outline-none transition-all duration-300 placeholder-transparent
+            peer w-full bg-black/5 dark:bg-white/5 backdrop-blur-md border-b-2 border-t-0 border-x-0 border-neutral-300 dark:border-neutral-700/50 rounded-lg px-4 py-3.5 text-foreground outline-none transition-all duration-300 placeholder-transparent
             ${
               error
                 ? "border-destructive"
@@ -228,7 +228,7 @@ export const ContactForm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
           className={`
-                        peer w-full bg-neutral-100 dark:bg-neutral-900/50 border-b-2 border-t-0 border-x-0 border-neutral-300 dark:border-neutral-700 rounded-none px-4 py-3.5 text-foreground outline-none transition-all duration-300 placeholder-transparent resize-none
+                        peer w-full bg-black/5 dark:bg-white/5 backdrop-blur-md border-b-2 border-t-0 border-x-0 border-neutral-300 dark:border-neutral-700/50 rounded-lg px-4 py-3.5 text-foreground outline-none transition-all duration-300 placeholder-transparent resize-none
                         ${
                           errors.message
                             ? "border-destructive"
@@ -266,7 +266,7 @@ export const ContactForm: React.FC = () => {
                     ${
                       isSuccess
                         ? "bg-green-600 text-white shadow-[0_0_40px_rgba(34,197,94,0.4)] border border-green-500/50"
-                        : "bg-foreground text-background border-2 border-transparent hover:bg-transparent hover:border-foreground hover:text-foreground hover:shadow-[0_0_30px_-5px_rgba(150,150,150,0.3)] hover:scale-[1.02]"
+                        : "bg-white/80 dark:bg-white/10 backdrop-blur-2xl text-foreground border border-black/8 dark:border-white/15 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:shadow-[0_2px_15px_-3px_rgba(0,0,0,0.4),inset_0_1px_2px_rgba(255,255,255,0.1)] hover:scale-[1.02] hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.12),0_15px_30px_-5px_rgba(0,0,0,0.08),inset_0_1px_3px_rgba(255,255,255,0.8)] dark:hover:shadow-[0_4px_25px_-5px_rgba(0,0,0,0.5),inset_0_1px_2px_rgba(255,255,255,0.15)]"
                     } 
                     ${(isLoading || isSuccess) && "cursor-not-allowed"}
                 `}

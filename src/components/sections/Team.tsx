@@ -8,20 +8,15 @@ import { SectionHeader } from "../ui/SectionHeader";
 const teamMembers = [
   {
     name: "Semion Raskin",
-    role: "Geschäftsführung",
-    image: "/team_semion_nano_v1_1772039706807.png",
+    role: "Geschäftsführer",
+    email: "semion.raskin@ass-security-ug.de",
+    image: "/semion.jpeg",
   },
   {
-    name: "Alexander Calutcov",
-    role: "Geschäftsführung",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop",
-  },
-  {
-    name: "Andre Pogosan",
+    name: "Andrej Pogosyan",
     role: "Prokurist",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1000&auto=format&fit=crop",
+    email: "andrej.pogosyan@ass-security-ug.de",
+    image: "/andrej.jpeg",
   },
 ];
 
@@ -55,7 +50,7 @@ const Team: React.FC = () => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
         >
           {teamMembers.map((member, index) => (
             <motion.div
@@ -77,7 +72,7 @@ const Team: React.FC = () => {
                   src={member.image}
                   alt={member.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
 
@@ -96,9 +91,18 @@ const Team: React.FC = () => {
                 <h3 className="text-2xl font-bold text-white mb-1 tracking-tight">
                   {member.name}
                 </h3>
-                <p className="text-sm font-mono text-neutral-300 uppercase tracking-widest">
+                <p className="text-sm font-mono text-neutral-300 uppercase tracking-widest mb-2">
                   {member.role}
                 </p>
+                <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  <a 
+                    href={`mailto:${member.email}`} 
+                    className="text-xs font-mono text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
+                  >
+                    <span className="w-1 h-1 bg-foreground rounded-full"></span>
+                    {member.email}
+                  </a>
+                </div>
               </div>
 
               {/* Corner Accents */}

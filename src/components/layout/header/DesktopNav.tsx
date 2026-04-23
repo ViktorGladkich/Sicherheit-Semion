@@ -152,7 +152,7 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
     <nav className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto max-lg:hidden z-100">
       <div
         ref={navRef}
-        className="relative flex items-center h-[50px] bg-foreground rounded-full shadow-lg p-1.5"
+        className="relative flex items-center h-[52px] bg-black/5 dark:bg-white/10 backdrop-blur-3xl rounded-full border border-black/10 dark:border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.15)] p-1.5"
       >
         <ul
           className="flex items-stretch gap-1 m-0 h-full list-none"
@@ -166,17 +166,17 @@ export const DesktopNav: React.FC<DesktopNavProps> = ({
                 onClick={(e) => handleNavClick(e, item.href)}
                 className={`
                                     relative inline-flex items-center justify-center h-full px-5 
-                                    bg-transparent text-background decoration-0 rounded-full 
-                                    font-semibold text-sm uppercase tracking-wider cursor-pointer 
-                                    overflow-hidden pill group border-2 transition-colors duration-300
-                                    ${activeHref === item.href ? "border-background" : "border-transparent"}
+                                    bg-transparent text-foreground decoration-0 rounded-full 
+                                    font-bold text-sm uppercase tracking-wider cursor-pointer 
+                                    overflow-hidden pill group transition-all duration-300
+                                    ${activeHref === item.href ? "bg-black/10 dark:bg-white/10 border-black/10 dark:border-white/20" : "border border-transparent"}
                                 `}
                 aria-label={item.ariaLabel || item.label}
                 onMouseEnter={() => handleEnter(i)}
                 onMouseLeave={() => handleLeave(i)}
               >
                 <span
-                  className="hover-circle absolute left-1/2 bottom-0 rounded-full bg-background z-10 block pointer-events-none will-change-transform"
+                  className="hover-circle absolute left-1/2 bottom-0 rounded-full bg-foreground dark:bg-background z-10 block pointer-events-none will-change-transform"
                   aria-hidden="true"
                   ref={(el) => {
                     circleRefs.current[i] = el;

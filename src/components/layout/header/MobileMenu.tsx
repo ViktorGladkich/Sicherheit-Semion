@@ -114,7 +114,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-90 bg-background/95 backdrop-blur-xl invisible max-lg:flex flex-col pointer-events-auto"
+      className="fixed inset-0 z-90 bg-white/5 dark:bg-black/20 backdrop-blur-3xl invisible max-lg:flex flex-col pointer-events-auto border-l border-white/20 dark:border-white/10"
       ref={menuRef}
       style={{ clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)" }}
     >

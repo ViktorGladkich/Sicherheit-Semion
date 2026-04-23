@@ -39,7 +39,7 @@ const Header: React.FC = () => {
         {/* RIGHT: Controls */}
         <div className="flex items-center gap-3 pointer-events-auto z-100">
           {/* Theme Toggle */}
-          <div className="bg-foreground rounded-full w-[50px] h-[50px] flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-300">
+          <div className="bg-black/5 dark:bg-white/10 backdrop-blur-3xl rounded-full w-[50px] h-[50px] flex items-center justify-center border border-black/10 dark:border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:scale-105 transition-transform duration-300 pointer-events-auto">
             <ThemeToggle />
           </div>
 

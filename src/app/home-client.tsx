@@ -6,6 +6,7 @@ import Hero from "../components/sections/Hero";
 import Services from "../components/sections/Services";
 import Benefits from "../components/sections/Benefits";
 import About from "../components/sections/About";
+import Team from "../components/sections/Team";
 import Contact from "../components/sections/Contact";
 import Preloader from "../components/layout/Preloader";
 
@@ -68,6 +69,7 @@ export default function HomeClient() {
           <Approach />
         </Suspense>
         <About />
+        <Team />
         <Suspense fallback={<SectionFallback />}>
           <FAQ />
         </Suspense>
