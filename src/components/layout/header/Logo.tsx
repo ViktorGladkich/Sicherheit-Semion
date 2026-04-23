@@ -49,7 +49,7 @@ export const Logo: React.FC = () => {
     <div className="pointer-events-auto z-100">
       <Link
         ref={logoRef}
-        className="w-[60px] h-[60px] rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-3xl p-2 inline-flex items-center justify-center border border-black/10 dark:border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:scale-105 transition-transform duration-300 relative pointer-events-auto"
+        className="w-[50px] h-[50px] rounded-full bg-black/5 dark:bg-white/10 backdrop-blur-3xl p-2 inline-flex items-center justify-center border border-black/10 dark:border-white/20 shadow-[0_4px_24px_rgba(0,0,0,0.1),inset_0_1px_1px_rgba(255,255,255,0.15)] hover:scale-105 transition-transform duration-300 relative pointer-events-auto"
         href="/"
         aria-label="Home"
         onMouseEnter={handleLogoEnter}
@@ -59,7 +59,7 @@ export const Logo: React.FC = () => {
           src={logoSrc}
           alt="A.S.S Security"
           fill
-          className="object-contain block p-2"
+          className="object-contain block p-0"
         />
       </Link>
     </div>

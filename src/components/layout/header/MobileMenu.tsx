@@ -121,8 +121,8 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
       {/* Background Dot Pattern */}
       <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none"></div>
 
-      <div className="flex-1 flex flex-col justify-center px-6 relative overflow-y-auto">
-        <div className="menu-decoration absolute left-6 top-24 bottom-24 w-px bg-foreground/20 origin-top"></div>
+      <div className="flex-1 flex flex-col justify-start pt-32 px-6 relative overflow-y-auto">
+        <div className="menu-decoration absolute left-6 top-32 bottom-24 w-px bg-foreground/20 origin-top"></div>
 
         <ul className="flex flex-col gap-3 pl-6">
           {items.map((item, index) => (
