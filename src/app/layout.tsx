@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "A.S.S SECURITY UG | Professioneller Sicherheitsdienst in Dresden",
     description:
-      "Ihr zuverlässiger Partner für Objektschutz, Veranstaltungsschutz und baustellensicherheit in Dresden und Umgebung.",
+      "Ihr zuverlässiger Partner für Objektschutz, Veranstaltungsschutz und Baustellenbewachung in Dresden und Umgebung.",
   },
   robots: {
     index: true,

@@ -58,7 +58,7 @@ const Services: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           title="UNSERE DIENSTLEISTUNGEN"
-          description="Maßgeschneiderte Sicherheitslösungen für höchste Ansprüche. Wir analysieren, planen und schützen mit bewährten Methoden und modernster technologie."
+          description="Maßgeschneiderte Sicherheitslösungen für höchste Ansprüche. Wir analysieren, planen und schützen mit bewährten Methoden und modernster Technologie."
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" role="list">
