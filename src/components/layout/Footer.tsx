@@ -169,16 +169,29 @@ const Footer: React.FC = () => {
             <div className="w-12 h-12 bg-muted rounded-2xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
               <PhoneIcon className="w-6 h-6" />
             </div>
-            <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/40 mb-2">
-                Telefon
-              </p>
-              <a
-                href="tel:+4916097553090"
-                className="text-lg font-bold hover:text-muted-foreground transition-colors"
-              >
-                +49 160 97553090
-              </a>
+            <div className="flex flex-col gap-4">
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/40 mb-1">
+                  Telefon (Geschäftsführung)
+                </p>
+                <a
+                  href="tel:+4916097553090"
+                  className="text-lg font-bold hover:text-muted-foreground transition-colors"
+                >
+                  +49 160 97553090
+                </a>
+              </div>
+              <div>
+                <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground/40 mb-1">
+                  Telefon (Prokurist)
+                </p>
+                <a
+                  href="tel:+4917640153293"
+                  className="text-lg font-bold hover:text-muted-foreground transition-colors"
+                >
+                  +49 176 40153293
+                </a>
+              </div>
             </div>
           </div>
           <div className="flex items-start gap-6 group">

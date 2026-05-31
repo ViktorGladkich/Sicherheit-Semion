@@ -10,12 +10,14 @@ const teamMembers = [
     name: "Semion Raskin",
     role: "Geschäftsführer",
     email: "semion.raskin@ass-security-ug.de",
+    phone: "+4916097553090",
     image: "/semion.jpeg",
   },
   {
     name: "Andrej Pogosyan",
     role: "Prokurist",
     email: "andrej.pogosyan@ass-security-ug.de",
+    phone: "+4917640153293",
     image: "/andrej.jpeg",
   },
 ];
@@ -94,7 +96,16 @@ const Team: React.FC = () => {
                 <p className="text-sm font-mono text-neutral-300 uppercase tracking-widest mb-2">
                   {member.role}
                 </p>
-                <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                <div className="flex flex-col items-start gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  {member.phone && (
+                    <a 
+                      href={`tel:${member.phone.replace(/\s+/g, '')}`} 
+                      className="text-xs font-mono text-white/70 hover:text-white transition-colors flex items-center gap-1.5"
+                    >
+                      <span className="w-1 h-1 bg-foreground rounded-full"></span>
+                      {member.phone}
+                    </a>
+                  )}
                   <a 
                     href={`mailto:${member.email}`} 
                     className="text-xs font-mono text-white/70 hover:text-white transition-colors flex items-center gap-1.5"

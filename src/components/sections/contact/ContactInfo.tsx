@@ -31,19 +31,29 @@ export const ContactInfo: React.FC = () => {
           Kontaktinformationen
         </h3>
         <div className="space-y-8">
-          <a href="tel:+4916097553090" className="flex items-center group">
-            <div className="w-12 h-12 rounded-2xl bg-white/90 dark:bg-white/10 border border-black/8 dark:border-white/10 backdrop-blur-md flex items-center justify-center mr-5 group-hover:border-foreground/30 transition-all shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),inset_0_1px_2px_rgba(255,255,255,0.9)] dark:shadow-[0_2px_8px_-2px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.1)]">
+          <div className="flex items-start group">
+            <div className="w-12 h-12 shrink-0 rounded-2xl bg-white/90 dark:bg-white/10 border border-black/8 dark:border-white/10 backdrop-blur-md flex items-center justify-center mr-5 group-hover:border-foreground/30 transition-all shadow-[0_2px_8px_-2px_rgba(0,0,0,0.08),inset_0_1px_2px_rgba(255,255,255,0.9)] dark:shadow-[0_2px_8px_-2px_rgba(0,0,0,0.3),inset_0_1px_2px_rgba(255,255,255,0.1)]">
               <PhoneIcon className="w-5 h-5 text-foreground" />
             </div>
-            <div>
-              <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">
-                Telefon
-              </p>
-              <span className="text-foreground group-hover:text-foreground/80 transition-colors font-medium">
-                +49 160 97553090
-              </span>
+            <div className="flex flex-col gap-3 pt-1">
+              <a href="tel:+4916097553090" className="block group/phone">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-0.5">
+                  Telefon (Geschäftsführung)
+                </p>
+                <span className="text-foreground group-hover/phone:text-foreground/80 transition-colors font-medium">
+                  +49 160 97553090
+                </span>
+              </a>
+              <a href="tel:+4917640153293" className="block group/phone">
+                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-0.5">
+                  Telefon (Prokurist)
+                </p>
+                <span className="text-foreground group-hover/phone:text-foreground/80 transition-colors font-medium">
+                  +49 176 40153293
+                </span>
+              </a>
             </div>
-          </a>
+          </div>
           <a
             href="mailto:info@ass-security-ug.de"
             className="flex items-center group"

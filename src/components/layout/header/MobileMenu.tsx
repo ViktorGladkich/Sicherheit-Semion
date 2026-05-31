@@ -168,15 +168,26 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
               info@ass-security-ug.de
             </a>
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-1 mb-2">
             <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-              Notfall
+              Telefon (Geschäftsführung)
             </span>
             <a
               href="tel:+4916097553090"
               className="text-sm font-bold text-foreground"
             >
               +49 160 97553090
+            </a>
+          </div>
+          <div className="flex flex-col gap-1">
+            <span className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
+              Telefon (Prokurist)
+            </span>
+            <a
+              href="tel:+4917640153293"
+              className="text-sm font-bold text-foreground"
+            >
+              +49 176 40153293
             </a>
           </div>
         </div>
