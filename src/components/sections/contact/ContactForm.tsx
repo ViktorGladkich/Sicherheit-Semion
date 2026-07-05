@@ -260,7 +260,7 @@ export const ContactForm: React.FC = () => {
         type="submit"
         disabled={isLoading || isSuccess}
         className={`
-                    w-full py-5 cursor-pointer font-black uppercase tracking-[0.2em] rounded-xl mt-6
+                    w-full py-3.5 md:py-5 text-sm md:text-base cursor-pointer font-black uppercase tracking-[0.2em] rounded-full mt-6
                     transition-all duration-500 ease-out transform
                     flex items-center justify-center overflow-hidden relative group/btn
                     ${

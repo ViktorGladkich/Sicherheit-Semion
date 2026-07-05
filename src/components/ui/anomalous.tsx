@@ -311,7 +311,7 @@ export function AnomalousMatterHero({
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <a
               href="#contact"
-              className="inline-block py-4 px-10 bg-foreground text-background uppercase font-bold tracking-widest rounded-lg hover:bg-foreground/80 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              className="inline-block py-3 px-6 md:py-4 md:px-10 text-sm md:text-base bg-foreground text-background uppercase font-bold tracking-widest rounded-full hover:bg-foreground/80 transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
               Beratungsgespräch
             </a>
