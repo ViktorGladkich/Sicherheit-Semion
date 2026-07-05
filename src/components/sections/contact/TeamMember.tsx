@@ -31,7 +31,7 @@ export const TeamMember: React.FC<TeamMemberProps> = ({ member }) => {
       whileInView="visible"
       viewport={{ once: true, margin: "-50px" }}
       style={{ willChange: "transform, opacity" }}
-      className="group relative bg-white dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
+      className="group relative bg-white dark:bg-neutral-900/60 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 flex flex-col"
     >
       {/* Image Container */}
       <div className="relative aspect-4/3 overflow-hidden">

@@ -92,7 +92,7 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
         {/* Core */}
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full bg-background border border-foreground/20 shadow-[0_0_20px_rgba(0,0,0,0.1)] flex items-center justify-center z-10 group-hover:border-foreground group-hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-all duration-300"
+          className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full bg-background border border-foreground/20 shadow-[0_0_20px_rgba(0,0,0,0.1)] flex items-center justify-center z-10 group-hover:border-foreground group-hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-colors transition-shadow duration-300"
         >
           <div className="w-4 h-4 md:w-6 md:h-6 text-foreground/70 group-hover:text-foreground transition-colors duration-300">
             {step.icon}
@@ -108,7 +108,7 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
           className={`
                         hidden md:block absolute top-1/2 h-px bg-linear-to-r from-foreground/80 to-transparent w-12
                         ${isEven ? "right-full rotate-180" : "left-full"}
-                        group-hover:opacity-100 group-hover:w-16 transition-all duration-500
+                        group-hover:opacity-100 group-hover:w-16 transition-[width,opacity] duration-500
                     `}
         >
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-1 bg-foreground rounded-full shadow-[0_0_5px_currentColor]"></div>

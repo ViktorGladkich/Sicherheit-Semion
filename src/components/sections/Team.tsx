@@ -65,7 +65,7 @@ const Team: React.FC = () => {
                   transition: { duration: 0.6, ease: "easeOut" },
                 },
               }}
-              className="group relative bg-white/50 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="group relative bg-white/50 dark:bg-neutral-900/40 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300"
             >
               {/* Image Container with Metal Border Effect */}
               <div className="relative aspect-4/5 overflow-hidden">
