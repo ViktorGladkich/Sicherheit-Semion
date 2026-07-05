@@ -40,7 +40,7 @@ export const ImageSlider: React.FC = () => {
     <motion.div
       initial={{ opacity: 0, x: -50 }}
       whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
+      viewport={{ once: true, amount: 0.15, margin: "0px" }}
       transition={{ duration: 0.8 }}
       className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl border border-neutral-200 dark:border-neutral-800 group"
     >

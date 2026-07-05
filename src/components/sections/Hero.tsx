@@ -1,11 +1,16 @@
 "use client";
 
 import React from "react";
-import { SplineScene } from "../ui/splite";
+import dynamic from "next/dynamic";
 import { Spotlight } from "../ui/spotlight";
 import { useTheme } from "../../hooks/useTheme";
 import { CinematicText } from "../ui/cinematic-text";
 import { useIsMounted } from "../../hooks/useIsMounted";
+
+const SplineScene = dynamic(
+  () => import("../ui/splite").then((mod) => mod.SplineScene),
+  { ssr: false, loading: () => <div className="w-full h-full flex items-center justify-center text-muted-foreground animate-pulse font-mono text-sm">Loading 3D Engine...</div> }
+);
 
 const Hero: React.FC = () => {
   const { theme } = useTheme();

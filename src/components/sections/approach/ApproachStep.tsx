@@ -22,7 +22,7 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "0px" }}
+      viewport={{ once: true, amount: 0.15, margin: "0px" }}
       transition={{ 
         duration: 0.8, 
         delay: 0, 
@@ -92,7 +92,7 @@ export const ApproachStep: React.FC<ApproachStepProps> = ({ step, index }) => {
         {/* Core */}
         <motion.div
           whileHover={{ scale: 1.1 }}
-          className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full bg-background border border-foreground/20 shadow-[0_0_20px_rgba(0,0,0,0.1)] flex items-center justify-center z-10 group-hover:border-foreground group-hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-colors transition-shadow duration-300"
+          className="absolute w-8 h-8 md:w-12 md:h-12 rounded-full bg-background border border-foreground/20 shadow-[0_0_20px_rgba(0,0,0,0.1)] flex items-center justify-center z-10 group-hover:border-foreground group-hover:shadow-[0_0_25px_rgba(255,255,255,0.3)] transition-[border-color,box-shadow] duration-300"
         >
           <div className="w-4 h-4 md:w-6 md:h-6 text-foreground/70 group-hover:text-foreground transition-colors duration-300">
             {step.icon}

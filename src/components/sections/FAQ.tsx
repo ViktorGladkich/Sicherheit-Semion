@@ -61,7 +61,7 @@ const FaqItem = ({
     <motion.div
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, amount: 0.15, margin: "0px" }}
       transition={{ duration: 0.8, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
       style={{ willChange: "transform, opacity" }}
       className="relative mb-4 group isolate"
