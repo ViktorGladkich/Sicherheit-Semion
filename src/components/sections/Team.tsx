@@ -13,13 +13,6 @@ const teamMembers = [
     phone: "+4916097553090",
     image: "/semion.jpeg",
   },
-  {
-    name: "Andrej Pogosyan",
-    role: "Prokurist",
-    email: "andrej.pogosyan@ass-security-ug.de",
-    phone: "+4917640153293",
-    image: "/andrej.jpeg",
-  },
 ];
 
 const Team: React.FC = () => {
@@ -52,7 +45,7 @@ const Team: React.FC = () => {
               transition: { staggerChildren: 0.2 },
             },
           }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+          className="grid grid-cols-1 gap-8 max-w-sm mx-auto"
         >
           {teamMembers.map((member, index) => (
             <motion.div

@@ -38,18 +38,10 @@ export const ContactInfo: React.FC = () => {
             <div className="flex flex-col gap-3 pt-1">
               <a href="tel:+4916097553090" className="block group/phone">
                 <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-0.5">
-                  Telefon (Geschäftsführung)
+                  Telefon
                 </p>
                 <span className="text-foreground group-hover/phone:text-foreground/80 transition-colors font-medium">
                   +49 160 97553090
-                </span>
-              </a>
-              <a href="tel:+4917640153293" className="block group/phone">
-                <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold mb-0.5">
-                  Telefon (Prokurist)
-                </p>
-                <span className="text-foreground group-hover/phone:text-foreground/80 transition-colors font-medium">
-                  +49 176 40153293
                 </span>
               </a>
             </div>
